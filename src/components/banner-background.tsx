@@ -14,7 +14,7 @@ class Particle {
 
     static readonly MIN_SPEED = 0;
     static readonly MAX_SPEED = 6; // Reduced maximum speed
-    
+
     constructor(x: number, y: number, temperature: number) {
         this.x = x;
         this.y = y;
@@ -25,7 +25,7 @@ class Particle {
         const speedScale = 1.0;
         const angle = Math.random() * 2 * Math.PI;
         this.baseSpeed = Math.sqrt(-2 * Math.log(Math.random())) * speedScale;
-        const currentSpeed = this.baseSpeed * Math.pow(temperature, 1.5);
+        const currentSpeed = this.baseSpeed * Math.sqrt(temperature); // Changed from pow(1.5) to sqrt for smoother scaling
         this.vx = currentSpeed * Math.cos(angle);
         this.vy = currentSpeed * Math.sin(angle);
     }
@@ -50,7 +50,7 @@ class Particle {
         // Find colors to interpolate between
         let lower = colors[0];
         let upper = colors[colors.length - 1];
-        
+
         for (let i = 0; i < colors.length - 1; i++) {
             if (normalizedSpeed >= colors[i].pos && normalizedSpeed <= colors[i + 1].pos) {
                 lower = colors[i];
@@ -62,11 +62,11 @@ class Particle {
         // Interpolate between colors
         const range = upper.pos - lower.pos;
         const normalizedPos = (normalizedSpeed - lower.pos) / range;
-        
+
         const h = lower.h + (upper.h - lower.h) * normalizedPos;
         const s = lower.s + (upper.s - lower.s) * normalizedPos;
         const l = lower.l + (upper.l - lower.l) * normalizedPos;
-        
+
         // Particles get brighter (more visible) at higher speeds
         const alpha = 0.3 + normalizedSpeed * 0.5;
 
@@ -74,16 +74,21 @@ class Particle {
     }
 
     updateTemperature(newTemp: number) {
-        const speedScale = Math.pow(newTemp / this.temperature, 1.5);
+        const speedScale = Math.sqrt(newTemp / this.temperature); // Changed from pow(1.5) to sqrt
         this.vx *= speedScale;
         this.vy *= speedScale;
         this.temperature = newTemp;
     }
 
-    update(width: number, height: number) {
-        this.x += this.vx;
-        this.y += this.vy;
+    update(width: number, height: number, deltaTime: number) {
+        // Convert deltaTime to seconds and normalize to 60 FPS
+        const timeScale = deltaTime / (1000 / 60);
 
+        // Update position with time-scaled velocity
+        this.x += this.vx * timeScale;
+        this.y += this.vy * timeScale;
+
+        // Handle wall collisions
         if (this.x - this.radius < 0 || this.x + this.radius > width) {
             this.x = Math.max(this.radius, Math.min(width - this.radius, this.x));
             this.vx *= -1;
@@ -106,7 +111,7 @@ class Particle {
             Math.max((speed - Particle.MIN_SPEED) / (Particle.MAX_SPEED - Particle.MIN_SPEED), 0),
             1
         );
-        
+
         if (normalizedSpeed > 0.7) { // Higher threshold for glow effect
             ctx.save();
             ctx.globalAlpha = (normalizedSpeed - 0.7) * 0.2; // Reduced opacity
@@ -122,6 +127,7 @@ class Particle {
 const Background = () => {
     const canvasRef = useRef<HTMLCanvasElement>(null);
     const particlesRef = useRef<Particle[]>([]);
+    const lastTimeRef = useRef<number>(0);
     const [temperature, setTemperature] = useState(2);
 
     useEffect(() => {
@@ -139,7 +145,7 @@ const Background = () => {
         window.addEventListener('resize', resizeCanvas);
 
         // Initialize particles with reduced count for better performance
-        const particleCount = window.innerWidth < 768 ? 15 : 60;
+        const particleCount = window.innerWidth < 768 ? 15 : 70;
         particlesRef.current = Array(particleCount).fill(null).map(() =>
             new Particle(
                 Math.random() * canvas.width,
@@ -149,12 +155,21 @@ const Background = () => {
         );
 
         let animationFrameId: number;
-        const animate = () => {
+        const animate = (currentTime: number) => {
+            // Initialize lastTimeRef on first frame
+            if (!lastTimeRef.current) {
+                lastTimeRef.current = currentTime;
+            }
+
+            const deltaTime = currentTime - lastTimeRef.current;
+            lastTimeRef.current = currentTime;
+
             ctx.fillStyle = 'rgba(15, 23, 42, 0.35)';
             ctx.fillRect(0, 0, canvas.width, canvas.height);
 
+            // Update and draw particles with deltaTime
             particlesRef.current.forEach(particle => {
-                particle.update(canvas.width, canvas.height);
+                particle.update(canvas.width, canvas.height, deltaTime);
                 particle.draw(ctx);
             });
 
@@ -183,15 +198,24 @@ const Background = () => {
                         const sin = Math.sin(angle);
                         const cos = Math.cos(angle);
 
+                        // Rotate velocities to axis of collision
                         const vx1 = p1.vx * cos + p1.vy * sin;
                         const vy1 = p1.vy * cos - p1.vx * sin;
                         const vx2 = p2.vx * cos + p2.vy * sin;
                         const vy2 = p2.vy * cos - p2.vx * sin;
 
+                        // Swap velocities along collision axis
                         p1.vx = vx2 * cos - vy1 * sin;
                         p1.vy = vy1 * cos + vx2 * sin;
                         p2.vx = vx1 * cos - vy2 * sin;
                         p2.vy = vy2 * cos + vx1 * sin;
+
+                        // Add a small dampening effect to prevent infinite collisions
+                        const dampening = 0.98;
+                        p1.vx *= dampening;
+                        p1.vy *= dampening;
+                        p2.vx *= dampening;
+                        p2.vy *= dampening;
                     }
                 }
             }
@@ -199,7 +223,7 @@ const Background = () => {
             animationFrameId = requestAnimationFrame(animate);
         };
 
-        animate();
+        animate(0);
 
         return () => {
             window.removeEventListener('resize', resizeCanvas);
@@ -228,4 +252,4 @@ const Background = () => {
     );
 };
 
-export default Background;
+export default Background
