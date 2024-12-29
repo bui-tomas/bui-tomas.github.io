@@ -1,7 +1,5 @@
 import Image from 'next/image';
-import { motion } from 'framer-motion';
 import { Project } from '@/types/project';
-
 
 interface ProjectCardProps {
     project: Project;
@@ -10,11 +8,9 @@ interface ProjectCardProps {
 
 const ProjectCard = ({ project, onClick }: ProjectCardProps) => {
     return (
-        <motion.div
-            className="bg-white rounded-xl shadow-md overflow-hidden cursor-pointer hover:shadow-lg transition-shadow"
+        <div
+            className="bg-white rounded-xl shadow-md overflow-hidden cursor-pointer hover:shadow-lg transition-all hover:scale-[1.02] duration-200"
             onClick={onClick}
-            whileHover={{ scale: 1.02 }}
-            layout
         >
             <div className="relative h-48">
                 <Image
@@ -39,7 +35,7 @@ const ProjectCard = ({ project, onClick }: ProjectCardProps) => {
                 <p className="text-gray-600 mb-4">{project.description}</p>
                 {/* <div className="flex gap-4">
                     {project.liveUrl && (
-                        <a
+                        
                             href={project.liveUrl}
                             className="text-blue-600 hover:underline"
                             onClick={(e) => e.stopPropagation()}
@@ -48,7 +44,7 @@ const ProjectCard = ({ project, onClick }: ProjectCardProps) => {
                         </a>
                     )}
                     {project.codeUrl && (
-                        <a
+                        
                             href={project.codeUrl}
                             className="text-blue-600 hover:underline"
                             onClick={(e) => e.stopPropagation()}
@@ -58,7 +54,7 @@ const ProjectCard = ({ project, onClick }: ProjectCardProps) => {
                     )}
                 </div> */}
             </div>
-        </motion.div>
+        </div>
     );
 };
 
