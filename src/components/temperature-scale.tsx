@@ -14,24 +14,25 @@ const TemperatureScale = ({
     min = 0.5,
     max = 5
 }: TemperatureScaleProps) => {
-    const percentage = ((temperature - min) / (max - min)) * 100;
+    // Clamp the percentage between 2% and 98% to keep thumb within bounds
+    const percentage = Math.min(Math.max(((temperature - min) / (max - min)) * 100, 6), 94);
 
     return (
-        <div className="fixed top-24 right-8 p-4 bg-white/90 backdrop-blur-sm rounded-lg shadow-lg z-50 flex flex-col items-center gap-2">
+        <div className="p-4 bg-slate-900/90 backdrop-blur-sm rounded-lg shadow-lg z-50 flex flex-col items-center gap-2 relative">
             <div className="flex items-center gap-2">
                 <Thermometer 
                     size={24} 
-                    className="text-gray-700"
+                    className="text-white"
                 />
-                <span className="text-sm font-medium">
-                    Temperature: {temperature.toFixed(1)}
+                <span className="text-sm font-medium text-white">
+                    Temperature
                 </span>
             </div>
 
             <div className="relative w-48 h-6">
                 {/* Black body radiation gradient */}
                 <div 
-                    className="absolute inset-0 rounded-full"
+                    className="absolute inset-0 rounded-full pointer-events-none"
                     style={{
                         background: `linear-gradient(to right, 
                             hsla(0, 100%, 20%, 0.8),   /* Deep red */
@@ -51,23 +52,17 @@ const TemperatureScale = ({
                     max={max * 100}
                     value={temperature * 100}
                     onChange={(e) => setTemperature(Number(e.target.value) / 100)}
-                    className="absolute inset-0 w-full h-full opacity-0 cursor-pointer"
+                    className="absolute inset-0 w-full h-full opacity-0 cursor-pointer z-20"
                 />
 
                 <div
-                    className="absolute top-1/2 -translate-y-1/2 w-4 h-4 bg-white rounded-full shadow-lg ring-2 ring-gray-200 transition-transform duration-150 hover:scale-110"
+                    className="absolute top-1/2 w-4 h-4 bg-white rounded-full shadow-lg ring-2 ring-gray-200 transition-transform duration-150 hover:scale-110 pointer-events-none"
                     style={{ 
                         left: `${percentage}%`,
                         transform: `translateX(-50%) translateY(-50%)`,
                         boxShadow: '0 0 10px rgba(255, 255, 255, 0.5)'
                     }}
                 />
-            </div>
-
-            <div className="flex justify-between w-full text-xs font-medium">
-                <span className="text-red-900">Cool</span>
-                <span className="text-yellow-500">↔</span>
-                <span className="text-blue-400">Hot</span>
             </div>
         </div>
     );

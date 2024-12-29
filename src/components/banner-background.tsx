@@ -133,13 +133,16 @@ const Background = () => {
     useEffect(() => {
         const canvas = canvasRef.current;
         if (!canvas) return;
-
         const ctx = canvas.getContext('2d');
         if (!ctx) return;
 
         const resizeCanvas = () => {
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight * 0.6;
+            // Set actual canvas dimensions to match container
+            const container = canvas.parentElement;
+            if (container) {
+                canvas.width = container.offsetWidth;
+                canvas.height = container.offsetHeight;
+            }
         };
         resizeCanvas();
         window.addEventListener('resize', resizeCanvas);
@@ -237,18 +240,20 @@ const Background = () => {
     }, [temperature]);
 
     return (
-        <>
+        <div className="relative w-full h-full">
             <canvas
                 ref={canvasRef}
                 className="absolute inset-0 w-full h-full"
             />
-            {/* <TemperatureScale
-                temperature={temperature}
-                setTemperature={setTemperature}
-                min={0.5}
-                max={5}
-            /> */}
-        </>
+            <div className="absolute bottom-4 right-4">
+                <TemperatureScale
+                    temperature={temperature}
+                    setTemperature={setTemperature}
+                    min={0.5}
+                    max={5}
+                />
+            </div>
+        </div>
     );
 };
 

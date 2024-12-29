@@ -5,9 +5,9 @@ import Link from 'next/link'
 import { Menu, X, Github, Linkedin, Mail, Instagram, Newspaper } from 'lucide-react'
 
 const navigation = [
-    // { name: 'About', href: '/about' },
+    { name: 'About', href: '/about' },
     { name: 'Portfolio', href: '/portfolio' },
-    { name: 'Skills', href: '/skills' },
+    // { name: 'Skills', href: '/skills' },
     { name: 'CV', href: '/cv' }
 ]
 
