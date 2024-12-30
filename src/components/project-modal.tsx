@@ -82,19 +82,11 @@ const ProjectModal = ({ project, onClose }: ProjectModalProps) => {
                     </div>
 
                     <div className="flex gap-4 mt-8">
-                        {project.liveUrl && (
-                            <a
-                                href={project.liveUrl}
-                                className="px-6 py-2 bg-blue-600 text-white rounded-full hover:bg-blue-700 transition-colors"
-                            >
-                                View Live Demo
-                            </a>
-                        )}
                         {project.codeUrl && (
                             <a
                                 href={project.codeUrl}
-                                className="px-6 py-2 border border-blue-600 text-blue-600 rounded-full hover:bg-blue-50 transition-colors"
-                            >
+                                className="px-6 py-2 bg-gradient-to-r from-amber-500 to-orange-500 text-white rounded-full hover:from-amber-600 hover:to-orange-600 transition-colors"
+                                >
                                 View Source Code
                             </a>
                         )}

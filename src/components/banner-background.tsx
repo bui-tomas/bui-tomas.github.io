@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from 'react';
 import TemperatureScale from './temperature-scale';
 
+// Particle class implementation
 class Particle {
     x: number;
     y: number;
@@ -13,7 +14,8 @@ class Particle {
     baseSpeed: number;
 
     static readonly MIN_SPEED = 0;
-    static readonly MAX_SPEED = 6; // Reduced maximum speed
+    static readonly MAX_SPEED = 6;
+    static readonly MAX_DELTA_TIME = 50;
 
     constructor(x: number, y: number, temperature: number) {
         this.x = x;
@@ -21,11 +23,10 @@ class Particle {
         this.temperature = temperature;
         this.radius = 6;
 
-        // const speedScale = Math.min(window.innerWidth / 1920, 1);
         const speedScale = 1.0;
         const angle = Math.random() * 2 * Math.PI;
         this.baseSpeed = Math.sqrt(-2 * Math.log(Math.random())) * speedScale;
-        const currentSpeed = this.baseSpeed * Math.sqrt(temperature); // Changed from pow(1.5) to sqrt for smoother scaling
+        const currentSpeed = this.baseSpeed * Math.sqrt(temperature);
         this.vx = currentSpeed * Math.cos(angle);
         this.vy = currentSpeed * Math.sin(angle);
     }
@@ -37,17 +38,15 @@ class Particle {
             1
         );
 
-        // Modified color stops with reduced red spectrum and earlier orange transition
         const colors = [
-            { pos: 0, h: 20, s: 90, l: 35 },     // Warm orange-red
-            { pos: 0.3, h: 30, s: 100, l: 45 },  // Orange
-            { pos: 0.5, h: 40, s: 100, l: 50 },  // Bright orange
-            { pos: 0.7, h: 45, s: 90, l: 55 },   // Orange-yellow
-            { pos: 0.85, h: 50, s: 85, l: 60 },  // Light orange
-            { pos: 1, h: 55, s: 80, l: 65 }      // Pale orange
+            { pos: 0, h: 20, s: 90, l: 35 },
+            { pos: 0.3, h: 30, s: 100, l: 45 },
+            { pos: 0.5, h: 40, s: 100, l: 50 },
+            { pos: 0.7, h: 45, s: 90, l: 55 },
+            { pos: 0.85, h: 50, s: 85, l: 60 },
+            { pos: 1, h: 55, s: 80, l: 65 }
         ];
 
-        // Find colors to interpolate between
         let lower = colors[0];
         let upper = colors[colors.length - 1];
 
@@ -59,7 +58,6 @@ class Particle {
             }
         }
 
-        // Interpolate between colors
         const range = upper.pos - lower.pos;
         const normalizedPos = (normalizedSpeed - lower.pos) / range;
 
@@ -67,28 +65,25 @@ class Particle {
         const s = lower.s + (upper.s - lower.s) * normalizedPos;
         const l = lower.l + (upper.l - lower.l) * normalizedPos;
 
-        // Particles get brighter (more visible) at higher speeds
         const alpha = 0.3 + normalizedSpeed * 0.5;
 
         return `hsla(${h}, ${s}%, ${l}%, ${alpha})`;
     }
 
     updateTemperature(newTemp: number) {
-        const speedScale = Math.sqrt(newTemp / this.temperature); // Changed from pow(1.5) to sqrt
+        const speedScale = Math.sqrt(newTemp / this.temperature);
         this.vx *= speedScale;
         this.vy *= speedScale;
         this.temperature = newTemp;
     }
 
     update(width: number, height: number, deltaTime: number) {
-        // Convert deltaTime to seconds and normalize to 60 FPS
-        const timeScale = deltaTime / (1000 / 60);
+        const cappedDeltaTime = Math.min(deltaTime, Particle.MAX_DELTA_TIME);
+        const timeScale = cappedDeltaTime / (1000 / 60);
 
-        // Update position with time-scaled velocity
         this.x += this.vx * timeScale;
         this.y += this.vy * timeScale;
 
-        // Handle wall collisions
         if (this.x - this.radius < 0 || this.x + this.radius > width) {
             this.x = Math.max(this.radius, Math.min(width - this.radius, this.x));
             this.vx *= -1;
@@ -96,6 +91,15 @@ class Particle {
         if (this.y - this.radius < 0 || this.y + this.radius > height) {
             this.y = Math.max(this.radius, Math.min(height - this.radius, this.y));
             this.vy *= -1;
+        }
+
+        // Maintain constant energy
+        const currentSpeed = Math.sqrt(this.vx * this.vx + this.vy * this.vy);
+        const targetSpeed = this.baseSpeed * Math.sqrt(this.temperature);
+        if (Math.abs(currentSpeed - targetSpeed) > 0.1) {
+            const scaleFactor = targetSpeed / currentSpeed;
+            this.vx *= scaleFactor;
+            this.vy *= scaleFactor;
         }
     }
 
@@ -105,49 +109,59 @@ class Particle {
         ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
         ctx.fill();
 
-        // Reduced glow effect for better performance
         const speed = Math.sqrt(this.vx * this.vx + this.vy * this.vy);
         const normalizedSpeed = Math.min(
             Math.max((speed - Particle.MIN_SPEED) / (Particle.MAX_SPEED - Particle.MIN_SPEED), 0),
             1
         );
 
-        if (normalizedSpeed > 0.7) { // Higher threshold for glow effect
+        if (normalizedSpeed > 0.7) {
             ctx.save();
-            ctx.globalAlpha = (normalizedSpeed - 0.7) * 0.2; // Reduced opacity
-            ctx.filter = 'blur(3px)'; // Reduced blur
+            ctx.globalAlpha = (normalizedSpeed - 0.7) * 0.2;
+            ctx.filter = 'blur(3px)';
             ctx.beginPath();
-            ctx.arc(this.x, this.y, this.radius * 1.2, 0, Math.PI * 2); // Smaller glow radius
+            ctx.arc(this.x, this.y, this.radius * 1.2, 0, Math.PI * 2);
             ctx.fill();
             ctx.restore();
         }
     }
 }
 
+// Main Background component
 const Background = () => {
     const canvasRef = useRef<HTMLCanvasElement>(null);
     const particlesRef = useRef<Particle[]>([]);
     const lastTimeRef = useRef<number>(0);
     const [temperature, setTemperature] = useState(2);
+    const animationFrameIdRef = useRef<number>();
+    const isVisibleRef = useRef(true);
 
     useEffect(() => {
+        const handleVisibilityChange = () => {
+            isVisibleRef.current = document.visibilityState === 'visible';
+            if (isVisibleRef.current) {
+                lastTimeRef.current = performance.now();
+            }
+        };
+        
+        document.addEventListener('visibilitychange', handleVisibilityChange);
+        
         const canvas = canvasRef.current;
         if (!canvas) return;
         const ctx = canvas.getContext('2d');
         if (!ctx) return;
 
         const resizeCanvas = () => {
-            // Set actual canvas dimensions to match container
             const container = canvas.parentElement;
             if (container) {
                 canvas.width = container.offsetWidth;
                 canvas.height = container.offsetHeight;
             }
         };
+        
         resizeCanvas();
         window.addEventListener('resize', resizeCanvas);
 
-        // Initialize particles with reduced count for better performance
         const particleCount = window.innerWidth < 768 ? 15 : 70;
         particlesRef.current = Array(particleCount).fill(null).map(() =>
             new Particle(
@@ -157,9 +171,12 @@ const Background = () => {
             )
         );
 
-        let animationFrameId: number;
         const animate = (currentTime: number) => {
-            // Initialize lastTimeRef on first frame
+            if (!isVisibleRef.current) {
+                animationFrameIdRef.current = requestAnimationFrame(animate);
+                return;
+            }
+
             if (!lastTimeRef.current) {
                 lastTimeRef.current = currentTime;
             }
@@ -170,13 +187,12 @@ const Background = () => {
             ctx.fillStyle = 'rgba(15, 23, 42, 0.35)';
             ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-            // Update and draw particles with deltaTime
             particlesRef.current.forEach(particle => {
                 particle.update(canvas.width, canvas.height, deltaTime);
                 particle.draw(ctx);
             });
 
-            // Particle collisions with optimization
+            // Handle particle collisions
             for (let i = 0; i < particlesRef.current.length; i++) {
                 for (let j = i + 1; j < particlesRef.current.length; j++) {
                     const p1 = particlesRef.current[i];
@@ -190,51 +206,42 @@ const Background = () => {
                         const dxNorm = dx / distance;
                         const dyNorm = dy / distance;
 
-                        // Separate overlapping particles
                         p1.x -= dxNorm * overlap;
                         p1.y -= dyNorm * overlap;
                         p2.x += dxNorm * overlap;
                         p2.y += dyNorm * overlap;
 
-                        // Collision handling (velocity adjustment)
                         const angle = Math.atan2(dy, dx);
                         const sin = Math.sin(angle);
                         const cos = Math.cos(angle);
 
-                        // Rotate velocities to axis of collision
                         const vx1 = p1.vx * cos + p1.vy * sin;
                         const vy1 = p1.vy * cos - p1.vx * sin;
                         const vx2 = p2.vx * cos + p2.vy * sin;
                         const vy2 = p2.vy * cos - p2.vx * sin;
 
-                        // Swap velocities along collision axis
                         p1.vx = vx2 * cos - vy1 * sin;
                         p1.vy = vy1 * cos + vx2 * sin;
                         p2.vx = vx1 * cos - vy2 * sin;
                         p2.vy = vy2 * cos + vx1 * sin;
-
-                        // Add a small dampening effect to prevent infinite collisions
-                        const dampening = 0.98;
-                        p1.vx *= dampening;
-                        p1.vy *= dampening;
-                        p2.vx *= dampening;
-                        p2.vy *= dampening;
                     }
                 }
             }
 
-            animationFrameId = requestAnimationFrame(animate);
+            animationFrameIdRef.current = requestAnimationFrame(animate);
         };
 
-        animate(0);
+        animate(performance.now());
 
         return () => {
+            document.removeEventListener('visibilitychange', handleVisibilityChange);
             window.removeEventListener('resize', resizeCanvas);
-            cancelAnimationFrame(animationFrameId);
+            if (animationFrameIdRef.current) {
+                cancelAnimationFrame(animationFrameIdRef.current);
+            }
         };
     }, []);
 
-    // Update particle temperatures when the temperature slider changes
     useEffect(() => {
         particlesRef.current.forEach(particle => particle.updateTemperature(temperature));
     }, [temperature]);
@@ -257,4 +264,4 @@ const Background = () => {
     );
 };
 
-export default Background
+export default Background;

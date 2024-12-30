@@ -3,15 +3,25 @@
 import { useState } from 'react'
 import Link from 'next/link'
 import { Menu, X, Github, Linkedin, Mail, Instagram, Newspaper } from 'lucide-react'
+import { usePathname } from 'next/navigation'
 
-const navigation = [
-    { name: 'About', href: '/about' },
-    { name: 'Portfolio', href: '/portfolio' },
-    // { name: 'Skills', href: '/skills' },
+type NavigationItem = {
+    name: string;
+    href: string;
+}
+
+type SocialLink = {
+    href: string;
+    icon: React.ElementType;
+}
+
+const navigation: NavigationItem[] = [
+    { name: 'About', href: '/#about' },
+    { name: 'Portfolio', href: '/#portfolio' },
     { name: 'CV', href: '/cv' }
 ]
 
-const socialLinks = [
+const socialLinks: SocialLink[] = [
     { href: "https://github.com/bui-tomas", icon: Github },
     { href: "https://www.linkedin.com/in/tomas-bui/", icon: Linkedin },
     { href: "https://instagram.com", icon: Instagram },
@@ -21,6 +31,15 @@ const socialLinks = [
 
 const Navbar = () => {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+    const pathname = usePathname()
+
+    const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+        // Only handle hash navigation on home page
+        if (pathname !== '/' && href.startsWith('/#')) {
+            e.preventDefault()
+            window.location.href = href
+        }
+    }
 
     return (
         <nav className="shadow">
@@ -37,6 +56,7 @@ const Navbar = () => {
                                     key={item.name}
                                     href={item.href}
                                     className="text-[#DCD7C9] px-3 py-2 rounded-md text-base font-medium hover:text-amber-500"
+                                    onClick={(e) => handleNavClick(e, item.href)}
                                 >
                                     {item.name}
                                 </Link>
@@ -78,7 +98,10 @@ const Navbar = () => {
                                 key={item.name}
                                 href={item.href}
                                 className="block text-[#DCD7C9] px-3 py-2 rounded-md text-base font-medium hover:text-amber-500"
-                                onClick={() => setIsMobileMenuOpen(false)}
+                                onClick={(e) => {
+                                    setIsMobileMenuOpen(false)
+                                    handleNavClick(e, item.href)
+                                }}
                             >
                                 {item.name}
                             </Link>

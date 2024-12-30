@@ -5,7 +5,6 @@ export interface Project {
     fullDescription: string;
     techStack: string[];
     images: string[];
-    liveUrl?: string;
     codeUrl?: string;
     // challenges: {
     //     challenge: string;

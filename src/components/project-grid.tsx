@@ -21,7 +21,7 @@ const ProjectGrid = ({ projects, columnsPerRow = 4 }: ProjectGridProps) => {
     };
 
     return (
-        <div className="p-6 my-16">
+        <div className="">
             <div className="flex flex-wrap gap-14 justify-center">
                 {projects.map((project) => (
                     <div key={project.id} className={`${flexBasis[columnsPerRow]} max-w-xs`}>

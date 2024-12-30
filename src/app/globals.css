@@ -20,6 +20,10 @@ body {
   background: var(--background);
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 nav {
   background: var(--foreground);
 }

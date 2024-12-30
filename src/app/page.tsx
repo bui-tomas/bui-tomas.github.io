@@ -5,6 +5,7 @@ import BackToTop from '@/components/back-to-top'
 import Link from 'next/link'
 import TypeWriter from '@/components/typewriter'
 import ProjectGrid from '@/components/project-grid';
+import About from '@/components/about-section'
 
 const projects = [
     {
@@ -14,19 +15,26 @@ const projects = [
         fullDescription: 'Simple Logistic Regression model used for binary classification of heart disease',
         techStack: ['Python', 'Pandas', 'Seaborn', 'scikit-learn'],
         images: ['/images/projects/heart1.png', '/images/projects/heart2.png'],
-        liveUrl: 'https://example.com',
-        codeUrl: 'https://github.com/example',
+        codeUrl: 'https://www.kaggle.com/code/tombuianh/heart-disease-model',
     },
     {
       id: '2',
+      title: 'Linear Programming',
+      description: 'Python implementation of simplex method',
+      fullDescription: 'The implementation leverages NumPy for efficient matrix operations and includes comprehensive documentation and test cases for various optimization scenarios',
+      techStack: ['Python', 'Numpy', 'CS', 'Algorithms'],
+      images: ['/images/projects/linprog1.jpg', '/images/projects/linprog1.jpg'],
+      codeUrl: 'https://github.com/example',
+    },
+    {
+      id: '3',
       title: 'Portfolio Website',
       description: 'Personal portfolio built with Next.js and TypeScript',
       fullDescription: 'A modern, responsive portfolio website showcasing my projects and skills...',
       techStack: ['Next.js', 'TypeScript', 'Tailwind CSS'],
       images: ['/images/projects/portfolio1.png', '/images/projects/portfolio2.png'],
-      liveUrl: 'https://example.com',
       codeUrl: 'https://github.com/example',
-  },
+    }
 ];
 
 export default function Home() {
@@ -55,13 +63,13 @@ export default function Home() {
 
         <div className="flex justify-center gap-4 mb-3">
           <Link
-            href="/about"
+            href="#about"
             className="animate-fade-in px-6 py-2 bg-gradient-to-r from-amber-500 to-orange-500 text-white rounded-full hover:from-amber-600 hover:to-orange-600 transition-colors"
           >
             About
           </Link>
           <Link
-            href="/portfolio"
+            href="#portfolio"
             className="animate-fade-in px-6 py-2 bg-gradient-to-r from-amber-500 to-orange-500 text-white rounded-full hover:from-amber-600 hover:to-orange-600 transition-colors"
           >
             Portfolio
@@ -77,21 +85,27 @@ export default function Home() {
             className="text-white/90 text-xl md:text-2xl max-w-2xl mx-auto px-4"
             delay={3300}
             speed={40}
-        />
+          />
         </div>
-        
       </Banner>
 
-      <div className="mt-1 pb-4 flex items-center justify-center space-x-4 pt-32 mx-48">
+      <div id="about" className="flex items-center justify-center space-x-4 py-32 mx-48">
         <div className="flex-1 h-px bg-[#A27B5C]/20"></div>
-        <p className="text-2xl font-medium"> Recent Works</p>
+        <p className="text-2xl font-medium">About Me</p>
+        <div className="flex-1 h-px bg-[#A27B5C]/20"></div>
+      </div>
+
+      <About />
+
+      <div id="portfolio" className="flex items-center justify-center space-x-4 py-32 mx-48">
+        <div className="flex-1 h-px bg-[#A27B5C]/20"></div>
+        <p className="text-2xl font-medium">Recent Works</p>
         <div className="flex-1 h-px bg-[#A27B5C]/20"></div>
       </div>
       
       <div className="container mx-auto pb-32">
-        <ProjectGrid projects={projects} columnsPerRow={2}/>
+        <ProjectGrid projects={projects} columnsPerRow={4}/>
       </div>
-
 
       <Footer />
 
