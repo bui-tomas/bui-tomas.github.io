@@ -1,0 +1,119 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #FFFFFF;
+  --foreground: #18181B;
+  --primary: #2563EB;
+  /* Bright blue */
+  --primary-dark: #1D4ED8;
+  --secondary: #7C3AED;
+  /* Purple */
+  --gray-light: #F3F4F6;
+  --gray: #6B7280;
+}
+
+/* Update existing elements */
+body {
+  color: var(--foreground);
+  background: var(--background);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+nav {
+  background: var(--foreground);
+}
+
+.skill-card {
+  background: var(--background);
+  border: 1px solid var(--gray-light);
+}
+
+.skill-card:hover {
+  border-color: var(--primary);
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(100px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideRight {
+  from {
+    transform: translateX(-50vw);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideLeft {
+  from {
+    transform: translateX(50vw);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.animate-slide-right {
+  animation: slideRight 1.2s ease-out forwards;
+}
+
+.animate-slide-left {
+  animation: slideLeft 1.2s ease-out forwards;
+}
+
+.animate-slide-up {
+  animation: slideUp 1.2s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.animate-fade-in {
+  opacity: 0;
+  animation: fadeIn 1s ease-out forwards;
+  animation-delay: 3000ms;
+}
+
+@keyframes fadeLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-600px);
+  } 
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-fade-left {
+  opacity: 0;
+  animation: fadeLeft 0.7s ease-out forwards;
+  animation-delay: 2300ms;
+}
