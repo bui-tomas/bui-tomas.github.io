@@ -45,7 +45,7 @@ export default function Home() {
       <Banner
         borderClass="border-b border-white/80" 
         shadowClass="shadow-lg"
-        height = "h-[80vh]"
+        height = "h-[92vh]"
       >
         <h1 className="text-white text-4xl md:text-6xl font-bold">
           <TypeWriter 
@@ -96,6 +96,9 @@ export default function Home() {
       </div>
 
       <About />
+
+      
+
 
       <div id="portfolio" className="flex items-center justify-center space-x-4 py-32 mx-48">
         <div className="flex-1 h-px bg-[#A27B5C]/20"></div>
