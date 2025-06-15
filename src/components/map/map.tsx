@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from 'react';
 import dynamic from 'next/dynamic';
 import { getVoltageColor, getVoltageWeight, getVoltageOpacity, SlovakiaGridData } from '@/types/slovakia-grid';
+import MapControls from './map-controls';
 
 // Dynamically import Leaflet to avoid SSR issues
 const L = dynamic(() => import('leaflet'), { ssr: false });
@@ -23,10 +24,53 @@ const SlovakiaMap = ({ className = '' }: MapProps) => {
     const mapRef = useRef<HTMLDivElement>(null);
     const mapInstanceRef = useRef<L.Map | null>(null);
     const gridLayerRef = useRef<L.LayerGroup | null>(null);
+    const tileLayerRef = useRef<L.TileLayer | null>(null);
+    
     const [gridData, setGridData] = useState<SlovakiaGridData | null>(null);
     const [isLoading, setIsLoading] = useState(true);
     const [error, setError] = useState<string | null>(null);
     const [mapReady, setMapReady] = useState(false);
+
+    // Tile layer options
+    const tileLayerOptions = {
+        light: {
+            url: 'https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png',
+            attribution: '© OpenStreetMap contributors © CARTO'
+        },
+        dark: {
+            url: 'https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png',
+            attribution: '© OpenStreetMap contributors © CARTO'
+        },
+        satellite: {
+            url: 'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',
+            attribution: '© Esri'
+        }
+    };
+
+    const changeTileLayer = async (layerType: string) => {
+        if (!mapInstanceRef.current) return;
+        
+        // Dynamically import Leaflet
+        const L = await import('leaflet');
+        
+        // Remove existing tile layer
+        if (tileLayerRef.current) {
+            mapInstanceRef.current.removeLayer(tileLayerRef.current);
+        }
+
+        // Add new tile layer
+        const newLayerConfig = tileLayerOptions[layerType as keyof typeof tileLayerOptions];
+        if (newLayerConfig) {
+            tileLayerRef.current = L.tileLayer(newLayerConfig.url, {
+                attribution: newLayerConfig.attribution,
+                subdomains: 'abcd',
+                maxZoom: 20,
+                minZoom: 7
+            });
+            
+            tileLayerRef.current.addTo(mapInstanceRef.current);
+        }
+    };
 
     // Load grid data
     useEffect(() => {
@@ -34,7 +78,6 @@ const SlovakiaMap = ({ className = '' }: MapProps) => {
             try {
                 setIsLoading(true);
                 console.log('Attempting to fetch grid data...');
-                // Fix the fetch URL to point to the correct path
                 const response = await fetch('/data/slovakia-grid.json');
                 if (!response.ok) {
                     throw new Error(`Failed to load grid data: ${response.status} ${response.statusText}`);
@@ -72,17 +115,14 @@ const SlovakiaMap = ({ className = '' }: MapProps) => {
             substations: gridData.substations?.length || 0
         });
 
-        // Dynamically import Leaflet to avoid SSR issues
         const L = await import('leaflet');
 
-        // Clear existing grid layer
         if (gridLayerRef.current) {
             mapInstanceRef.current.removeLayer(gridLayerRef.current);
         }
 
         gridLayerRef.current = L.layerGroup();
 
-        // Create transmission lines from data
         if (gridData.transmission_lines) {
             gridData.transmission_lines.forEach((line, index) => {
                 console.log(`Processing transmission line ${index + 1}:`, line.name, line.towers?.length || 0, 'towers');
@@ -92,40 +132,14 @@ const SlovakiaMap = ({ className = '' }: MapProps) => {
                     return;
                 }
 
-                // Log first and last tower coordinates to check if they're in Slovakia
-                const firstTower = line.towers[0];
-                const lastTower = line.towers[line.towers.length - 1];
-                console.log('First tower:', firstTower);
-                console.log('Last tower:', lastTower);
-                
-                // Check if coordinates are within Slovakia bounds
-                const isInSlovakia = line.towers.some(tower => 
-                    tower.lat >= slovakiaBounds.south && 
-                    tower.lat <= slovakiaBounds.north &&
-                    tower.lng >= slovakiaBounds.west && 
-                    tower.lng <= slovakiaBounds.east
-                );
-                console.log('Line has towers in Slovakia bounds:', isInSlovakia);
-
-                // Convert towers to coordinate array
                 const coordinates: [number, number][] = line.towers.map(tower => [tower.lat, tower.lng]);
-                console.log('Coordinates array length:', coordinates.length);
-                console.log('Sample coordinates:', coordinates.slice(0, 3));
 
-                // Create the transmission line
                 const powerLine = L.polyline(coordinates, {
                     color: getVoltageColor(line.voltage),
                     weight: getVoltageWeight(line.voltage),
                     opacity: getVoltageOpacity(line.voltage)
                 });
 
-                console.log('Created polyline with style:', {
-                    color: getVoltageColor(line.voltage),
-                    weight: getVoltageWeight(line.voltage),
-                    opacity: getVoltageOpacity(line.voltage)
-                });
-
-                // Add tooltip with line information
                 const tooltipContent = `
                     <strong>${line.name}</strong><br/>
                     ${line.voltage}<br/>
@@ -141,11 +155,9 @@ const SlovakiaMap = ({ className = '' }: MapProps) => {
                 });
 
                 gridLayerRef.current!.addLayer(powerLine);
-                console.log('Added power line to grid layer');
             });
         }
 
-        // Create substations from data
         if (gridData.substations) {
             gridData.substations.forEach((substation, index) => {
                 console.log(`Processing substation ${index + 1}:`, substation.name);
@@ -185,42 +197,39 @@ const SlovakiaMap = ({ className = '' }: MapProps) => {
         if (!mapRef.current || typeof window === 'undefined') return;
 
         const initMap = async () => {
-            // Dynamically import Leaflet and CSS
             const L = await import('leaflet');
             await import('leaflet/dist/leaflet.css');
 
-            // Initialize map
             mapInstanceRef.current = L.map(mapRef.current!, {
                 zoomControl: false,
                 attributionControl: false,
                 zoomSnap: 0.50
             });
 
-            // Add clean tile layer (CartoDB Positron - minimal style)
-            L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+            // Initialize with light tile layer
+            tileLayerRef.current = L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
                 attribution: '© OpenStreetMap contributors © CARTO',
                 subdomains: 'abcd',
                 maxZoom: 20,
-                minZoom: 8
-            }).addTo(mapInstanceRef.current);
+                minZoom: 7
+            });
+            
+            tileLayerRef.current.addTo(mapInstanceRef.current);
 
-            // Set initial view to Slovakia with restricted bounds
             const bounds: L.LatLngBoundsExpression = [
                 [slovakiaBounds.south, slovakiaBounds.west],
                 [slovakiaBounds.north, slovakiaBounds.east]
             ];
             
-            // Set maximum bounds to prevent panning outside Slovakia
             mapInstanceRef.current.setMaxBounds([
-                [47.0, 16.0], // Extended southwest for some buffer
-                [50.2, 23.0]  // Extended northeast for some buffer
+                [47.0, 16.0],
+                [50.2, 23.0]
             ]);
             
             mapInstanceRef.current.fitBounds(bounds, {
                 padding: [20, 20]
             });
 
-            // Add custom CSS for tooltips
             const style = document.createElement('style');
             style.textContent = `
                 .power-tooltip {
@@ -239,14 +248,12 @@ const SlovakiaMap = ({ className = '' }: MapProps) => {
             `;
             document.head.appendChild(style);
 
-            // Mark map as ready
             console.log('Map initialization completed, setting mapReady to true');
             setMapReady(true);
         };
 
         initMap();
 
-        // Cleanup function
         return () => {
             if (mapInstanceRef.current) {
                 mapInstanceRef.current.remove();
@@ -256,17 +263,10 @@ const SlovakiaMap = ({ className = '' }: MapProps) => {
         };
     }, []);
 
-    // Create grid when both data and map are ready
     useEffect(() => {
         if (gridData && mapReady && mapInstanceRef.current) {
             console.log('Both grid data and map are ready, creating grid...');
             createElectricalGrid();
-        } else {
-            console.log('Grid creation waiting for:', {
-                hasGridData: !!gridData,
-                mapReady: mapReady,
-                hasMapInstance: !!mapInstanceRef.current
-            });
         }
     }, [gridData, mapReady]);
 
@@ -287,7 +287,7 @@ const SlovakiaMap = ({ className = '' }: MapProps) => {
     }
 
     return (
-        <div className={`w-full ${className}`}>
+        <div className={`w-full relative ${className}`}>
             {isLoading && (
                 <div className="absolute inset-0 bg-white bg-opacity-75 flex items-center justify-center z-10 rounded-lg">
                     <div className="text-center">
@@ -296,11 +296,15 @@ const SlovakiaMap = ({ className = '' }: MapProps) => {
                     </div>
                 </div>
             )}
+            
             <div 
                 ref={mapRef} 
                 className="w-full" 
                 style={{ height: '600px', borderRadius: '8px' }} 
             />
+
+            {/* Map Controls Component */}
+            <MapControls onTileLayerChange={changeTileLayer} />
         </div>
     );
 };

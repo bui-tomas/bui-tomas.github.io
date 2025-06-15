@@ -1,10 +1,10 @@
 import Navbar from '@/components/navbar'
-import Banner from '@/components/banner'
+import Banner from '@/components/banner/banner'
 import Footer from '@/components/footer'
 import BackToTop from '@/components/back-to-top'
 import Link from 'next/link'
 import TypeWriter from '@/components/typewriter'
-import ProjectGrid from '@/components/project-grid';
+import ProjectGrid from '@/components/projects/project-grid'
 import About from '@/components/about-section'
 
 const projects = [
