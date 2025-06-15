@@ -162,7 +162,30 @@ const TILE_LAYERS = {
             'fill-color': '#2d3748'
           }
         },
-
+        // Land areas
+        {
+          id: 'landuse-residential',
+          type: 'fill',
+          source: 'openinfra-base',
+          'source-layer': 'landuse',
+          filter: ['in', 'kind', 'residential', 'urban'],
+          paint: {
+            'fill-color': '#2a2a2a',
+            'fill-opacity': 0.7
+          }
+        },
+        // Green areas
+        {
+          id: 'landuse-park',
+          type: 'fill',
+          source: 'openinfra-base',
+          'source-layer': 'landuse',
+          filter: ['in', 'kind', 'park', 'forest', 'wood'],
+          paint: {
+            'fill-color': '#365a3e',
+            'fill-opacity': 0.8
+          }
+        },
         // Roads - major
         {
           id: 'roads-major',
@@ -215,57 +238,6 @@ const TILE_LAYERS = {
         }
       ]
     }
-  },
-  // ✅ Keep Carto as fallback option
-  carto_light: {
-    style: {
-      version: 8,
-      sources: {
-        'carto-light': {
-          type: 'raster',
-          tiles: [
-            'https://a.basemaps.cartocdn.com/light_all/{z}/{x}/{y}@2x.png',
-            'https://b.basemaps.cartocdn.com/light_all/{z}/{x}/{y}@2x.png',
-            'https://c.basemaps.cartocdn.com/light_all/{z}/{x}/{y}@2x.png',
-            'https://d.basemaps.cartocdn.com/light_all/{z}/{x}/{y}@2x.png'
-          ],
-          tileSize: 512, // ✅ @2x tiles need 512 tile size
-          attribution: '© OpenStreetMap contributors © CARTO'
-        }
-      },
-      layers: [
-        {
-          id: 'carto-light',
-          type: 'raster',
-          source: 'carto-light'
-        }
-      ]
-    }
-  },
-  carto_dark: {
-    style: {
-      version: 8,
-      sources: {
-        'carto-dark': {
-          type: 'raster',
-          tiles: [
-            'https://a.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}@2x.png',
-            'https://b.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}@2x.png',
-            'https://c.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}@2x.png',
-            'https://d.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}@2x.png'
-          ],
-          tileSize: 512, // ✅ @2x tiles need 512 tile size
-          attribution: '© OpenStreetMap contributors © CARTO'
-        }
-      },
-      layers: [
-        {
-          id: 'carto-dark',
-          type: 'raster',
-          source: 'carto-dark'
-        }
-      ]
-    }
   }
 };
 
@@ -288,7 +260,7 @@ const SlovakiaMap = ({ className = '' }: SlovakiaMapProps) => {
       // ✅ Initialize MapLibre map with high-DPI support and vector tiles
       map.current = new maplibregl.Map({
         container: mapContainer.current,
-        style: TILE_LAYERS.light.style, // ✅ Start with vector tiles
+        style: TILE_LAYERS.light.style,
         center: [19.5, 48.7], // Slovakia center coordinates
         zoom: 7,
         minZoom: 6,
@@ -736,7 +708,7 @@ const SlovakiaMap = ({ className = '' }: SlovakiaMapProps) => {
   const changeTileLayer = (layerType: string) => {
     if (!map.current || !TILE_LAYERS[layerType as keyof typeof TILE_LAYERS]) return;
 
-    console.log('Changing tile layer to:', layerType);
+    console.log('Changing vector tile layer to:', layerType);
     setCurrentTileLayer(layerType);
     
     const newStyle = TILE_LAYERS[layerType as keyof typeof TILE_LAYERS].style;
