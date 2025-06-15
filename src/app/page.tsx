@@ -1,10 +1,10 @@
 import Navbar from '@/components/navbar'
-import Banner from '@/components/banner'
+import Banner from '@/components/banner/banner'
 import Footer from '@/components/footer'
 import BackToTop from '@/components/back-to-top'
 import Link from 'next/link'
 import TypeWriter from '@/components/typewriter'
-import ProjectGrid from '@/components/project-grid';
+import ProjectGrid from '@/components/projects/project-grid'
 import About from '@/components/about-section'
 
 const projects = [
@@ -45,7 +45,7 @@ export default function Home() {
       <Banner
         borderClass="border-b border-white/80" 
         shadowClass="shadow-lg"
-        height = "h-[80vh]"
+        height = "h-[92vh]"
       >
         <h1 className="text-white text-4xl md:text-6xl font-bold">
           <TypeWriter 
@@ -96,6 +96,9 @@ export default function Home() {
       </div>
 
       <About />
+
+      
+
 
       <div id="portfolio" className="flex items-center justify-center space-x-4 py-32 mx-48">
         <div className="flex-1 h-px bg-[#A27B5C]/20"></div>
