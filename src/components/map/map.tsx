@@ -7,11 +7,7 @@ import MapControls from "./map-controls";
 import {
   Tower,
   TransmissionLine,
-  Substation,
   SlovakiaGridData,
-  getVoltageColor,
-  getVoltageWeight,
-  getVoltageOpacity,
 } from "@/types/slovakia-grid";
 
 interface SlovakiaMapProps {
@@ -393,6 +389,15 @@ const SlovakiaMap = ({ className = "" }: SlovakiaMapProps) => {
         attributionControl: true,
       });
 
+      map.current
+        .loadImage("images/icons/tower.png")
+        .then((image) => {
+          map.current!.addImage("tower-icon", image.data);
+        })
+        .catch((error) => {
+          console.error("Error loading tower image:", error);
+        });
+
       // Add navigation controls
       map.current.addControl(new maplibregl.NavigationControl(), "top-left");
 
@@ -473,65 +478,6 @@ const SlovakiaMap = ({ className = "" }: SlovakiaMapProps) => {
         setGridData(data as SlovakiaGridData);
       } catch (err) {
         console.error("Error fetching grid data:", err);
-
-        // Fallback to mock data for development
-        const mockData: SlovakiaGridData = {
-          transmission_lines: [
-            {
-              id: "line-1",
-              name: "Bratislava - Košice 400kV",
-              voltage: "400kV",
-              operator: "SEPS",
-              status: "active",
-              towers: [
-                {
-                  id: "tower-1",
-                  lat: 48.7164,
-                  lng: 19.4992,
-                  height: 45,
-                  type: "suspension",
-                },
-                {
-                  id: "tower-2",
-                  lat: 48.8,
-                  lng: 19.6,
-                  height: 35,
-                  type: "tension",
-                },
-                {
-                  id: "tower-3",
-                  lat: 48.9,
-                  lng: 19.7,
-                  height: 50,
-                  type: "terminal",
-                },
-              ],
-            },
-          ],
-          substations: [
-            {
-              id: "sub-1",
-              lat: 48.7164,
-              lng: 19.4992,
-              name: "Substation A",
-              type: "transmission",
-              voltage_levels: ["220kV", "110kV"],
-              operator: "SEPS",
-            },
-            {
-              id: "sub-2",
-              lat: 48.85,
-              lng: 19.65,
-              name: "Substation B",
-              type: "distribution",
-              voltage_levels: ["22kV"],
-              operator: "ZSD",
-            },
-          ],
-        };
-
-        console.log("Using mock data due to API error");
-        setGridData(mockData);
       } finally {
         setIsLoading(false);
       }
@@ -604,22 +550,24 @@ const SlovakiaMap = ({ className = "" }: SlovakiaMapProps) => {
               "line-width": [
                 "case",
                 ["==", ["get", "voltage"], "400kV"],
-                4,
+                1.2,
                 ["==", ["get", "voltage"], "220kV"],
-                3,
-                ["==", ["get", "voltage"], "110kV"],
-                2,
                 1,
+                ["==", ["get", "voltage"], "110kV"],
+                0.8,
+                0.6,
               ],
               "line-color": [
                 "case",
                 ["==", ["get", "voltage"], "400kV"],
-                "#DC2626", // Red
+                "#B54EB2", // Purple (310kV+ range from OIM)
                 ["==", ["get", "voltage"], "220kV"],
-                "#EA580C", // Orange
+                "#C73030", // Red (220kV+ from OIM)
                 ["==", ["get", "voltage"], "110kV"],
-                "#2563EB", // Blue
-                "#6B7280", // Gray default
+                "#B55D00", // Orange (132kV+ from OIM)
+                ["==", ["get", "voltage"], "22kV"],
+                "#55B555", // Green (25kV+ from OIM)
+                "#7A7A85", // Gray default (OIM default)
               ],
               "line-opacity": 0.8,
             },
@@ -659,37 +607,32 @@ const SlovakiaMap = ({ className = "" }: SlovakiaMapProps) => {
 
           map.current.addLayer({
             id: "tower-symbols",
-            type: "circle",
+            type: "symbol",
             source: "towers",
-            minzoom: 12, // Show towers only at zoom 12+
-            paint: {
-              "circle-radius": [
+            minzoom: 12,
+            layout: {
+              "icon-image": "tower-icon",
+              "icon-size": [
                 "interpolate",
                 ["linear"],
                 ["zoom"],
                 12,
-                4, // Small at zoom 12
+                0.5, // Very small at zoom 12 (8% of original size)
                 15,
-                6, // Medium at zoom 15
+                1, // Still small at zoom 15 (12% of original size)
                 18,
-                10, // Large at zoom 18
+                1, // Slightly larger at zoom 18 (16% of original size)
               ],
-              "circle-color": "#ff4444",
-              "circle-stroke-width": 2,
-              "circle-stroke-color": "#ffffff",
-              "circle-opacity": [
+              "icon-allow-overlap": true,
+              "icon-ignore-placement": true, // Allow overlapping for dense areas
+            },
+            paint: {
+              "icon-opacity": [
                 "step",
                 ["zoom"],
                 0, // Hidden below zoom 12
                 12,
                 0.9, // Visible from zoom 12+
-              ],
-              "circle-stroke-opacity": [
-                "step",
-                ["zoom"],
-                0, // Hidden below zoom 12
-                12,
-                1, // Visible from zoom 12+
               ],
             },
           });
