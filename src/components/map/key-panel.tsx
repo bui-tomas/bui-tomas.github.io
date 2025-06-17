@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { X, Eye, EyeOff } from 'lucide-react';
-import { getVoltageColor } from '@/types/slovakia-grid';
+import { getVoltageColor } from '@/types/map/slovakia-grid';
 
 interface KeyPanelProps {
     isVisible: boolean;

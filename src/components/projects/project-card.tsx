@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { Project } from '@/types/project';
+import { Project } from '@/types/project/project';
 
 interface ProjectCardProps {
     project: Project;

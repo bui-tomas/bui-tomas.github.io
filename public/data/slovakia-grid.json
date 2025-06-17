@@ -38767,5 +38767,310 @@
         }
       ]
     }
+  ],
+  "substations" : [
+    {
+      "id": "est_bosaca",
+      "name": "ESt Bošáca",
+      "voltage" : "400/110 kV",
+      "lat": "",
+      "lng": "",
+      "operator": "SEPS",
+      "type": "distribution",
+      "nodes": [
+  {
+    "lat": 48.7924935,
+    "lng": 17.8398009
+  },
+  {
+    "lat": 48.7942788,
+    "lng": 17.8363904
+  },
+  {
+    "lat": 48.7959204,
+    "lng": 17.838258
+  },
+  {
+    "lat": 48.7949508,
+    "lng": 17.8402119
+  },
+  {
+    "lat": 48.7954389,
+    "lng": 17.8408463
+  },
+  {
+    "lat": 48.7946888,
+    "lng": 17.8423367
+  },
+  {
+    "lat": 48.7926482,
+    "lng": 17.8399796
+  },
+  {
+    "lat": 48.7924935,
+    "lng": 17.8398009
+  }
+]
+    },
+        {
+      "id": "est",
+      "name": "ESt Bystričany",
+      "voltage" : "400/220/110 kV",
+      "lat": "",
+      "lng": "",
+      "operator": "SEPS/SSD",
+      "type": "transmission",
+      "nodes": []
+    },
+        {
+      "id": "est1",
+      "name": "ESt Gabčíkovo",
+      "voltage" : "400 kV",
+      "lat": "",
+      "lng": "",
+      "operator": "SEPS",
+      "type": "transmission",
+      "nodes": []
+    },
+        {
+      "id": "est2",
+      "name": "ESt Vodné dielo Gabčíkovo",
+      "voltage" : "400/110 kV",
+      "lat": "",
+      "lng": "",
+      "operator": "SEPS",
+      "type": "transmission",
+      "nodes": []
+    },
+        {
+      "id": "est",
+      "name": "ESt Horná Ždaňa",
+      "voltage" : "400/110 kV",
+      "lat": "",
+      "lng": "",
+      "operator": "SEPS",
+      "type": "transmission",
+      "nodes": []
+    },
+        {
+      "id": "est-1",
+      "name": "ESt Košice",
+      "voltage" : "400/110 kV",
+      "lat": "",
+      "lng": "",
+      "operator": "SEPS",
+      "type": "transmission",
+      "nodes": []
+    },
+            {
+      "id": "est-2",
+      "name": "ESt Košice",
+      "voltage" : "400/110 kV",
+      "lat": "",
+      "lng": "",
+      "operator": "SEPS",
+      "type": "transmission",
+      "nodes": []
+    },
+        {
+      "id": "est-1",
+      "name": "ESt Levice",
+      "voltage" : "400 kV",
+      "lat": "",
+      "lng": "",
+      "operator": "SEPS",
+      "type": "transmission",
+      "nodes": []
+    },
+            {
+      "id": "est-2",
+      "name": "ESt Levice",
+      "voltage" : "110 kV",
+      "lat": "",
+      "lng": "",
+      "operator": "SEPS",
+      "type": "transmission",
+      "nodes": []
+    },
+        {
+      "id": "est",
+      "name": "ESt Liptovská Mara",
+      "voltage" : "400/110 kV",
+      "lat": "",
+      "lng": "",
+      "operator": "SEPS",
+      "type": "transmission",
+      "nodes": []
+    },
+        {
+      "id": "est",
+      "name": "ESt Medzibrod",
+      "voltage" : "400/110 kV",
+      "lat": "",
+      "lng": "",
+      "operator": "SEPS",
+      "type": "transmission",
+      "nodes": []
+    },
+        {
+      "id": "est",
+      "name": "ESt Moldava",
+      "voltage" : "400/110 kV",
+      "lat": "",
+      "lng": "",
+      "operator": "SEPS",
+      "type": "transmission",
+      "nodes": []
+    },
+        {
+      "id": "est",
+      "name": "ESt Podunajské Biskupice",
+      "voltage" : "400/110 kV",
+      "lat": "",
+      "lng": "",
+      "operator": "SEPS/ZSD",
+      "type": "transmission",
+      "nodes": []
+    },
+        {
+      "id": "est",
+      "name": "ESt Rimavská Sobota",
+      "voltage" : "400/110 kV",
+      "lat": "",
+      "lng": "",
+      "operator": "SEPS",
+      "type": "transmission",
+      "nodes": []
+    },
+        {
+      "id": "est",
+      "name": "ESt Spišská Nová Ves",
+      "voltage" : "400/110 kV",
+      "lat": "",
+      "lng": "",
+      "operator": "SEPS",
+      "type": "transmission",
+      "nodes": []
+    },
+        {
+      "id": "est",
+      "name": "ESt Stupava",
+      "voltage" : "400/110 kV",
+      "lat": "",
+      "lng": "",
+      "operator": "SEPS",
+      "type": "transmission",
+      "nodes": []
+    },
+        {
+      "id": "est",
+      "name": "ESt Varín",
+      "voltage" : "400/110 kV",
+      "lat": "",
+      "lng": "",
+      "operator": "SEPS",
+      "type": "transmission",
+      "nodes": []
+    },
+        {
+      "id": "est",
+      "name": "ESt Veľké Kapušany",
+      "voltage" : "400 kV",
+      "lat": "",
+      "lng": "",
+      "operator": "SEPS",
+      "type": "transmission",
+      "nodes": []
+    },
+        {
+      "id": "est",
+      "name": "ESt Veľký Ďur",
+      "voltage" : "400/110 kV",
+      "lat": "",
+      "lng": "",
+      "operator": "SEPS",
+      "type": "transmission",
+      "nodes": []
+    },
+        {
+      "id": "est",
+      "name": "ESt Vodné dielo Čierny Váh",
+      "voltage" : "400 kV",
+      "lat": "",
+      "lng": "",
+      "operator": "SEPS",
+      "type": "transmission",
+      "nodes": []
+    },
+        {
+      "id": "est",
+      "name": "ESt Voľa",
+      "voltage" : "400/220/110 kV",
+      "lat": "",
+      "lng": "",
+      "operator": "SEPS",
+      "type": "transmission",
+      "nodes": []
+    },
+        {
+      "id": "est-krizovany",
+      "name": "ESt Križovany",
+      "voltage" : "400/220/110 kV",
+      "lat": "",
+      "lng": "",
+      "operator": "SEPS",
+      "type": "transmission",
+      "nodes": []
+    },
+            {
+      "id": "est-lemesany",
+      "name": "ESt Lemešany",
+      "voltage" : "400/220/110 kV",
+      "lat": "",
+      "lng": "",
+      "operator": "SEPS/VSE",
+      "type": "transmission",
+      "nodes": []
+    },
+            {
+      "id": "est-sucany",
+      "name": "ESt Sučany",
+      "voltage" : "400/220/110 kV",
+      "lat": "",
+      "lng": "",
+      "operator": "SEPS",
+      "type": "transmission",
+      "nodes": []
+    },
+            {
+      "id": "est-jaslovske-bohunice",
+      "name": "ESt Jaslovské Bohunice",
+      "voltage" : "400 kV",
+      "lat": "",
+      "lng": "",
+      "operator": "SEPS",
+      "type": "transmission",
+      "nodes": []
+    },
+                {
+      "id": "est-mochovce",
+      "name": "ESt Mochovce",
+      "voltage" : "400/110 kV",
+      "lat": "",
+      "lng": "",
+      "operator": "SEPS",
+      "type": "transmission",
+      "nodes": []
+    },
+                {
+      "id": "est",
+      "name": "ESt",
+      "voltage" : "",
+      "lat": "",
+      "lng": "",
+      "operator": "SEPS",
+      "type": "transmission",
+      "nodes": []
+    }
   ]
 }

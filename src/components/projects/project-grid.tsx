@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import ProjectCard from './project-card';
 import ProjectModal from './project-modal';
-import { Project } from '@/types/project';
+import { Project } from '@/types/project/project';
 
 interface ProjectGridProps {
     projects: Project[];

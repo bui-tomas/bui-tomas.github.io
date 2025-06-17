@@ -1,13 +1,19 @@
 "use client";
 
-import { useEffect, useRef, forwardRef, useImperativeHandle, useState } from "react";
+import {
+  useEffect,
+  useRef,
+  forwardRef,
+  useImperativeHandle,
+  useState,
+} from "react";
 import maplibregl from "maplibre-gl";
 import "maplibre-gl/dist/maplibre-gl.css";
 import {
   Tower,
   TransmissionLine,
   SlovakiaGridData,
-} from "@/types/slovakia-grid";
+} from "@/types/map/slovakia-grid";
 
 // Vector tile style configurations
 function landcover_colour(hue: number, sat: string, initial_lum = "85%") {
@@ -21,6 +27,11 @@ function landcover_colour(hue: number, sat: string, initial_lum = "85%") {
     `hsl(${hue}, ${sat}, 93%)`,
   ];
 }
+
+const calculateCentroid = (nodes: Array<{lat: number; lng: number}>) => ({
+  lat: nodes.reduce((sum, n) => sum + n.lat, 0) / nodes.length,
+  lng: nodes.reduce((sum, n) => sum + n.lng, 0) / nodes.length  // ← FIX: Add sum +
+});
 
 const colours = {
   land: landcover_colour(42, "10%"),
@@ -82,7 +93,8 @@ export const TILE_LAYERS = {
           type: "vector",
           tiles: ["https://openinframap.org/20250311/{z}/{x}/{y}.mvt"],
           maxzoom: 15,
-          attribution: '© <a href="https://openstreetmap.org">OpenStreetMap</a>',
+          attribution:
+            '© <a href="https://openstreetmap.org">OpenStreetMap</a>',
         },
       },
       layers: [
@@ -198,75 +210,139 @@ export const TILE_LAYERS = {
             "line-dasharray": [3, 3],
           },
         },
-        {
-          id: "label_places_country",
-          type: "symbol",
-          source: "openinfra-base",
-          "source-layer": "places",
-          minzoom: 2,
-          maxzoom: 8,
-          filter: ["==", "kind", "country"],
-          layout: {
-            "text-field": ["coalesce", ["get", "name:en"], ["get", "name"]],
-            "text-font": ["Noto Sans Regular"],
-            "text-size": 14,
-          },
-          paint: {
-            "text-color": "#333",
-            "text-halo-color": "rgba(255, 255, 255, 0.8)",
-            "text-halo-width": 2,
-          },
-        },
-        {
-          id: "label_places_region",
-          type: "symbol",
-          source: "openinfra-base",
-          "source-layer": "places",
-          minzoom: 5,
-          maxzoom: 8,
-          filter: ["==", "kind", "region"],
-          layout: {
-            "text-font": ["Noto Sans Regular"],
-            "text-field": ["coalesce", ["get", "name:en"], ["get", "name"]],
-            "text-size": ["interpolate", ["linear"], ["zoom"], 5, 10, 8, 16],
-            "text-anchor": "center",
-          },
-          paint: {
-            "text-color": "#555",
-            "text-halo-color": "rgba(255, 255, 255, 0.8)",
-            "text-halo-width": 2,
-          },
-        },
-        {
-          id: "label_places_locality",
-          type: "symbol",
-          source: "openinfra-base",
-          "source-layer": "places",
-          minzoom: 6,
-          maxzoom: 14,
-          filter: ["==", "kind", "locality"],
-          layout: {
-            "text-font": ["Noto Sans Regular"],
-            "text-field": ["coalesce", ["get", "name:en"], ["get", "name"]],
-            "text-size": [
-              "interpolate",
-              ["linear"],
-              ["zoom"],
-              6,
-              8,
-              10,
-              12,
-              14,
-              16,
-            ],
-            "text-padding": 4,
-          },
-          paint: {
-            "text-color": "#333",
-            "text-halo-color": "rgba(255, 255, 255, 0.8)",
-            "text-halo-width": 1.5,
-          },
-        },
+{
+  id: "label_places_country",
+  type: "symbol",
+  source: "openinfra-base",
+  "source-layer": "places",
+  minzoom: 2,
+  maxzoom: 8,
+  filter: ["==", "kind", "country"],
+  layout: {
+    "symbol-sort-key": ["get", "min_zoom"],
+    "text-field": ["coalesce", ["get", "name:en"], ["get", "name"]],
+    "text-font": ["Noto Sans Regular"],
+    "text-size": [
+      "interpolate", ["linear"], ["zoom"],
+      2, [
+        "case", 
+        ["<", ["get", "population_rank"], 10], 7, 
+        [">=", ["get", "population_rank"], 10], 10, 
+        0
+      ],
+      6, [
+        "case", 
+        ["<", ["get", "population_rank"], 8], 8, 
+        [">=", ["get", "population_rank"], 8], 18, 
+        0
+      ],
+      8, [
+        "case", 
+        ["<", ["get", "population_rank"], 7], 11, 
+        [">=", ["get", "population_rank"], 7], 20, 
+        0
+      ]
+    ],
+    "icon-padding": [
+      "interpolate", ["linear"], ["zoom"], 
+      0, 2, 14, 2, 16, 20, 17, 2, 22, 2
+    ]
+  },
+  paint: {
+    "text-color": "hsl(0, 0%, 20%)",
+    "text-halo-color": "rgb(242,243,240)",
+    "text-halo-width": 2
+  }
+},
+{
+  id: "label_places_region",
+  type: "symbol",
+  source: "openinfra-base",
+  "source-layer": "places",
+  minzoom: 5,
+  maxzoom: 8,
+  filter: ["==", "kind", "region"],
+  layout: {
+    "symbol-sort-key": ["get", "min_zoom"],
+    "text-font": ["Noto Sans Regular"],
+    "text-field": ["coalesce", ["get", "name:en"], ["get", "name"]],
+    "text-size": ["interpolate", ["linear"], ["zoom"], 3, 7, 7, 14],
+    "text-radial-offset": 0.2,
+    "text-anchor": "center"
+  },
+  paint: {
+    "text-color": "hsl(0, 0%, 30%)",
+    "text-halo-color": "rgb(242,243,240)",
+    "text-halo-width": 2
+  }
+},
+{
+  id: "label_places_locality",
+  type: "symbol",
+  source: "openinfra-base",
+  "source-layer": "places",
+  minzoom: 5.5,
+  maxzoom: 12,
+  filter: ["==", "kind", "locality"],
+  layout: {
+    "icon-size": 0.7,
+    "text-font": ["Noto Sans Regular"],
+    "text-field": ["coalesce", ["get", "name:en"], ["get", "name"]],
+    "text-padding": [
+      "interpolate", ["linear"], ["zoom"], 
+      5, 3, 8, 7, 12, 11
+    ],
+    "text-size": [
+      "interpolate", ["linear"], ["zoom"],
+      2, [
+        "case", 
+        ["<", ["get", "population_rank"], 13], 8, 
+        [">=", ["get", "population_rank"], 13], 13, 
+        0
+      ],
+      4, [
+        "case", 
+        ["<", ["get", "population_rank"], 13], 10, 
+        [">=", ["get", "population_rank"], 13], 15, 
+        0
+      ],
+      6, [
+        "case", 
+        ["<", ["get", "population_rank"], 12], 11, 
+        [">=", ["get", "population_rank"], 12], 17, 
+        0
+      ],
+      8, [
+        "case", 
+        ["<", ["get", "population_rank"], 11], 11, 
+        [">=", ["get", "population_rank"], 11], 18, 
+        0
+      ],
+      10, [
+        "case", 
+        ["<", ["get", "population_rank"], 9], 12, 
+        [">=", ["get", "population_rank"], 9], 20, 
+        0
+      ],
+      15, [
+        "case", 
+        ["<", ["get", "population_rank"], 8], 12, 
+        [">=", ["get", "population_rank"], 8], 22, 
+        0
+      ]
+    ],
+    "icon-padding": [
+      "interpolate", ["linear"], ["zoom"], 
+      0, 0, 8, 4, 10, 8, 12, 6, 22, 2
+    ],
+    "text-justify": "auto"
+  },
+  paint: {
+    "text-color": "hsl(0, 0%, 40%)",
+    "text-halo-color": "rgb(242,243,240)",
+    "text-halo-width": 1.5
+  }
+},
         {
           id: "label_places_subplace",
           type: "symbol",
@@ -343,7 +419,10 @@ export interface MapLibreRef {
 }
 
 const MapLibreComponent = forwardRef<MapLibreRef, MapLibreProps>(
-  ({ gridData, currentTileLayer, onMapReady, onError, className = "" }, ref) => {
+  (
+    { gridData, currentTileLayer, onMapReady, onError, className = "" },
+    ref
+  ) => {
     const mapContainer = useRef<HTMLDivElement>(null);
     const map = useRef<maplibregl.Map | null>(null);
     const [mapReady, setMapReady] = useState(false);
@@ -351,10 +430,12 @@ const MapLibreComponent = forwardRef<MapLibreRef, MapLibreProps>(
     // Expose methods to parent component
     useImperativeHandle(ref, () => ({
       changeStyle: (layerType: string) => {
-        if (!map.current || !TILE_LAYERS[layerType as keyof typeof TILE_LAYERS]) return;
+        if (!map.current || !TILE_LAYERS[layerType as keyof typeof TILE_LAYERS])
+          return;
 
         console.log("Changing tile layer to:", layerType);
-        const newStyle = TILE_LAYERS[layerType as keyof typeof TILE_LAYERS].style as unknown as maplibregl.StyleSpecification;
+        const newStyle = TILE_LAYERS[layerType as keyof typeof TILE_LAYERS]
+          .style as unknown as maplibregl.StyleSpecification;
         map.current.setStyle(newStyle);
 
         // Re-add data layers after style change
@@ -367,7 +448,8 @@ const MapLibreComponent = forwardRef<MapLibreRef, MapLibreProps>(
           }
         });
       },
-      isReady: () => mapReady && !!map.current && (map.current?.isStyleLoaded() ?? false),
+      isReady: () =>
+        mapReady && !!map.current && (map.current?.isStyleLoaded() ?? false),
     }));
 
     // Initialize map
@@ -377,7 +459,8 @@ const MapLibreComponent = forwardRef<MapLibreRef, MapLibreProps>(
       try {
         map.current = new maplibregl.Map({
           container: mapContainer.current,
-          style: TILE_LAYERS.light.style as unknown as maplibregl.StyleSpecification,
+          style: TILE_LAYERS.light
+            .style as unknown as maplibregl.StyleSpecification,
           center: [20.5, 48.7],
           zoom: 6.7,
           pixelRatio: Math.min(window.devicePixelRatio, 2),
@@ -411,7 +494,6 @@ const MapLibreComponent = forwardRef<MapLibreRef, MapLibreProps>(
           console.error("Map error:", e);
           onError("Failed to load map");
         });
-
       } catch (err) {
         console.error("Error initializing map:", err);
         onError("Failed to initialize map");
@@ -469,20 +551,29 @@ const MapLibreComponent = forwardRef<MapLibreRef, MapLibreProps>(
 
       // Remove existing sources if they exist
       if (map.current.getSource("transmission-lines")) {
-        map.current.removeLayer("transmission-lines");
-        map.current.removeSource("transmission-lines");
-      }
-      if (map.current.getSource("towers")) {
-        map.current.removeLayer("tower-symbols");
-        map.current.removeSource("towers");
-      }
-      if (map.current.getSource("substations")) {
-        map.current.removeLayer("substation-symbols");
-        map.current.removeSource("substations");
-      }
+  map.current.removeLayer("transmission-lines");
+  map.current.removeSource("transmission-lines");
+}
+if (map.current.getSource("towers")) {
+  map.current.removeLayer("tower-symbols");
+  map.current.removeSource("towers");
+}
+// Remove both substation sources
+if (map.current.getSource("substation-points")) {
+  map.current.removeLayer("substation-circles");
+  map.current.removeSource("substation-points");
+}
+if (map.current.getSource("substation-polygons")) {
+  map.current.removeLayer("substation-areas");
+  map.current.removeLayer("substation-outlines");
+  map.current.removeSource("substation-polygons");
+}
 
       // Add transmission lines and towers
-      if (gridData.transmission_lines && gridData.transmission_lines.length > 0) {
+      if (
+        gridData.transmission_lines &&
+        gridData.transmission_lines.length > 0
+      ) {
         const allTowers: Tower[] = [];
         const allLines: {
           line: TransmissionLine;
@@ -534,11 +625,11 @@ const MapLibreComponent = forwardRef<MapLibreRef, MapLibreProps>(
               "line-width": [
                 "case",
                 ["==", ["get", "voltage"], "400kV"],
-                1.2,
+                1.4,
                 ["==", ["get", "voltage"], "220kV"],
                 1,
                 ["==", ["get", "voltage"], "110kV"],
-                0.8,
+                1.5,
                 0.6,
               ],
               "line-color": [
@@ -554,6 +645,34 @@ const MapLibreComponent = forwardRef<MapLibreRef, MapLibreProps>(
                 "#7A7A85",
               ],
               "line-opacity": 0.8,
+            },
+          });
+
+          // Add line labels layer
+          map.current.addLayer({
+            id: "transmission-line-labels",
+            type: "symbol",
+            source: "transmission-lines",
+            minzoom: 10, // Start showing labels at zoom 10
+            layout: {
+              "text-field": [
+                "case",
+                ["has", "name"],
+                ["concat", ["get", "name"], " (", ["get", "voltage"], ")"],
+                ["get", "voltage"],
+              ],
+              "text-font": ["Noto Sans Regular"],
+              "symbol-placement": "line",
+              "symbol-spacing": 400,
+              "text-size": 12,
+              "text-offset": [0, 1], // Offset above the line
+              "text-max-angle": 15,
+              "text-padding": 2,
+            },
+            paint: {
+              "text-color": "#333",
+              "text-halo-color": "#fff",
+              "text-halo-width": 1,
             },
           });
 
@@ -607,13 +726,7 @@ const MapLibreComponent = forwardRef<MapLibreRef, MapLibreProps>(
               "icon-ignore-placement": true,
             },
             paint: {
-              "icon-opacity": [
-                "step",
-                ["zoom"],
-                0,
-                12,
-                0.9,
-              ],
+              "icon-opacity": ["step", ["zoom"], 0, 12, 0.9],
             },
           });
 
@@ -621,60 +734,113 @@ const MapLibreComponent = forwardRef<MapLibreRef, MapLibreProps>(
         }
       }
 
-      // Add substations
-      if (gridData.substations && gridData.substations.length > 0) {
-        const substationGeoJSON = {
-          type: "FeatureCollection" as const,
-          features: gridData.substations.map((substation, index) => ({
-            type: "Feature" as const,
-            id: `substation-${index}`,
-            geometry: {
-              type: "Point" as const,
-              coordinates: [substation.lng, substation.lat],
-            },
-            properties: {
-              name: substation.name,
-              type: substation.type,
-              voltage_levels: substation.voltage_levels.join(", "),
-              operator: substation.operator,
-              category: "substation",
-            },
-          })),
-        };
 
-        map.current.addSource("substations", {
-          type: "geojson",
-          data: substationGeoJSON,
-        });
+// Add substations
+if (gridData.substations && gridData.substations.length > 0) {
+  // Create point GeoJSON for low zoom levels (circles)
+  const substationPointsGeoJSON = {
+    type: "FeatureCollection" as const,
+    features: gridData.substations.map((substation, index) => {
+      const center = calculateCentroid(substation.nodes);
+      
+      return {
+        type: "Feature" as const,
+        id: `substation-point-${index}`,
+        geometry: {
+          type: "Point" as const,
+          coordinates: [center.lng, center.lat]
+        },
+        properties: {
+          name: substation.name,
+          type: substation.type,
+          voltage: substation.voltage,
+          operator: substation.operator,
+          category: "substation",
+        }
+      };
+    })
+  };
 
-        map.current.addLayer({
-          id: "substation-symbols",
-          type: "circle",
-          source: "substations",
-          paint: {
-            "circle-radius": [
-              "interpolate",
-              ["linear"],
-              ["zoom"],
-              8,
-              6,
-              12,
-              8,
-              15,
-              12,
-              18,
-              16,
-            ],
-            "circle-color": "#2563EB",
-            "circle-stroke-width": 2,
-            "circle-stroke-color": "#1E40AF",
-            "circle-opacity": 0.8,
-            "circle-stroke-opacity": 1,
-          },
-        });
+  // Create polygon GeoJSON for high zoom levels (areas)
+  const substationPolygonsGeoJSON = {
+    type: "FeatureCollection" as const,
+    features: gridData.substations.map((substation, index) => {
+      return {
+        type: "Feature" as const,
+        id: `substation-polygon-${index}`,
+        geometry: {
+          type: "Polygon" as const,
+          coordinates: [substation.nodes.map(n => [n.lng, n.lat])]
+        },
+        properties: {
+          name: substation.name,
+          type: substation.type,
+          voltage: substation.voltage,
+          operator: substation.operator,
+          category: "substation",
+        }
+      };
+    })
+  };
 
-        console.log(`Added ${gridData.substations.length} substations`);
-      }
+  // Add point source and layer (for low zoom)
+  map.current.addSource("substation-points", {
+    type: "geojson",
+    data: substationPointsGeoJSON,
+  });
+
+  map.current.addLayer({
+    id: "substation-circles",
+    type: "circle",
+    source: "substation-points",
+    maxzoom: 11.99,
+    paint: {
+      "circle-radius": [
+        "interpolate", ["linear"], ["zoom"],
+        8, 6, 12, 12
+      ],
+      "circle-color": "#B54EB2",
+      "circle-stroke-width": 2,
+      "circle-stroke-color": "#1E40AF",
+      "circle-opacity": 0.8
+    }
+  });
+
+  // Add polygon source and layers (for high zoom)
+  map.current.addSource("substation-polygons", {
+    type: "geojson",
+    data: substationPolygonsGeoJSON,
+  });
+
+  // Add polygon fill layer (high zoom)
+  map.current.addLayer({
+    id: "substation-areas",
+    type: "fill",
+    source: "substation-polygons",
+    minzoom: 12,
+    paint: {
+      "fill-color": "#B54EB2",
+      "fill-opacity": 0.3
+    }
+  });
+
+  // Add polygon outline layer (high zoom)
+  map.current.addLayer({
+    id: "substation-outlines", 
+    type: "line",
+    source: "substation-polygons",
+    minzoom: 12,
+    paint: {
+      "line-color": "#1E1E1E",
+      "line-width": [
+        "interpolate", ["linear"], ["zoom"],
+        12, 1, 18, 3
+      ]
+    }
+  });
+
+  console.log(`Added ${gridData.substations.length} substations`);
+}
 
       addClickHandlers();
     };
@@ -692,13 +858,25 @@ const MapLibreComponent = forwardRef<MapLibreRef, MapLibreProps>(
 
       // Remove existing handlers if they exist
       if (handlersRef.current.towerClick) {
-        map.current.off("click", "tower-symbols", handlersRef.current.towerClick);
+        map.current.off(
+          "click",
+          "tower-symbols",
+          handlersRef.current.towerClick
+        );
       }
       if (handlersRef.current.substationClick) {
-        map.current.off("click", "substation-symbols", handlersRef.current.substationClick);
+        map.current.off(
+          "click",
+          "substation-symbols",
+          handlersRef.current.substationClick
+        );
       }
       if (handlersRef.current.lineClick) {
-        map.current.off("click", "transmission-lines", handlersRef.current.lineClick);
+        map.current.off(
+          "click",
+          "transmission-lines",
+          handlersRef.current.lineClick
+        );
       }
 
       // Tower click handler
@@ -710,18 +888,22 @@ const MapLibreComponent = forwardRef<MapLibreRef, MapLibreProps>(
 
         new maplibregl.Popup({ closeOnClick: true })
           .setLngLat(coordinates)
-          .setHTML(`
+          .setHTML(
+            `
             <div class="power-tooltip">
               <strong>Tower ${id}</strong><br/>
               ${height ? `Height: ${height}m<br/>` : ""}
               ${type ? `Type: ${type}` : ""}
             </div>
-          `)
+          `
+          )
           .addTo(map.current!);
       };
 
       // Substation click handler
-      handlersRef.current.substationClick = (e: maplibregl.MapLayerMouseEvent) => {
+      handlersRef.current.substationClick = (
+        e: maplibregl.MapLayerMouseEvent
+      ) => {
         if (!e.features?.[0]) return;
         const feature = e.features[0];
         const coordinates = (feature.geometry as any).coordinates.slice();
@@ -729,14 +911,16 @@ const MapLibreComponent = forwardRef<MapLibreRef, MapLibreProps>(
 
         new maplibregl.Popup({ closeOnClick: true })
           .setLngLat(coordinates)
-          .setHTML(`
+          .setHTML(
+            `
             <div class="power-tooltip">
               <strong>${name}</strong><br/>
               Type: ${type}<br/>
               Voltages: ${voltage_levels}<br/>
               Operator: ${operator}
             </div>
-          `)
+          `
+          )
           .addTo(map.current!);
       };
 
@@ -745,11 +929,13 @@ const MapLibreComponent = forwardRef<MapLibreRef, MapLibreProps>(
         if (!e.features?.[0]) return;
         const feature = e.features[0];
         const coordinates = e.lngLat;
-        const { name, voltage, operator, status, description } = feature.properties!;
+        const { name, voltage, operator, status, description } =
+          feature.properties!;
 
         new maplibregl.Popup({ closeOnClick: true })
           .setLngLat(coordinates)
-          .setHTML(`
+          .setHTML(
+            `
             <div class="power-tooltip">
               <strong>${name}</strong><br/>
               Voltage: ${voltage}<br/>
@@ -757,18 +943,47 @@ const MapLibreComponent = forwardRef<MapLibreRef, MapLibreProps>(
               Status: ${status}
               ${description ? `<br/>${description}` : ""}
             </div>
-          `)
+          `
+          )
           .addTo(map.current!);
       };
 
+      handlersRef.current.substationClick = (e: maplibregl.MapLayerMouseEvent) => {
+  if (!e.features?.[0]) return;
+  const feature = e.features[0];
+  const coordinates = e.lngLat; // Use click coordinates instead of geometry coordinates
+  const { name, type, voltage, operator } = feature.properties!;
+
+  new maplibregl.Popup({ closeOnClick: true })
+    .setLngLat(coordinates)
+    .setHTML(
+      `
+      <div class="power-tooltip">
+        <strong>${name}</strong><br/>
+        Type: ${type}<br/>
+        Voltage: ${voltage}<br/>
+        Operator: ${operator}
+      </div>
+    `
+    )
+    .addTo(map.current!);
+};
+
+
       // Add event listeners
-      map.current.on("click", "tower-symbols", handlersRef.current.towerClick);
-      map.current.on("click", "substation-symbols", handlersRef.current.substationClick);
-      map.current.on("click", "transmission-lines", handlersRef.current.lineClick);
+map.current.on("click", "tower-symbols", handlersRef.current.towerClick);
+map.current.on("click", "substation-circles", handlersRef.current.substationClick);
+map.current.on("click", "substation-areas", handlersRef.current.substationClick);
+map.current.on("click", "transmission-lines", handlersRef.current.lineClick);
 
       // Cursor handlers
-      const layers = ["tower-symbols", "substation-symbols", "transmission-lines"];
-      layers.forEach(layer => {
+      const layers = [
+         "tower-symbols",
+  "substation-circles", 
+  "substation-areas",
+  "transmission-lines",
+      ];
+      layers.forEach((layer) => {
         map.current!.on("mouseenter", layer, () => {
           map.current!.getCanvas().style.cursor = "pointer";
         });
@@ -780,17 +995,17 @@ const MapLibreComponent = forwardRef<MapLibreRef, MapLibreProps>(
 
     // Effect to update grid data when it changes
     useEffect(() => {
-      console.log("Grid data effect triggered:", { 
-        hasMap: !!map.current, 
-        hasGridData: !!gridData, 
+      console.log("Grid data effect triggered:", {
+        hasMap: !!map.current,
+        hasGridData: !!gridData,
         mapReady,
-        isStyleLoaded: map.current?.isStyleLoaded() 
+        isStyleLoaded: map.current?.isStyleLoaded(),
       });
 
       if (map.current && gridData && mapReady) {
         // Always wait for styledata to ensure the style is completely ready
         console.log("Waiting for style to be ready...");
-        
+
         const tryAddData = () => {
           console.log("Attempting to add grid data");
           addGridDataToMap();
@@ -801,7 +1016,7 @@ const MapLibreComponent = forwardRef<MapLibreRef, MapLibreProps>(
           tryAddData();
         } else {
           console.log("Waiting for styledata event");
-          map.current.once('styledata', () => {
+          map.current.once("styledata", () => {
             console.log("Styledata event fired, adding grid data");
             tryAddData();
           });

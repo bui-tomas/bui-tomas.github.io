@@ -23,8 +23,10 @@ export interface TransmissionLine {
 export interface Substation {
   id: string;
   name: string;
+  voltage?: string;
   lat: number;
   lng: number;
+  nodes: Array<{lat: number; lng: number}>;  // ← Polygon coordinates
   voltage_levels: string[];
   operator: string;
   type: 'distribution' | 'transmission' | 'interconnection';

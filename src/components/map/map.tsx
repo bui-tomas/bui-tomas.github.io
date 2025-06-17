@@ -3,7 +3,7 @@
 import { useState, useEffect, useRef } from "react";
 import MapControls from "./map-controls";
 import MapLibreComponent, { MapLibreRef } from "./maplibre";
-import { SlovakiaGridData } from "@/types/slovakia-grid";
+import { SlovakiaGridData } from "@/types/map/slovakia-grid";
 
 interface SlovakiaMapProps {
   className?: string;
