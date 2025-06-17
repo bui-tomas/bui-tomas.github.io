@@ -1,3 +1,5 @@
+// Updated types/map/index.ts - include powerStyle in base map
+
 // types/map/index.ts - Main style composition file
 
 import { StyleSpecification } from 'maplibre-gl';
@@ -25,7 +27,7 @@ function sortLayers(layers: LayerSpecificationWithZIndex[]): LayerSpecificationW
 export function createMapStyle(): StyleSpecification {
   const allLayers = [
     ...baseStyle(),
-    ...powerStyle(),
+    ...powerStyle(),  // ← NOW INCLUDED in base map
     ...labelStyle(),
   ];
 
@@ -52,7 +54,7 @@ export function createMapStyle(): StyleSpecification {
     sources: {
       "openinfra-base": {
         type: "vector",
-        tiles: ["https://openinframap.org/20250311/{z}/{x}/{y}.mvt"],
+        tiles: ["https://openinframap.org/tiles/{z}/{x}/{y}.pbf"], // ← Fixed URL
         maxzoom: 15,
         attribution: '© <a href="https://openstreetmap.org">OpenStreetMap</a>',
       },

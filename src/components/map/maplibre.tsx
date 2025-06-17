@@ -1,3 +1,5 @@
+// Updated maplibre.tsx - using powerStyle() instead of manual layers
+
 "use client";
 
 import {
@@ -12,10 +14,14 @@ import "maplibre-gl/dist/maplibre-gl.css";
 
 // Import types and styles from the new modular structure
 import { MapLibreProps, MapLibreRef } from "@/types/map/types";
-import { baseStyle, labelStyle } from "@/types/map";
-import { SlovakiaGridData, Tower, TransmissionLine } from "@/types/map/slovakia-grid";
+import { baseStyle, labelStyle, powerStyle } from "@/types/map"; // ← Add powerStyle
+import {
+  SlovakiaGridData,
+  Tower,
+  TransmissionLine,
+} from "@/types/map/slovakia-grid";
 
-// Create base map style without dynamic power sources
+// Create base map style INCLUDING power layers
 const createBaseMapStyle = () => ({
   version: 8,
   projection: {
@@ -43,10 +49,47 @@ const createBaseMapStyle = () => ({
       maxzoom: 15,
       attribution: '© <a href="https://openstreetmap.org">OpenStreetMap</a>',
     },
+    // Empty sources for power data - will be populated later
+    "transmission-lines": {
+      type: "geojson",
+      data: {
+        type: "FeatureCollection",
+        features: []
+      }
+    },
+    "towers": {
+      type: "geojson", 
+      data: {
+        type: "FeatureCollection",
+        features: []
+      }
+    },
+    "substation-points": {
+      type: "geojson",
+      data: {
+        type: "FeatureCollection", 
+        features: []
+      }
+    },
+    "substation-polygons": {
+      type: "geojson",
+      data: {
+        type: "FeatureCollection",
+        features: []
+      }
+    },
+    "power-plants": {
+      type: "geojson",
+      data: {
+        type: "FeatureCollection",
+        features: []
+      }
+    }
   },
   layers: [
-    ...baseStyle(),
-    ...labelStyle(),
+    ...baseStyle(),    // Geographic features
+    ...powerStyle(),   // Power infrastructure layers
+    ...labelStyle(),   // Text labels on top
   ].sort((a, b) => {
     const aZOrder = a.zorder || 0;
     const bZOrder = b.zorder || 0;
@@ -55,7 +98,7 @@ const createBaseMapStyle = () => ({
 });
 
 // Utility function for calculating centroids
-const calculateCentroid = (nodes: Array<{lat: number; lng: number}>) => ({
+const calculateCentroid = (nodes: Array<{ lat: number; lng: number }>) => ({
   lat: nodes.reduce((sum, n) => sum + n.lat, 0) / nodes.length,
   lng: nodes.reduce((sum, n) => sum + n.lng, 0) / nodes.length,
 });
@@ -75,11 +118,10 @@ const MapLibreComponent = forwardRef<MapLibreRef, MapLibreProps>(
         if (!map.current) return;
 
         console.log("Changing tile layer to:", layerType);
-        // For now, we only have one style, but this structure allows for future expansion
-        const newStyle = createBaseMapStyle();
+        const newStyle = createBaseMapStyle() as unknown as maplibregl.StyleSpecification;;
         map.current.setStyle(newStyle);
 
-        // Re-add data layers after style change
+        // Re-add data sources after style change
         map.current.once("styledata", () => {
           if (gridData) {
             setTimeout(() => {
@@ -92,10 +134,11 @@ const MapLibreComponent = forwardRef<MapLibreRef, MapLibreProps>(
         mapReady && !!map.current && (map.current?.isStyleLoaded() ?? false),
     }));
 
-    // Function to add grid data to map
+    // Simplified function - just add data sources, layers are already defined in powerStyle()
+
     const addGridDataToMap = () => {
       if (!map.current || !gridData) return;
-      
+
       // Wait for style to finish loading
       if (!map.current.isStyleLoaded()) {
         console.log("Style not loaded yet, waiting...");
@@ -106,80 +149,93 @@ const MapLibreComponent = forwardRef<MapLibreRef, MapLibreProps>(
       }
 
       try {
-        // Remove existing sources and layers if they exist
-        const existingLayers = ["substations", "towers", "transmission-lines", "transmission-line-labels"];
-        const existingSources = ["substations", "towers", "transmission-lines"];
+        // DON'T remove sources - just update them!
+        // The sources already exist from createBaseMapStyle()
 
-        existingLayers.forEach(layerId => {
-          if (map.current?.getLayer(layerId)) {
-            map.current.removeLayer(layerId);
-          }
-        });
-
-        existingSources.forEach(sourceId => {
-          if (map.current?.getSource(sourceId)) {
-            map.current.removeSource(sourceId);
-          }
-        });
-
-        // Add substations
+        // 1. Update substation sources
         if (gridData.substations && gridData.substations.length > 0) {
-          const substationsGeoJSON = {
+          // Point source for circles
+          const substationPointsGeoJSON = {
             type: "FeatureCollection" as const,
-            features: gridData.substations.map((substation) => ({
-              type: "Feature" as const,
-              geometry: {
-                type: "Point" as const,
-                coordinates: [substation.lng, substation.lat],
-              },
-              properties: {
-                name: substation.name,
-                voltage: substation.voltage,
-                operator: substation.operator,
-                status: substation.status,
-              },
-            })),
+            features: gridData.substations.map((substation, index) => {
+              const center =
+                substation.nodes && substation.nodes.length > 0
+                  ? calculateCentroid(substation.nodes)
+                  : { lat: substation.lat, lng: substation.lng };
+
+              return {
+                type: "Feature" as const,
+                id: `substation-point-${index}`,
+                geometry: {
+                  type: "Point" as const,
+                  coordinates: [center.lng, center.lat],
+                },
+                properties: {
+                  name: substation.name,
+                  type: substation.type,
+                  voltage: substation.voltage,
+                  operator: substation.operator,
+                  category: "substation",
+                },
+              };
+            }),
           };
 
-          map.current.addSource("substations", {
-            type: "geojson",
-            data: substationsGeoJSON,
-          });
+          // Polygon source for areas
+          const substationPolygonsGeoJSON = {
+            type: "FeatureCollection" as const,
+            features: gridData.substations
+              .filter(
+                (substation) => substation.nodes && substation.nodes.length > 0
+              )
+              .map((substation, index) => {
+                return {
+                  type: "Feature" as const,
+                  id: `substation-polygon-${index}`,
+                  geometry: {
+                    type: "Polygon" as const,
+                    coordinates: [substation.nodes.map((n) => [n.lng, n.lat])],
+                  },
+                  properties: {
+                    name: substation.name,
+                    type: substation.type,
+                    voltage: substation.voltage,
+                    operator: substation.operator,
+                    category: "substation",
+                  },
+                };
+              }),
+          };
 
-          map.current.addLayer({
-            id: "substations",
-            type: "circle",
-            source: "substations",
-            paint: {
-              "circle-radius": [
-                "interpolate",
-                ["linear"],
-                ["zoom"],
-                5, 2,
-                10, 4,
-                15, 8
-              ],
-              "circle-color": [
-                "case",
-                ["==", ["get", "voltage"], "400kV"], "#8B5CF6",
-                ["==", ["get", "voltage"], "220kV"], "#EF4444", 
-                ["==", ["get", "voltage"], "110kV"], "#F97316",
-                "#10B981"
-              ],
-              "circle-stroke-width": 1,
-              "circle-stroke-color": "#ffffff",
-              "circle-opacity": 0.8,
-            },
-          });
+          // Update existing sources instead of adding new ones
+          const substationPointsSource = map.current.getSource(
+            "substation-points"
+          ) as maplibregl.GeoJSONSource;
+          if (substationPointsSource) {
+            substationPointsSource.setData(substationPointsGeoJSON);
+            console.log(
+              `Updated substation points: ${substationPointsGeoJSON.features.length} features`
+            );
+          }
+
+          const substationPolygonsSource = map.current.getSource(
+            "substation-polygons"
+          ) as maplibregl.GeoJSONSource;
+          if (substationPolygonsSource) {
+            substationPolygonsSource.setData(substationPolygonsGeoJSON);
+            console.log(
+              `Updated substation polygons: ${substationPolygonsGeoJSON.features.length} features`
+            );
+          }
         }
 
-        // Add towers
+        // 2. Update tower source
         if (gridData.transmission_lines) {
           const allTowers: Array<Tower & { lineId: string }> = [];
-          
+
           gridData.transmission_lines.forEach((line, lineIndex) => {
             if (line.towers) {
-              line.towers.forEach(tower => {
+              line.towers.forEach((tower) => {
                 allTowers.push({
                   ...tower,
                   lineId: `line-${lineIndex}`,
@@ -198,7 +254,7 @@ const MapLibreComponent = forwardRef<MapLibreRef, MapLibreProps>(
                   coordinates: [tower.lng, tower.lat],
                 },
                 properties: {
-                  name: tower.name || `Tower ${tower.id}`,
+                  name: `Tower ${tower.id}`,
                   type: tower.type,
                   height: tower.height,
                   lineId: tower.lineId,
@@ -206,44 +262,36 @@ const MapLibreComponent = forwardRef<MapLibreRef, MapLibreProps>(
               })),
             };
 
-            map.current.addSource("towers", {
-              type: "geojson",
-              data: towersGeoJSON,
-            });
-
-            map.current.addLayer({
-              id: "towers",
-              type: "circle",
-              source: "towers",
-              minzoom: 12,
-              paint: {
-                "circle-radius": [
-                  "interpolate",
-                  ["linear"],
-                  ["zoom"],
-                  12, 1,
-                  18, 3
-                ],
-                "circle-color": "#6B7280",
-                "circle-stroke-width": 0.5,
-                "circle-stroke-color": "#ffffff",
-                "circle-opacity": 0.7,
-              },
-            });
+            const towersSource = map.current.getSource(
+              "towers"
+            ) as maplibregl.GeoJSONSource;
+            if (towersSource) {
+              towersSource.setData(towersGeoJSON);
+              console.log(`Updated towers: ${allTowers.length} features`);
+            }
           }
         }
 
-        // Add transmission lines
-        if (gridData.transmission_lines && gridData.transmission_lines.length > 0) {
+        // 3. Update transmission line source
+        if (
+          gridData.transmission_lines &&
+          gridData.transmission_lines.length > 0
+        ) {
           const linesWithCoordinates = gridData.transmission_lines
             .map((line) => {
               if (!line.towers || line.towers.length < 2) return null;
 
-              const coordinates = line.towers.map((tower) => [tower.lng, tower.lat]);
+              const coordinates = line.towers.map((tower) => [
+                tower.lng,
+                tower.lat,
+              ]);
               return { line, coordinates };
             })
-            .filter((item): item is { line: TransmissionLine; coordinates: number[][] } => 
-              item !== null
+            .filter(
+              (
+                item
+              ): item is { line: TransmissionLine; coordinates: number[][] } =>
+                item !== null
             );
 
           const linesGeoJSON = {
@@ -264,68 +312,21 @@ const MapLibreComponent = forwardRef<MapLibreRef, MapLibreProps>(
             })),
           };
 
-          map.current.addSource("transmission-lines", {
-            type: "geojson",
-            data: linesGeoJSON,
-          });
-
-          map.current.addLayer({
-            id: "transmission-lines",
-            type: "line",
-            source: "transmission-lines",
-            paint: {
-              "line-width": [
-                "case",
-                ["==", ["get", "voltage"], "400kV"], 1.4,
-                ["==", ["get", "voltage"], "220kV"], 1,
-                ["==", ["get", "voltage"], "110kV"], 1.5,
-                0.6,
-              ],
-              "line-color": [
-                "case",
-                ["==", ["get", "voltage"], "400kV"], "#B54EB2",
-                ["==", ["get", "voltage"], "220kV"], "#C73030",
-                ["==", ["get", "voltage"], "110kV"], "#B55D00",
-                ["==", ["get", "voltage"], "22kV"], "#55B555",
-                "#7A7A85",
-              ],
-              "line-opacity": 0.8,
-            },
-          });
-
-          // Add line labels layer
-          map.current.addLayer({
-            id: "transmission-line-labels",
-            type: "symbol",
-            source: "transmission-lines",
-            minzoom: 10,
-            layout: {
-              "text-field": [
-                "case",
-                ["has", "name"],
-                ["concat", ["get", "name"], " (", ["get", "voltage"], ")"],
-                ["get", "voltage"],
-              ],
-              "text-font": ["Noto Sans Regular"],
-              "symbol-placement": "line",
-              "symbol-spacing": 400,
-              "text-size": 12,
-              "text-offset": [0, 1],
-              "text-max-angle": 15,
-              "text-padding": 2,
-            },
-            paint: {
-              "text-color": "#374151",
-              "text-halo-color": "rgba(255, 255, 255, 0.8)",
-              "text-halo-width": 1,
-            },
-          });
+          const linesSource = map.current.getSource(
+            "transmission-lines"
+          ) as maplibregl.GeoJSONSource;
+          if (linesSource) {
+            linesSource.setData(linesGeoJSON);
+            console.log(
+              `Updated transmission lines: ${linesWithCoordinates.length} features`
+            );
+          }
         }
 
-        console.log("Grid data added to map successfully");
+        console.log("Grid data sources updated successfully");
       } catch (error) {
-        console.error("Error adding grid data to map:", error);
-        onError("Failed to add grid data to map");
+        console.error("Error updating grid data sources:", error);
+        onError("Failed to update grid data sources");
       }
     };
 
@@ -334,7 +335,7 @@ const MapLibreComponent = forwardRef<MapLibreRef, MapLibreProps>(
       if (!mapContainer.current) return;
 
       try {
-        // Create the base style without dynamic power sources
+        // Create the base style including power layers
         const baseStyle = createBaseMapStyle();
 
         map.current = new maplibregl.Map({
@@ -348,6 +349,19 @@ const MapLibreComponent = forwardRef<MapLibreRef, MapLibreProps>(
           minZoom: 2,
         });
 
+        // Load tower icon
+        map.current
+          .loadImage("/images/icons/tower.png")
+          .then((image) => {
+            if (map.current && !map.current.hasImage("tower-icon")) {
+              map.current.addImage("tower-icon", image.data);
+              console.log("Tower icon loaded successfully");
+            }
+          })
+          .catch((error) => {
+            console.error("Error loading tower image:", error);
+          });
+
         // Add navigation controls
         map.current.addControl(new maplibregl.NavigationControl(), "top-right");
 
@@ -356,8 +370,8 @@ const MapLibreComponent = forwardRef<MapLibreRef, MapLibreProps>(
           console.log("Map loaded successfully");
           setMapReady(true);
           onMapReady();
-          
-          // Add grid data if available
+
+          // Add grid data sources if available
           if (gridData) {
             addGridDataToMap();
           }
@@ -369,20 +383,53 @@ const MapLibreComponent = forwardRef<MapLibreRef, MapLibreProps>(
           onError(`Map error: ${e.error?.message || "Unknown error"}`);
         });
 
-        // Add click handlers for interactivity
-        map.current.on("click", "substations", (e) => {
+        // Add click handlers - these will work with the predefined layers
+        map.current.on("click", "substation-circles", (e) => {
           if (e.features && e.features[0]) {
             const properties = e.features[0].properties;
             new maplibregl.Popup()
               .setLngLat(e.lngLat)
-              .setHTML(`
+              .setHTML(
+                `
                 <div class="p-2">
-                  <h3 class="font-semibold">${properties?.name || "Substation"}</h3>
-                  <p><strong>Voltage:</strong> ${properties?.voltage || "Unknown"}</p>
-                  <p><strong>Operator:</strong> ${properties?.operator || "Unknown"}</p>
-                  <p><strong>Status:</strong> ${properties?.status || "Unknown"}</p>
+                  <h3 class="font-semibold">${
+                    properties?.name || "Substation"
+                  }</h3>
+                  <p><strong>Voltage:</strong> ${
+                    properties?.voltage || "Unknown"
+                  }</p>
+                  <p><strong>Operator:</strong> ${
+                    properties?.operator || "Unknown"
+                  }</p>
+                  <p><strong>Type:</strong> ${properties?.type || "Unknown"}</p>
                 </div>
-              `)
+              `
+              )
+              .addTo(map.current!);
+          }
+        });
+
+        map.current.on("click", "substation-areas", (e) => {
+          if (e.features && e.features[0]) {
+            const properties = e.features[0].properties;
+            new maplibregl.Popup()
+              .setLngLat(e.lngLat)
+              .setHTML(
+                `
+                <div class="p-2">
+                  <h3 class="font-semibold">${
+                    properties?.name || "Substation"
+                  }</h3>
+                  <p><strong>Voltage:</strong> ${
+                    properties?.voltage || "Unknown"
+                  }</p>
+                  <p><strong>Operator:</strong> ${
+                    properties?.operator || "Unknown"
+                  }</p>
+                  <p><strong>Type:</strong> ${properties?.type || "Unknown"}</p>
+                </div>
+              `
+              )
               .addTo(map.current!);
           }
         });
@@ -392,36 +439,56 @@ const MapLibreComponent = forwardRef<MapLibreRef, MapLibreProps>(
             const properties = e.features[0].properties;
             new maplibregl.Popup()
               .setLngLat(e.lngLat)
-              .setHTML(`
+              .setHTML(
+                `
                 <div class="p-2">
-                  <h3 class="font-semibold">${properties?.name || "Transmission Line"}</h3>
-                  <p><strong>Voltage:</strong> ${properties?.voltage || "Unknown"}</p>
-                  <p><strong>Operator:</strong> ${properties?.operator || "Unknown"}</p>
-                  <p><strong>Status:</strong> ${properties?.status || "Unknown"}</p>
-                  ${properties?.description ? `<p><strong>Description:</strong> ${properties.description}</p>` : ""}
+                  <h3 class="font-semibold">${
+                    properties?.name || "Transmission Line"
+                  }</h3>
+                  <p><strong>Voltage:</strong> ${
+                    properties?.voltage || "Unknown"
+                  }</p>
+                  <p><strong>Operator:</strong> ${
+                    properties?.operator || "Unknown"
+                  }</p>
+                  <p><strong>Status:</strong> ${
+                    properties?.status || "Unknown"
+                  }</p>
+                  ${
+                    properties?.description
+                      ? `<p><strong>Description:</strong> ${properties.description}</p>`
+                      : ""
+                  }
                 </div>
-              `)
+              `
+              )
               .addTo(map.current!);
           }
         });
 
-        // Change cursor to pointer when hovering over interactive layers
-        map.current.on("mouseenter", "substations", () => {
-          if (map.current) map.current.getCanvas().style.cursor = "pointer";
-        });
-        map.current.on("mouseleave", "substations", () => {
-          if (map.current) map.current.getCanvas().style.cursor = "";
-        });
-        map.current.on("mouseenter", "transmission-lines", () => {
-          if (map.current) map.current.getCanvas().style.cursor = "pointer";
-        });
-        map.current.on("mouseleave", "transmission-lines", () => {
-          if (map.current) map.current.getCanvas().style.cursor = "";
-        });
+        // Add cursor hover effects
+        const interactiveLayers = [
+          "substation-circles",
+          "substation-areas",
+          "tower-symbols",
+          "transmission-lines",
+        ];
 
+        interactiveLayers.forEach((layerId) => {
+          map.current!.on("mouseenter", layerId, () => {
+            if (map.current) map.current.getCanvas().style.cursor = "pointer";
+          });
+          map.current!.on("mouseleave", layerId, () => {
+            if (map.current) map.current.getCanvas().style.cursor = "";
+          });
+        });
       } catch (error) {
         console.error("Error initializing map:", error);
-        onError(`Failed to initialize map: ${error instanceof Error ? error.message : "Unknown error"}`);
+        onError(
+          `Failed to initialize map: ${
+            error instanceof Error ? error.message : "Unknown error"
+          }`
+        );
       }
 
       // Cleanup function
@@ -441,8 +508,8 @@ const MapLibreComponent = forwardRef<MapLibreRef, MapLibreProps>(
     }, [mapReady, gridData]);
 
     return (
-      <div 
-        ref={mapContainer} 
+      <div
+        ref={mapContainer}
         className={`map-container ${className}`}
         style={{ width: "100%", height: "600px" }}
       />
