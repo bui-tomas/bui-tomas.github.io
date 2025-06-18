@@ -1,7 +1,8 @@
 // types/map/common.ts - Shared constants, colors, and utility functions
+import type { ExpressionSpecification } from 'maplibre-gl';
 
 // Color interpolation helper function
-export function landcover_colour(hue: number, sat: string, initial_lum = "85%") {
+export function landcover_colour(hue: number, sat: string, initial_lum = "85%"): ExpressionSpecification {
   return [
     "interpolate-lab",
     ["linear"],
@@ -10,7 +11,7 @@ export function landcover_colour(hue: number, sat: string, initial_lum = "85%") 
     `hsl(${hue}, ${sat}, ${initial_lum})`,
     6,
     `hsl(${hue}, ${sat}, 93%)`,
-  ];
+  ] as ExpressionSpecification;
 }
 
 // Base color definitions
@@ -26,7 +27,7 @@ export const colours = {
     "hsl(207, 25%, 75%)",
     12,
     "hsl(207, 14%, 86%)",
-  ],
+  ] as ExpressionSpecification,
   green: landcover_colour(90, "20%", "86%"),
   wood: landcover_colour(100, "20%", "81%"),
   sand: landcover_colour(57, "20%"),
@@ -44,8 +45,8 @@ export const colours = {
     "hsl(0, 30%, 60%)",
     12,
     "hsl(0, 10%, 80%)",
-  ],
-} as const;
+  ] as ExpressionSpecification,
+};
 
 // Label color definitions (following OpenInfraMap pattern)
 export const label_colors = {

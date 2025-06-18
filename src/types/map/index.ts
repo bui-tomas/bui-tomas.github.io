@@ -27,23 +27,17 @@ function sortLayers(layers: LayerSpecificationWithZIndex[]): LayerSpecificationW
 export function createMapStyle(): StyleSpecification {
   const allLayers = [
     ...baseStyle(),
-    ...powerStyle(),  // ← NOW INCLUDED in base map
+    ...powerStyle(),
     ...labelStyle(),
   ];
 
   return {
     version: 8,
-    projection: {
-      type: "globe",
-    },
+    projection: { type: "globe" },
     sky: {
       "sky-color": "#87CEEB",
       "horizon-color": "#ffffff",
-      "fog-color": "#f0f0f0",
-      "sky-horizon-blend": 0.5,
-      "horizon-fog-blend": 0.5,
-      "fog-ground-blend": 0.5,
-      "atmosphere-blend": ["interpolate", ["linear"], ["zoom"], 2, 0.4, 4, 0],
+      // ... rest of sky config
     },
     light: {
       anchor: "map",
@@ -54,10 +48,31 @@ export function createMapStyle(): StyleSpecification {
     sources: {
       "openinfra-base": {
         type: "vector",
-        tiles: ["https://openinframap.org/tiles/{z}/{x}/{y}.pbf"], // ← Fixed URL
+        tiles: ["https://openinframap.org/20250311/{z}/{x}/{y}.mvt"],
         maxzoom: 15,
         attribution: '© <a href="https://openstreetmap.org">OpenStreetMap</a>',
       },
+      // ADD YOUR GEOJSON SOURCES HERE
+      "transmission-lines": {
+        type: "geojson",
+        data: { type: "FeatureCollection", features: [] }
+      },
+      "towers": {
+        type: "geojson", 
+        data: { type: "FeatureCollection", features: [] }
+      },
+      "substation-points": {
+        type: "geojson",
+        data: { type: "FeatureCollection", features: [] }
+      },
+      "substation-polygons": {
+        type: "geojson",
+        data: { type: "FeatureCollection", features: [] }
+      },
+      "power-plants": {
+        type: "geojson",
+        data: { type: "FeatureCollection", features: [] }
+      }
     },
     layers: sortLayers(allLayers),
   };

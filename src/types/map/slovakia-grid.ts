@@ -5,7 +5,7 @@ export interface Tower {
   lat: number;
   lng: number;
   height?: number;
-  type?: 'suspension' | 'tension' | 'terminal';
+  type?: 'tower' | 'connection' | 'terminal';
 }
 
 export interface TransmissionLine {
@@ -23,9 +23,7 @@ export interface TransmissionLine {
 export interface Substation {
   id: string;
   name: string;
-  voltage?: string;
-  lat: number;
-  lng: number;
+  voltage?: number[];
   nodes: Array<{lat: number; lng: number}>;  // ← Polygon coordinates
   voltage_levels: string[];
   operator: string;

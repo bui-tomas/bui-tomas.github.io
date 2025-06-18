@@ -1,10 +1,154 @@
 {
   "transmission_lines": [
     {
+      "id": "100",
+      "name": "100",
+      "voltage": "400kV",
+      "status": "active",
+      "operator": "SEPS",
+      "country_from": "SK",
+      "country_to": "SK",
+      "towers": ""
+    },
+    {
+      "id": "cn-kosice-1",
+      "name": "Power Line",
+      "voltage": "400kV",
+      "status": "active",
+      "operator": "SEPS",
+      "country_from": "SK",
+      "country_to": "SK",
+      "towers": [
+  {
+    "id": "CN_kosice_1 - /node/8989735993",
+    "lat": 48.6273002,
+    "lng": 21.1899861,
+    "type": "connection"
+  },
+  {
+    "id": "CN_kosice_1 - /node/8989735994",
+    "lat": 48.6267896,
+    "lng": 21.1907113,
+    "type": "connection"
+  }
+]
+    },
+    {
+      "id": "cn-kosice-2",
+      "name": "Power Line",
+      "voltage": "400kV",
+      "status": "active",
+      "operator": "SEPS",
+      "country_from": "SK",
+      "country_to": "SK",
+      "towers": [
+  {
+    "id": "CN_kosice_2 - /node/8989735992",
+    "lat": 48.6275033,
+    "lng": 21.1903738,
+    "type": "connection"
+  },
+  {
+    "id": "CN_kosice_2 - /node/8989735995",
+    "lat": 48.6269066,
+    "lng": 21.19095,
+    "type": "connection"
+  }
+]
+    },
+    {
+      "id": "cn-gabcikovo-1",
+      "name": "Győr-Gabčikovo",
+      "voltage": "400kV",
+      "status": "active",
+      "operator": "SEPS",
+      "country_from": "SK",
+      "country_to": "SK",
+      "towers": [
+  {
+    "id": "gabcikovo_1 - /node/5809544614",
+    "lat": 47.8832404,
+    "lng": 17.5418022,
+    "type": "connection"
+  },
+  {
+    "id": "gabcikovo_1 - /node/1555383619",
+    "lat": 47.8841878,
+    "lng": 17.5434862,
+    "type": "tower"
+  },
+  {
+    "id": "gabcikovo_1 - /node/5809544613",
+    "lat": 47.8846935,
+    "lng": 17.5446817,
+    "type": "tower"
+  },
+  {
+    "id": "gabcikovo_1 - /node/6084409133",
+    "lat": 47.8849879,
+    "lng": 17.5453014,
+    "type": "connection"
+  }
+]
+    },
+    {
+      "id": "cn-bosaca-1",
+      "name": "Power Line",
+      "voltage": "400kV",
+      "status": "active",
+      "operator": "SEPS",
+      "country_from": "SK",
+      "country_to": "SK",
+      "towers": [
+  {
+    "id": "ESt_Bosaca_1 - /node/1929630983",
+    "lat": 48.7951738,
+    "lng": 17.8364406,
+    "type": "connection"
+  },
+  {
+    "id": "ESt_Bosaca_1 - /node/11339512762",
+    "lat": 48.7947799,
+    "lng": 17.8378886,
+    "type": "connection"
+  },
+  {
+    "id": "ESt_Bosaca_1 - /node/11339512757",
+    "lat": 48.7940681,
+    "lng": 17.8392803,
+    "type": "connection"
+  }
+]
+    },
+    {
+      "id": "cn-bosaca-2",
+      "name": "Power Line",
+      "voltage": "400kV",
+      "status": "active",
+      "operator": "SEPS",
+      "country_from": "SK",
+      "country_to": "SK",
+      "towers": [
+  {
+    "id": "ESt_Bosaca_2 - /node/11339512756",
+    "lat": 48.7943401,
+    "lng": 17.8373503,
+    "type": "connection"
+  },
+  {
+    "id": "ESt_Bosaca_2 - /node/1929630983",
+    "lat": 48.7951738,
+    "lng": 17.8364406,
+    "type": "connection"
+  }
+]
+    },
+    {
       "id": "v043-ebov2-bosaca",
       "name": "V043 EBO V2-Bošáca",
       "voltage": "400kV",
       "status": "active",
+      "operator": "SEPS",
       "country_from": "SK",
       "country_to": "SK",
       "towers": ""
@@ -14,6 +158,7 @@
       "name": "V044 EBO V2-Križovany",
       "voltage": "400kV",
       "status": "active",
+      "operator": "SEPS",
       "country_from": "SK",
       "country_to": "SK",
       "towers": ""
@@ -23,6 +168,7 @@
       "name": "V045 PVE Čierny Váh-Liptovská Mara",
       "voltage": "400kV",
       "status": "active",
+      "operator": "SEPS",
       "country_from": "SK",
       "country_to": "SK",
       "towers": ""
@@ -32,6 +178,7 @@
       "name": "V046 EMO Blok 1-Veľký Ďur",
       "voltage": "400kV",
       "status": "active",
+      "operator": "SEPS",
       "country_from": "SK",
       "country_to": "SK",
       "towers": ""
@@ -41,6 +188,7 @@
       "name": "V047 EMO Blok 2-Veľký Ďur",
       "voltage": "400kV",
       "status": "active",
+      "operator": "SEPS",
       "country_from": "SK",
       "country_to": "SK",
       "towers": ""
@@ -50,6 +198,7 @@
       "name": "V048 EMO Blok 3-Veľký Ďur",
       "voltage": "400kV",
       "status": "active",
+      "operator": "SEPS",
       "country_from": "SK",
       "country_to": "SK",
       "towers": ""
@@ -59,6 +208,7 @@
       "name": "V049 EMO Blok 4-Veľký Ďur",
       "voltage": "400kV",
       "status": "active",
+      "operator": "SEPS",
       "country_from": "SK",
       "country_to": "SK",
       "towers": ""
@@ -68,6 +218,7 @@
       "name": "V050 PPC Malženice-Križovany",
       "voltage": "400kV",
       "status": "active",
+      "operator": "SEPS",
       "country_from": "SK",
       "country_to": "SK",
       "towers": ""
@@ -77,6 +228,7 @@
       "name": "V051 VE Gabčíkovo-Gabčíkovo",
       "voltage": "400kV",
       "status": "active",
+      "operator": "SEPS",
       "country_from": "SK",
       "country_to": "SK",
       "towers": ""
@@ -86,6 +238,7 @@
       "name": "V052 VE Gabčíkovo-Gabčíkovo",
       "voltage": "400kV",
       "status": "active",
+      "operator": "SEPS",
       "country_from": "SK",
       "country_to": "SK",
       "towers": ""
@@ -95,6 +248,7 @@
       "name": "V404 Nošovice-Varín",
       "voltage": "400kV",
       "status": "active",
+      "operator": "SEPS",
       "country_from": "CZ",
       "country_to": "SK",
       "towers": [
@@ -1500,7 +1654,7 @@
           "id": "V404-4 - /node/4019203891",
           "lat": 49.2147703,
           "lng": 18.8633785,
-          "type": "Tower"
+          "type": "connection"
         }
       ]
     },
@@ -1509,6 +1663,7 @@
       "name": "V405/V406 Varín-Liptovská Mara/Sučany",
       "voltage": "400kV",
       "status": "active",
+      "operator": "SEPS",
       "country_from": "SK",
       "country_to": "SK",
       "towers": [
@@ -1516,7 +1671,7 @@
           "id": "V405_406A - /node/4019203889",
           "lat": 49.214592,
           "lng": 18.8637017,
-          "type": "Tower"
+          "type": "connection"
         },
         {
           "id": "V405_406A - /node/3585927994",
@@ -1539,10 +1694,11 @@
       ]
     },
     {
-      "id": "v405/v406-varin-liptovskamara-sucany-b",
+      "id": "v405/v406-varin-liptovskamara-sucany-b-reversed",
       "name": "V405/V406 Varín-Liptovská Mara/Sučany",
       "voltage": "400kV",
       "status": "active",
+      "operator": "SEPS",
       "country_from": "SK",
       "country_to": "SK",
       "towers": [
@@ -1550,7 +1706,7 @@
           "id": "V405_406B - /node/2215358142",
           "lat": 49.2147967,
           "lng": 18.8693976,
-          "type": "Tower"
+          "type": "tower"
         },
         {
           "id": "V405_406B - /node/2215358144",
@@ -1562,7 +1718,7 @@
           "id": "V405_406B - /node/4019203678",
           "lat": 49.2141436,
           "lng": 18.8645278,
-          "type": "Tower"
+          "type": "connection"
         }
       ]
     },
@@ -1571,6 +1727,7 @@
       "name": "V405/V406 Varín-Liptovská Mara/Sučany",
       "voltage": "400kV",
       "status": "active",
+      "operator": "SEPS",
       "country_from": "SK",
       "country_to": "SK",
       "towers": [
@@ -1911,6 +2068,7 @@
       "name": "V405 Varín-Sučany",
       "voltage": "400kV",
       "status": "active",
+      "operator": "SEPS",
       "country_from": "SK",
       "country_to": "SK",
       "towers": [
@@ -1939,6 +2097,7 @@
       "name": "V406 Varín-Liptovská Mara",
       "voltage": "400kV",
       "status": "active",
+      "operator": "SEPS",
       "country_from": "SK",
       "country_to": "SK",
       "towers": [
@@ -2267,6 +2426,7 @@
       "name": "V406 Varín-Liptovská Mara",
       "voltage": "400kV",
       "status": "active",
+      "operator": "SEPS",
       "country_from": "SK",
       "country_to": "SK",
       "towers": [
@@ -2289,6 +2449,7 @@
       "name": "V406 Varín-Liptovská Mara",
       "voltage": "400kV",
       "status": "active",
+      "operator": "SEPS",
       "country_from": "SK",
       "country_to": "SK",
       "towers": [
@@ -2602,7 +2763,7 @@
           "id": "V406C - /node/4014099488",
           "lat": 49.0849822,
           "lng": 19.4897201,
-          "type": "Tower"
+          "type": "connection"
         }
       ]
     },
@@ -2612,6 +2773,7 @@
       "name": "V407 Liptovská Mara-Spišská Nová Ves",
       "voltage": "400kV",
       "status": "active",
+      "operator": "SEPS",
       "country_from": "SK",
       "country_to": "SK",
       "towers": [
@@ -2619,7 +2781,7 @@
           "id": "V407 - /node/4014132500",
           "lat": 49.0859308,
           "lng": 19.4911491,
-          "type": "Tower"
+          "type": "connection"
         },
         {
           "id": "V407 - /node/2213902751",
@@ -4245,7 +4407,7 @@
           "id": "V407 - /node/5552929185",
           "lat": 48.9650846,
           "lng": 20.5354003,
-          "type": "Tower"
+          "type": "connection"
         }
       ]
     },
@@ -4254,6 +4416,7 @@
       "name": "V408 Spišská Nová Ves-Lemešany",
       "voltage": "400kV",
       "status": "active",
+      "operator": "SEPS",
       "country_from": "SK",
       "country_to": "SK",
       "towers": [
@@ -4261,7 +4424,7 @@
           "id": "V408-1 - /node/5552929182",
           "lat": 48.9643081,
           "lng": 20.5354513,
-          "type": "Tower"
+          "type": "connection"
         },
         {
           "id": "V408-1 - /node/2212075874",
@@ -5308,6 +5471,7 @@
       "name": "V409/V410 Lemešany-Voľa-Veľké Kapušany",
       "voltage": "400kV",
       "status": "active",
+      "operator": "SEPS",
       "country_from": "SK",
       "country_to": "SK",
       "towers": [
@@ -5774,6 +5938,7 @@
       "name": "V409 Lemešany-Voľa",
       "voltage": "400kV",
       "status": "active",
+      "operator": "SEPS",
       "country_from": "SK",
       "country_to": "SK",
       "towers": [
@@ -5808,6 +5973,7 @@
       "name": "V409 Lemešany-Voľa",
       "voltage": "400kV",
       "status": "active",
+      "operator": "SEPS",
       "country_from": "SK",
       "country_to": "SK",
       "towers": [
@@ -6820,6 +6986,7 @@
       "name": "V410 Voľa-Veľké Kapušany",
       "voltage": "400kV",
       "status": "active",
+      "operator": "SEPS",
       "country_from": "SK",
       "country_to": "SK",
       "towers": [
@@ -7298,6 +7465,7 @@
       "name": "V410 Voľa-Veľké Kapušany",
       "voltage": "400kV",
       "status": "active",
+      "operator": "SEPS",
       "country_from": "SK",
       "country_to": "SK",
       "towers": [
@@ -7338,6 +7506,7 @@
       "name": "V424 Sokolnice-Križovany",
       "voltage": "400kV",
       "status": "active",
+      "operator": "SEPS",
       "country_from": "CZ",
       "country_to": "SK",
       "towers": [
@@ -9760,6 +9929,7 @@
       "name": "V425 Križovany-Veľký Ďur",
       "voltage": "400kV",
       "status": "active",
+      "operator": "SEPS",
       "country_from": "SK",
       "country_to": "SK",
       "towers": [
@@ -10790,6 +10960,7 @@
       "name": "V426 Levice-Rimavská Sobota",
       "voltage": "400kV",
       "status": "active",
+      "operator": "SEPS",
       "country_from": "SK",
       "country_to": "SK",
       "towers": [
@@ -10797,7 +10968,7 @@
           "id": "V426-1 - /node/1758880242",
           "lat": 48.2335451,
           "lng": 18.6049022,
-          "type": "Tower"
+          "type": "connection"
         },
         {
           "id": "V426-1 - /node/1758880245",
@@ -12657,7 +12828,7 @@
           "id": "V426-2 - /node/9738539466",
           "lat": 48.3792715,
           "lng": 20.0447269,
-          "type": "Tower"
+          "type": "connection"
         }
       ]
     },
@@ -12666,6 +12837,7 @@
       "name": "V427 Rimavská Sobota-Moldava",
       "voltage": "400kV",
       "status": "active",
+      "operator": "SEPS",
       "country_from": "SK",
       "country_to": "SK",
       "towers": [
@@ -12673,7 +12845,7 @@
           "id": "V427 - /node/9738487763",
           "lat": 48.3801103,
           "lng": 20.0466896,
-          "type": "Tower"
+          "type": "connection"
         },
         {
           "id": "V427 - /node/2210563628",
@@ -14215,19 +14387,19 @@
           "id": "V427 - /node/8616067206",
           "lat": 48.6013125,
           "lng": 21.0443587,
-          "type": "Tower"
+          "type": "connection"
         },
         {
           "id": "V427 - /node/8616067212",
           "lat": 48.6019389,
           "lng": 21.0444075,
-          "type": "Tower"
+          "type": "connection"
         },
         {
           "id": "V427 - /node/8616202318",
           "lat": 48.6021889,
           "lng": 21.0444116,
-          "type": "Tower"
+          "type": "connection"
         }
       ]
     },
@@ -14236,6 +14408,7 @@
       "name": "V428 Moldava-Veľké Kapušany",
       "voltage": "400kV",
       "status": "active",
+      "operator": "SEPS",
       "country_from": "SK",
       "country_to": "SK",
       "towers": [
@@ -14243,19 +14416,19 @@
           "id": "V428-1 - /node/8616202319",
           "lat": 48.6021755,
           "lng": 21.0448385,
-          "type": "Tower"
+          "type": "connection"
         },
         {
           "id": "V428-1 - /node/8616067213",
           "lat": 48.6019255,
           "lng": 21.0448344,
-          "type": "Tower"
+          "type": "connection"
         },
         {
           "id": "V428-1 - /node/8616067205",
           "lat": 48.6012991,
           "lng": 21.0447856,
-          "type": "Tower"
+          "type": "connection"
         },
         {
           "id": "V428-1 - /node/1916169850",
@@ -15788,6 +15961,7 @@
       "name": "V429 Podunajské Biskupice-Gabčíkovo",
       "voltage": "400kV",
       "status": "active",
+      "operator": "SEPS",
       "country_from": "SK",
       "country_to": "SK",
       "towers": [
@@ -15795,7 +15969,7 @@
           "id": "V429-1 - /node/388190977",
           "lat": 48.1111424,
           "lng": 17.2181034,
-          "type": "Tower"
+          "type": "connection"
         },
         {
           "id": "V429-1 - /node/35466233",
@@ -16486,19 +16660,19 @@
           "id": "V429-3 - /node/9580489621",
           "lat": 47.886515,
           "lng": 17.5453504,
-          "type": "Tower"
+          "type": "connection"
         },
         {
           "id": "V429-4 - /node/9580115793",
           "lat": 47.885749,
           "lng": 17.5446775,
-          "type": "Tower"
+          "type": "connection"
         },
         {
           "id": "V429-4 - /node/6084409131",
           "lat": 47.8856647,
           "lng": 17.5445271,
-          "type": "Tower"
+          "type": "connection"
         },
         {
           "id": "V429-4 - /node/2215391966",
@@ -16516,7 +16690,7 @@
           "id": "V429-4 - /node/5809544615",
           "lat": 47.883588,
           "lng": 17.5413798,
-          "type": "Tower"
+          "type": "connection"
         }
       ]
     },
@@ -16525,6 +16699,7 @@
       "name": "V439 Podunajské Biskupice-Križovany",
       "voltage": "400kV",
       "status": "active",
+      "operator": "SEPS",
       "country_from": "SK",
       "country_to": "SK",
       "towers": [
@@ -16532,7 +16707,7 @@
           "id": "V439 - /node/2010530961",
           "lat": 48.1112323,
           "lng": 17.2183028,
-          "type": "Tower"
+          "type": "connection"
         },
         {
           "id": "V439 - /node/388191114",
@@ -17315,6 +17490,7 @@
       "name": "V440 Veľké Kapušany-Mukačevo",
       "voltage": "400kV",
       "status": "active",
+      "operator": "SEPS",
       "country_from": "SK",
       "country_to": "UA",
       "towers": [
@@ -18321,6 +18497,7 @@
       "name": "V447 Rimavská Sobota-Sajóivánka",
       "voltage": "400kV",
       "status": "active",
+      "operator": "SEPS",
       "country_from": "SK",
       "country_to": "HU",
       "towers": [
@@ -18328,7 +18505,7 @@
           "id": "V447-1 - /node/8610949186",
           "lat": 48.3797888,
           "lng": 20.0461806,
-          "type": "Tower"
+          "type": "connection"
         },
         {
           "id": "V447-1 - /node/8610949185",
@@ -19195,6 +19372,7 @@
       "name": "V448 Gabčíkovo-Győr",
       "voltage": "400kV",
       "status": "active",
+      "operator": "SEPS",
       "country_from": "SK",
       "country_to": "SK",
       "towers": [
@@ -19202,7 +19380,7 @@
           "id": "V448-1 - /node/9580489623",
           "lat": 47.8856842,
           "lng": 17.5462294,
-          "type": "Tower"
+          "type": "connection"
         },
         {
           "id": "V448-1 - /node/1555383621",
@@ -19919,6 +20097,7 @@
       "name": "V449 Levice-Göd",
       "voltage": "400kV",
       "status": "active",
+      "operator": "SEPS",
       "country_from": "SK",
       "country_to": "HU",
       "towers": [
@@ -19926,7 +20105,7 @@
           "id": "V449-1 - /node/1758880236",
           "lat": 48.2329549,
           "lng": 18.6052919,
-          "type": "Tower"
+          "type": "connection"
         },
         {
           "id": "V449-1 - /node/1758880241",
@@ -21393,6 +21572,7 @@
       "name": "V461 Medzibrod-Liptovská Mara",
       "voltage": "400kV",
       "status": "active",
+      "operator": "SEPS",
       "country_from": "SK",
       "country_to": "SK",
       "towers": [
@@ -21400,7 +21580,7 @@
           "id": "V461-1 - /node/2853819368",
           "lat": 48.797329,
           "lng": 19.3674733,
-          "type": "Tower"
+          "type": "connection"
         },
         {
           "id": "V461-1 - /node/2217232619",
@@ -22384,7 +22564,7 @@
           "id": "V461-7 - /node/4014132490",
           "lat": 49.0851827,
           "lng": 19.490022,
-          "type": "Tower"
+          "type": "connection"
         }
       ]
     },
@@ -22393,6 +22573,7 @@
       "name": "V477/V478 Lemešany-Krosno Iskrzynia",
       "voltage": "400kV",
       "status": "active",
+      "operator": "SEPS",
       "country_from": "SK",
       "country_to": "PL",
       "towers": [
@@ -24619,10 +24800,11 @@
       ]
     },
     {
-      "id": "v479-velkydur-gabcikovo",
-      "name": "V479 Veľký Ďur-Gabčíkovo",
+      "id": "v479-gabcikovo-velkydur",
+      "name": "V479 Gabčíkovo-Veľký Ďur",
       "voltage": "400kV",
       "status": "active",
+      "operator": "SEPS",
       "country_from": "SK",
       "country_to": "SK",
       "towers": [
@@ -24645,6 +24827,7 @@
       "name": "V480 Veľký Ďur-Gönyű",
       "voltage": "400kV",
       "status": "active",
+      "operator": "SEPS",
       "country_from": "SK",
       "country_to": "SK",
       "towers": [
@@ -24663,10 +24846,21 @@
       ]
     },
     {
+      "id": "v481-gabcikovo-gonyu",
+      "name": "V481 Gabčíkovo-/Gönyű",
+      "voltage": "400kV",
+      "status": "active",
+      "operator": "SEPS",
+      "country_from": "SK",
+      "country_to": "SK",
+      "towers": ""
+    },
+    {
       "id": "v479/v480-gabcikovo-gonyu",
       "name": "V479/V480 Veľký Ďur-Gabčíkovo/Gönyű",
       "voltage": "400kV",
       "status": "active",
+      "operator": "SEPS",
       "country_from": "SK",
       "country_to": "SK",
       "towers": [
@@ -26117,6 +26311,7 @@
       "name": "V480/V481 Veľký Ďur/Gabčíkovo-Gönyű",
       "voltage": "400kV",
       "status": "active",
+      "operator": "SEPS",
       "country_from": "SK",
       "country_to": "SK",
       "towers": [
@@ -26469,28 +26664,66 @@
       "name": "V481 Gabčíkovo-Gönyű",
       "voltage": "400kV",
       "status": "active",
+      "operator": "SEPS",
       "country_from": "SK",
       "country_to": "HU",
       "towers": [
-        {
-          "id": "V481-2 - /node/4469917309",
-          "lat": 47.8729947,
-          "lng": 17.7239063,
-          "type": "Tower"
-        },
-        {
-          "id": "V481-2 - /node/8615951488",
-          "lat": 47.8700262,
-          "lng": 17.7265476,
-          "type": "Tower"
-        }
-      ]
+  {
+    "id": "V480_ad - /node/9580489622",
+    "lat": 47.8858129,
+    "lng": 17.5460663,
+    "type": "connection"
+  },
+  {
+    "id": "V480_ad - /node/6084409126",
+    "lat": 47.8866416,
+    "lng": 17.5472555,
+    "type": "tower"
+  },
+  {
+    "id": "V480_ad - /node/6084409125",
+    "lat": 47.8862693,
+    "lng": 17.549353,
+    "type": "connection"
+  }
+]
     },
+    {
+      "id": "v479-gabcikovo-velkydur",
+      "name": "V479 Gabčíkovo-Veľký Ďur",
+      "voltage": "400kV",
+      "status": "active",
+      "operator": "SEPS",
+      "country_from": "SK",
+      "country_to": "SK",
+      "towers": [
+  {
+    "id": "V479_ad - /node/6084409125",
+    "lat": 47.8862693,
+    "lng": 17.549353,
+    "type": "connection"
+  },
+  {
+    "id": "V479_ad - /node/6084409128",
+    "lat": 47.8870931,
+    "lng": 17.5468907,
+    "type": "tower"
+  },
+  {
+    "id": "V479_ad - /node/9580204296",
+    "lat": 47.886388,
+    "lng": 17.5455024,
+    "type": "connection"
+  }
+]
+    },
+
     {
       "id": "v479/v481-gabcikovo-velkydur-gonyu",
       "name": "V479/V481 Gabčíkovo-Veľký Ďur/Gönyű",
       "voltage": "400kV",
       "status": "active",
+      "operator": "SEPS",
       "country_from": "SK",
       "country_to": "HU",
       "towers": [
@@ -26767,10 +27000,117 @@
       ]
     },
     {
+      "id": "v483-krizovany-bystricany",
+      "name": "V484 Križovany-Bystričany",
+      "voltage": "400kV",
+      "status": "active",
+      "operator": "SEPS",
+      "country_from": "SK",
+      "country_to": "SK",
+      "towers": [
+  {
+    "id": "V483 - /node/1165736672",
+    "lat": 48.6665133,
+    "lng": 18.5071614,
+    "type": "tower"
+  },
+  {
+    "id": "V483 - /node/9083758017",
+    "lat": 48.6665026,
+    "lng": 18.5084846,
+    "type": "connection"
+  },
+  {
+    "id": "V483 - /node/9083758018",
+    "lat": 48.665931,
+    "lng": 18.5101426,
+    "type": "connection"
+  },
+  {
+    "id": "V483 - /node/9083758026",
+    "lat": 48.665892,
+    "lng": 18.5102763,
+    "type": "connection"
+  },
+  {
+    "id": "V483 - /node/9083758030",
+    "lat": 48.6657548,
+    "lng": 18.5107532,
+    "type": "connection"
+  },
+  {
+    "id": "V483 - /node/9083758034",
+    "lat": 48.6656926,
+    "lng": 18.5109597,
+    "type": "connection"
+  },
+  {
+    "id": "V483 - /node/9083758022",
+    "lat": 48.6656736,
+    "lng": 18.5110237,
+    "type": "connection"
+  }
+]
+    },
+      {
+      "id": "v484-krizovany-bystricany",
+      "name": "V484 Križovany-Bystričany",
+      "voltage": "400kV",
+      "status": "active",
+      "operator": "SEPS",
+      "country_from": "SK",
+      "country_to": "SK",
+      "towers": [
+  {
+    "id": "V484 - /node/1165736672",
+    "lat": 48.6665133,
+    "lng": 18.5071614,
+    "type": "tower"
+  },
+  {
+    "id": "V484 - /node/1691633009",
+    "lat": 48.6667905,
+    "lng": 18.5087429,
+    "type": "connection"
+  },
+  {
+    "id": "V484 - /node/8727720337",
+    "lat": 48.6662657,
+    "lng": 18.5104009,
+    "type": "connection"
+  },
+  {
+    "id": "V484 - /node/9083758025",
+    "lat": 48.6662321,
+    "lng": 18.5105131,
+    "type": "connection"
+  },
+  {
+    "id": "V484 - /node/9083758029",
+    "lat": 48.6660883,
+    "lng": 18.5109936,
+    "type": "connection"
+  },
+  {
+    "id": "V484 - /node/9083758033",
+    "lat": 48.6660282,
+    "lng": 18.5111942,
+    "type": "connection"
+  },
+  {
+    "id": "V484 - /node/9083758023",
+    "lat": 48.6660023,
+    "lng": 18.5112809,
+    "type": "connection"
+  }
+]
+    },
+    {
       "id": "v483/v484-krizovany-bystricany",
       "name": "V483/V484 Križovany-Bystričany",
       "voltage": "400kV",
       "status": "active",
+      "operator": "SEPS",
       "country_from": "SK",
       "country_to": "SK",
       "towers": [
@@ -28193,13 +28533,101 @@
       ]
     },
     {
-      "id": "v488-kosice-lemesany",
-      "name": "V488 Košice-Lemešany",
+      "id": "v487-moldava-lemesany",
+      "name": "V487 Moldava-Lemešany",
       "voltage": "400kV",
       "status": "active",
+      "operator": "SEPS",
       "country_from": "SK",
       "country_to": "SK",
       "towers": [
+  {
+    "id": "V487 - /node/1814408641",
+    "lat": 48.6282543,
+    "lng": 21.1882367,
+    "type": "connection"
+  },
+  {
+    "id": "V487 - /node/1814408642",
+    "lat": 48.6286521,
+    "lng": 21.1884387,
+    "type": "connection"
+  }
+]
+    },
+    {
+      "id": "v487-moldava-lemesany",
+      "name": "V487 Moldava-Lemešany",
+      "voltage": "400kV",
+      "status": "active",
+      "operator": "SEPS",
+      "country_from": "SK",
+      "country_to": "SK",
+      "towers": [
+  {
+    "id": "V487_ad - /node/8616067207",
+    "lat": 48.6012501,
+    "lng": 21.0463425,
+    "type": "connection"
+  },
+  {
+    "id": "V487_ad - /node/1814408603",
+    "lat": 48.6002045,
+    "lng": 21.045816,
+    "type": "connection"
+  }
+]
+    },
+    {
+      "id": "v489-moldava-kosice",
+      "name": "V489 Moldava-/Košice",
+      "voltage": "400kV",
+      "status": "active",
+      "operator": "SEPS",
+      "country_from": "SK",
+      "country_to": "SK",
+      "towers": [
+  {
+    "id": "V489_ad_2 - /node/8616067208",
+    "lat": 48.6012602,
+    "lng": 21.046022,
+    "type": "connection"
+  },
+  {
+    "id": "V489_ad_2 - /node/1814408603",
+    "lat": 48.6002045,
+    "lng": 21.045816,
+    "type": "connection"
+  }
+]
+    },
+    {
+      "id": "v487/v488-moldava-kosice-lemesany",
+      "name": "V487/V488 Moldava/Košice-Lemešany",
+      "voltage": "400kV",
+      "status": "active",
+      "operator": "SEPS",
+      "country_from": "SK",
+      "country_to": "SK",
+      "towers": [
+          {
+    "id": "V488_ad - /node/8989735977",
+    "lat": 48.6278346,
+    "lng": 21.1896488,
+    "type": "connection"
+  },
+  {
+    "id": "V488_ad - /node/1984222433",
+    "lat": 48.6284324,
+    "lng": 21.189092,
+    "type": "tower"
+  },
+  {
+    "id": "V488_ad - /node/1814408642",
+    "lat": 48.6286521,
+    "lng": 21.1884387,
+    "type": "connection"
+  },
         {
           "id": "V488 - /node/1814408642",
           "lat": 48.6286521,
@@ -28821,10 +29249,11 @@
       ]
     },
     {
-      "id": "v489-moldava-kosice",
-      "name": "V489 Moldava-Košice",
+      "id": "v487/v489-moldava-lemesany-kosice",
+      "name": "V487/V489 Moldava-Lemešany/Košice",
       "voltage": "400kV",
       "status": "active",
+      "operator": "SEPS",
       "country_from": "SK",
       "country_to": "SK",
       "towers": [
@@ -29091,7 +29520,25 @@
           "lat": 48.6282543,
           "lng": 21.1882367,
           "type": "Tower"
-        }
+        },
+          {
+    "id": "V489_ad - /node/1814408641",
+    "lat": 48.6282543,
+    "lng": 21.1882367,
+    "type": "connection"
+  },
+  {
+    "id": "V489_ad - /node/1984222365",
+    "lat": 48.628248,
+    "lng": 21.1886843,
+    "type": "tower"
+  },
+  {
+    "id": "V489_ad - /node/8989735990",
+    "lat": 48.6276345,
+    "lng": 21.1892638,
+    "type": "connection"
+  }
       ]
     },
     {
@@ -29099,6 +29546,7 @@
       "name": "V490 Veľký Ďur-Levice",
       "voltage": "400kV",
       "status": "active",
+      "operator": "SEPS",
       "country_from": "SK",
       "country_to": "SK",
       "towers": [
@@ -29352,7 +29800,7 @@
           "id": "V491 - /node/10697944320",
           "lat": 48.2327685,
           "lng": 18.6040431,
-          "type": "Tower"
+          "type": "connection"
         }
       ]
     },
@@ -29361,6 +29809,7 @@
       "name": "V491 Veľký Ďur-Levice",
       "voltage": "400kV",
       "status": "active",
+      "operator": "SEPS",
       "country_from": "SK",
       "country_to": "SK",
       "towers": [
@@ -29692,7 +30141,7 @@
           "id": "V491-2 - /node/2010348301",
           "lat": 48.234127,
           "lng": 18.6044951,
-          "type": "Tower"
+          "type": "connection"
         }
       ]
     },
@@ -29701,6 +30150,7 @@
       "name": "V492 Veľký Ďur-Horná Ždaňa",
       "voltage": "400kV",
       "status": "active",
+      "operator": "SEPS",
       "country_from": "SK",
       "country_to": "SK",
       "towers": [
@@ -30548,7 +30998,7 @@
           "id": "V492 - /node/6821448423",
           "lat": 48.5589646,
           "lng": 18.7404227,
-          "type": "Tower"
+          "type": "connection"
         }
       ]
     },
@@ -30557,6 +31007,7 @@
       "name": "V493 Horná Ždaňa-Sučany",
       "voltage": "400kV",
       "status": "active",
+      "operator": "SEPS",
       "country_from": "SK",
       "country_to": "SK",
       "towers": [
@@ -30564,7 +31015,7 @@
           "id": "V493 - /node/6821448421",
           "lat": 48.5587586,
           "lng": 18.7405702,
-          "type": "Tower"
+          "type": "connection"
         },
         {
           "id": "V493 - /node/2010412470",
@@ -31827,6 +32278,7 @@
       "name": "V494 Sučany-Medzibrod",
       "voltage": "400kV",
       "status": "active",
+      "operator": "SEPS",
       "country_from": "SK",
       "country_to": "SK",
       "towers": [
@@ -32950,15 +33402,16 @@
           "id": "V494-3 - /node/2853819369",
           "lat": 48.797343,
           "lng": 19.3670979,
-          "type": "Tower"
+          "type": "connection"
         }
       ]
     },
     {
-      "id": "v495-varin-bosaca",
+      "id": "v495-varin-bosaca-reversed",
       "name": "V495 Varín-Bošáca",
       "voltage": "400kV",
       "status": "active",
+      "operator": "SEPS",
       "country_from": "SK",
       "country_to": "SK",
       "towers": [
@@ -32966,13 +33419,13 @@
           "id": "V495 - /node/11339512758",
           "lat": 48.7949893,
           "lng": 17.8381152,
-          "type": "Tower"
+          "type": "connection"
         },
         {
           "id": "V495 - /node/2009591971",
           "lat": 48.7955327,
           "lng": 17.8369946,
-          "type": "Tower"
+          "type": "tower"
         },
         {
           "id": "V495 - /node/2009592055",
@@ -34736,7 +35189,7 @@
           "id": "V495 - /node/4019203683",
           "lat": 49.2142845,
           "lng": 18.8622457,
-          "type": "Tower"
+          "type": "connection"
         }
       ]
     },
@@ -34745,6 +35198,7 @@
       "name": "V496 Bošáca-Križovany",
       "voltage": "400kV",
       "status": "active",
+      "operator": "SEPS",
       "country_from": "SK",
       "country_to": "SK",
       "towers": [
@@ -34773,6 +35227,7 @@
       "name": "V043/V496 Bošáca-EBOV2-Križovany",
       "voltage": "400kV",
       "status": "active",
+      "operator": "SEPS",
       "country_from": "SK",
       "country_to": "SK",
       "towers":         [{
@@ -35477,6 +35932,7 @@
       "name": "V044/V496 Bošáca-EBOV2-Križovany",
       "voltage": "400kV",
       "status": "active",
+      "operator": "SEPS",
       "country_from": "SK",
       "country_to": "SK",
       "towers": [
@@ -35824,6 +36280,7 @@
       "name": "V497 Sokolnice-Stupava",
       "voltage": "400kV",
       "status": "active",
+      "operator": "SEPS",
       "country_from": "CZ",
       "country_to": "SK",
       "towers": [
@@ -37841,15 +38298,16 @@
           "id": "V497 - /node/1082181976",
           "lat": 48.3057855,
           "lng": 17.0296496,
-          "type": "Tower"
+          "type": "connection"
         }
       ]
     },
     {
-      "id": "v498-stupava-biskupice",
+      "id": "v498-stupava-podunajskebiskupice",
       "name": "V498 Stupava-Podunajské Biskupice",
       "voltage": "400kV",
       "status": "active",
+      "operator": "SEPS",
       "country_from": "SK",
       "country_to": "SK",
       "towers": [
@@ -37857,7 +38315,7 @@
           "id": "V498 - /node/1082181968",
           "lat": 48.3059886,
           "lng": 17.0299473,
-          "type": "Tower"
+          "type": "connection"
         },
         {
           "id": "V498 - /node/1082181944",
@@ -38764,7 +39222,26 @@
           "lat": 48.1121219,
           "lng": 17.2236112,
           "type": "Tower"
-        }
+        },
+          {
+    "id": "V498_ad - /node/35463960",
+    "lat": 48.1121219,
+    "lng": 17.2236112,
+    "type": "tower"
+  },
+  {
+    "id": "V498_ad - /node/35463961",
+    "lat": 48.1111966,
+    "lng": 17.2203809,
+    "type": "connection"
+  },
+  {
+    "id": "V498_ad - /node/388190990",
+    "lat": 48.1119644,
+    "lng": 17.2197967,
+    "type": "connection"
+  }
+
       ]
     }
   ],
@@ -38772,9 +39249,7 @@
     {
       "id": "est_bosaca",
       "name": "ESt Bošáca",
-      "voltage" : "400/110 kV",
-      "lat": "",
-      "lng": "",
+      "voltage" : [400, 110],
       "operator": "SEPS",
       "type": "distribution",
       "nodes": [
@@ -38813,201 +39288,1211 @@
 ]
     },
         {
-      "id": "est",
+      "id": "est-bystricany",
       "name": "ESt Bystričany",
-      "voltage" : "400/220/110 kV",
-      "lat": "",
-      "lng": "",
+      "voltage" : [400, 220, 110],
       "operator": "SEPS/SSD",
       "type": "transmission",
-      "nodes": []
+      "nodes": [
+  {
+    "lat": 48.6671746,
+    "lng": 18.5142116
+  },
+  {
+    "lat": 48.6666656,
+    "lng": 18.5138497
+  },
+  {
+    "lat": 48.6663406,
+    "lng": 18.5148976
+  },
+  {
+    "lat": 48.6662119,
+    "lng": 18.5148061
+  },
+  {
+    "lat": 48.6661241,
+    "lng": 18.5147437
+  },
+  {
+    "lat": 48.6663227,
+    "lng": 18.5141035
+  },
+  {
+    "lat": 48.6642663,
+    "lng": 18.5126702
+  },
+  {
+    "lat": 48.6643686,
+    "lng": 18.511864
+  },
+  {
+    "lat": 48.6652644,
+    "lng": 18.5089635
+  },
+  {
+    "lat": 48.6670898,
+    "lng": 18.510329
+  },
+  {
+    "lat": 48.668143,
+    "lng": 18.511062
+  },
+  {
+    "lat": 48.6671746,
+    "lng": 18.5142116
+  }
+]
     },
         {
-      "id": "est1",
+      "id": "est-gabcikovo-1",
       "name": "ESt Gabčíkovo",
-      "voltage" : "400 kV",
-      "lat": "",
-      "lng": "",
+      "voltage" : [400],
       "operator": "SEPS",
       "type": "transmission",
-      "nodes": []
+      "nodes": [
+  {
+    "lat": 47.887793,
+    "lng": 17.5451267
+  },
+  {
+    "lat": 47.8856073,
+    "lng": 17.5476821
+  },
+  {
+    "lat": 47.8855592,
+    "lng": 17.547741
+  },
+  {
+    "lat": 47.8844133,
+    "lng": 17.545619
+  },
+  {
+    "lat": 47.8860685,
+    "lng": 17.5437052
+  },
+  {
+    "lat": 47.8865997,
+    "lng": 17.5430776
+  },
+  {
+    "lat": 47.8867273,
+    "lng": 17.5430891
+  },
+  {
+    "lat": 47.8869725,
+    "lng": 17.5435536
+  },
+  {
+    "lat": 47.887793,
+    "lng": 17.5451267
+  }
+]
     },
         {
-      "id": "est2",
+      "id": "est-gabcikovo-2",
       "name": "ESt Vodné dielo Gabčíkovo",
-      "voltage" : "400/110 kV",
-      "lat": "",
-      "lng": "",
+      "voltage" : [400, 110],
       "operator": "SEPS",
       "type": "transmission",
-      "nodes": []
+      "nodes": [
+  {
+    "lat": 47.8835939,
+    "lng": 17.5433933
+  },
+  {
+    "lat": 47.8827958,
+    "lng": 17.5419236
+  },
+  {
+    "lat": 47.8843702,
+    "lng": 17.5399773
+  },
+  {
+    "lat": 47.8845999,
+    "lng": 17.5397045
+  },
+  {
+    "lat": 47.8854035,
+    "lng": 17.5411541
+  },
+  {
+    "lat": 47.8836474,
+    "lng": 17.5433227
+  },
+  {
+    "lat": 47.8835939,
+    "lng": 17.5433933
+  }
+]
     },
         {
-      "id": "est",
+      "id": "est-hornazdana",
       "name": "ESt Horná Ždaňa",
-      "voltage" : "400/110 kV",
-      "lat": "",
-      "lng": "",
+      "voltage" : [400, 110],
       "operator": "SEPS",
       "type": "transmission",
-      "nodes": []
+      "nodes": [
+  {
+    "lat": 48.5575667,
+    "lng": 18.742042
+  },
+  {
+    "lat": 48.5575286,
+    "lng": 18.7406344
+  },
+  {
+    "lat": 48.5582651,
+    "lng": 18.7400445
+  },
+  {
+    "lat": 48.5598204,
+    "lng": 18.7392859
+  },
+  {
+    "lat": 48.5598699,
+    "lng": 18.7395403
+  },
+  {
+    "lat": 48.5601007,
+    "lng": 18.7399131
+  },
+  {
+    "lat": 48.5602019,
+    "lng": 18.7402886
+  },
+  {
+    "lat": 48.5604374,
+    "lng": 18.7404803
+  },
+  {
+    "lat": 48.5606237,
+    "lng": 18.7408469
+  },
+  {
+    "lat": 48.5610612,
+    "lng": 18.7425537
+  },
+  {
+    "lat": 48.5583689,
+    "lng": 18.7442168
+  },
+  {
+    "lat": 48.5581579,
+    "lng": 18.7433878
+  },
+  {
+    "lat": 48.5580723,
+    "lng": 18.7433848
+  },
+  {
+    "lat": 48.5580458,
+    "lng": 18.7433039
+  },
+  {
+    "lat": 48.5578488,
+    "lng": 18.7427035
+  },
+  {
+    "lat": 48.5576428,
+    "lng": 18.7423011
+  },
+  {
+    "lat": 48.5575667,
+    "lng": 18.742042
+  }
+]
     },
         {
-      "id": "est-1",
+      "id": "est-kosice-1",
       "name": "ESt Košice",
-      "voltage" : "400/110 kV",
-      "lat": "",
-      "lng": "",
+      "voltage" : [400, 110],
       "operator": "SEPS",
       "type": "transmission",
-      "nodes": []
+      "nodes": [
+  {
+    "lat": 48.6283073,
+    "lng": 21.1898604
+  },
+  {
+    "lat": 48.6274191,
+    "lng": 21.1909058
+  },
+  {
+    "lat": 48.6267778,
+    "lng": 21.1896788
+  },
+  {
+    "lat": 48.6267142,
+    "lng": 21.189557
+  },
+  {
+    "lat": 48.6266959,
+    "lng": 21.189522
+  },
+  {
+    "lat": 48.6266709,
+    "lng": 21.1894741
+  },
+  {
+    "lat": 48.6275511,
+    "lng": 21.1884245
+  },
+  {
+    "lat": 48.6283073,
+    "lng": 21.1898604
+  }
+]
     },
             {
-      "id": "est-2",
+      "id": "est-kosice-2",
       "name": "ESt Košice",
-      "voltage" : "400/110 kV",
-      "lat": "",
-      "lng": "",
+      "voltage" : [400, 110],
       "operator": "SEPS",
       "type": "transmission",
-      "nodes": []
+      "nodes": [
+  {
+    "lat": 48.6270972,
+    "lng": 21.1906103
+  },
+  {
+    "lat": 48.6272864,
+    "lng": 21.1909571
+  },
+  {
+    "lat": 48.6280804,
+    "lng": 21.1924128
+  },
+  {
+    "lat": 48.6278267,
+    "lng": 21.1924386
+  },
+  {
+    "lat": 48.6271976,
+    "lng": 21.1931697
+  },
+  {
+    "lat": 48.6271618,
+    "lng": 21.1932124
+  },
+  {
+    "lat": 48.6271183,
+    "lng": 21.1932629
+  },
+  {
+    "lat": 48.6270619,
+    "lng": 21.1933281
+  },
+  {
+    "lat": 48.6267549,
+    "lng": 21.1936909
+  },
+  {
+    "lat": 48.6266648,
+    "lng": 21.1937984
+  },
+  {
+    "lat": 48.626624,
+    "lng": 21.1937137
+  },
+  {
+    "lat": 48.6265026,
+    "lng": 21.1938607
+  },
+  {
+    "lat": 48.6260565,
+    "lng": 21.1930172
+  },
+  {
+    "lat": 48.6259142,
+    "lng": 21.1927326
+  },
+  {
+    "lat": 48.6258191,
+    "lng": 21.1925426
+  },
+  {
+    "lat": 48.625784,
+    "lng": 21.192476
+  },
+  {
+    "lat": 48.6254847,
+    "lng": 21.1919227
+  },
+  {
+    "lat": 48.6254514,
+    "lng": 21.1918612
+  },
+  {
+    "lat": 48.6253697,
+    "lng": 21.1917046
+  },
+  {
+    "lat": 48.6253663,
+    "lng": 21.1916962
+  },
+  {
+    "lat": 48.6262865,
+    "lng": 21.1906212
+  },
+  {
+    "lat": 48.6261786,
+    "lng": 21.190409
+  },
+  {
+    "lat": 48.6266709,
+    "lng": 21.1898073
+  },
+  {
+    "lat": 48.6270972,
+    "lng": 21.1906103
+  }
+]
     },
         {
-      "id": "est-1",
+      "id": "est-levice-1",
       "name": "ESt Levice",
-      "voltage" : "400 kV",
-      "lat": "",
-      "lng": "",
+      "voltage" : [400],
       "operator": "SEPS",
       "type": "transmission",
-      "nodes": []
+      "nodes": [
+  {
+    "lat": 48.2348264,
+    "lng": 18.602664
+  },
+  {
+    "lat": 48.2346869,
+    "lng": 18.6036835
+  },
+  {
+    "lat": 48.2345466,
+    "lng": 18.6047217
+  },
+  {
+    "lat": 48.234521,
+    "lng": 18.6047518
+  },
+  {
+    "lat": 48.2335331,
+    "lng": 18.6054571
+  },
+  {
+    "lat": 48.2324369,
+    "lng": 18.6062365
+  },
+  {
+    "lat": 48.2317175,
+    "lng": 18.6039613
+  },
+  {
+    "lat": 48.2325817,
+    "lng": 18.6033453
+  },
+  {
+    "lat": 48.2326348,
+    "lng": 18.6035128
+  },
+  {
+    "lat": 48.2327597,
+    "lng": 18.6034251
+  },
+  {
+    "lat": 48.2327971,
+    "lng": 18.6033844
+  },
+  {
+    "lat": 48.2328205,
+    "lng": 18.6033402
+  },
+  {
+    "lat": 48.2328303,
+    "lng": 18.6032898
+  },
+  {
+    "lat": 48.2328207,
+    "lng": 18.6032398
+  },
+  {
+    "lat": 48.2326113,
+    "lng": 18.6025703
+  },
+  {
+    "lat": 48.2325444,
+    "lng": 18.602347
+  },
+  {
+    "lat": 48.2327038,
+    "lng": 18.6022337
+  },
+  {
+    "lat": 48.2330025,
+    "lng": 18.602021
+  },
+  {
+    "lat": 48.2329643,
+    "lng": 18.6019008
+  },
+  {
+    "lat": 48.2342839,
+    "lng": 18.6009676
+  },
+  {
+    "lat": 48.2343301,
+    "lng": 18.6011184
+  },
+  {
+    "lat": 48.2348264,
+    "lng": 18.602664
+  }
+]
     },
             {
-      "id": "est-2",
+      "id": "est-levice-2",
       "name": "ESt Levice",
-      "voltage" : "110 kV",
-      "lat": "",
-      "lng": "",
+      "voltage" : [110],
       "operator": "SEPS",
       "type": "transmission",
-      "nodes": []
+      "nodes": [
+  {
+    "lat": 48.2346991,
+    "lng": 18.6005965
+  },
+  {
+    "lat": 48.2346411,
+    "lng": 18.6008495
+  },
+  {
+    "lat": 48.2346265,
+    "lng": 18.6009005
+  },
+  {
+    "lat": 48.2345987,
+    "lng": 18.600918
+  },
+  {
+    "lat": 48.2343301,
+    "lng": 18.6011184
+  },
+  {
+    "lat": 48.2342839,
+    "lng": 18.6009676
+  },
+  {
+    "lat": 48.2329643,
+    "lng": 18.6019008
+  },
+  {
+    "lat": 48.2329532,
+    "lng": 18.6018643
+  },
+  {
+    "lat": 48.2328317,
+    "lng": 18.6019507
+  },
+  {
+    "lat": 48.2327612,
+    "lng": 18.6017343
+  },
+  {
+    "lat": 48.23272,
+    "lng": 18.601764
+  },
+  {
+    "lat": 48.2326382,
+    "lng": 18.6015047
+  },
+  {
+    "lat": 48.2326304,
+    "lng": 18.6015103
+  },
+  {
+    "lat": 48.2325748,
+    "lng": 18.6013351
+  },
+  {
+    "lat": 48.2325742,
+    "lng": 18.6013043
+  },
+  {
+    "lat": 48.2325492,
+    "lng": 18.6012179
+  },
+  {
+    "lat": 48.2328506,
+    "lng": 18.6010153
+  },
+  {
+    "lat": 48.2332347,
+    "lng": 18.6007572
+  },
+  {
+    "lat": 48.2344578,
+    "lng": 18.5998958
+  },
+  {
+    "lat": 48.2346991,
+    "lng": 18.6005965
+  }
+]
     },
         {
-      "id": "est",
+      "id": "est-liptovskamara",
       "name": "ESt Liptovská Mara",
-      "voltage" : "400/110 kV",
-      "lat": "",
-      "lng": "",
+      "voltage" : [400, 110],
       "operator": "SEPS",
       "type": "transmission",
-      "nodes": []
+      "nodes": [
+  {
+    "lat": 49.0842332,
+    "lng": 19.4893926
+  },
+  {
+    "lat": 49.0855339,
+    "lng": 19.4873573
+  },
+  {
+    "lat": 49.0861148,
+    "lng": 19.4864484
+  },
+  {
+    "lat": 49.0880908,
+    "lng": 19.4893716
+  },
+  {
+    "lat": 49.0876254,
+    "lng": 19.4901095
+  },
+  {
+    "lat": 49.0862093,
+    "lng": 19.4923245
+  },
+  {
+    "lat": 49.0842332,
+    "lng": 19.4893926
+  }
+]
     },
         {
-      "id": "est",
+      "id": "est-medzibrod",
       "name": "ESt Medzibrod",
-      "voltage" : "400/110 kV",
-      "lat": "",
-      "lng": "",
+      "voltage" : [400, 110],
       "operator": "SEPS",
       "type": "transmission",
-      "nodes": []
+      "nodes": [
+  {
+    "lat": 48.7974833,
+    "lng": 19.3679736
+  },
+  {
+    "lat": 48.796683,
+    "lng": 19.3679058
+  },
+  {
+    "lat": 48.7962834,
+    "lng": 19.3680861
+  },
+  {
+    "lat": 48.7962172,
+    "lng": 19.3680779
+  },
+  {
+    "lat": 48.7961751,
+    "lng": 19.3680636
+  },
+  {
+    "lat": 48.7961681,
+    "lng": 19.3681472
+  },
+  {
+    "lat": 48.7959417,
+    "lng": 19.3682719
+  },
+  {
+    "lat": 48.795926,
+    "lng": 19.3682965
+  },
+  {
+    "lat": 48.7958967,
+    "lng": 19.3682948
+  },
+  {
+    "lat": 48.7958715,
+    "lng": 19.3682883
+  },
+  {
+    "lat": 48.7958073,
+    "lng": 19.3683048
+  },
+  {
+    "lat": 48.7953727,
+    "lng": 19.368155
+  },
+  {
+    "lat": 48.7954195,
+    "lng": 19.3670261
+  },
+  {
+    "lat": 48.795475,
+    "lng": 19.3658309
+  },
+  {
+    "lat": 48.7954786,
+    "lng": 19.3655305
+  },
+  {
+    "lat": 48.795503,
+    "lng": 19.3649931
+  },
+  {
+    "lat": 48.7967391,
+    "lng": 19.3650631
+  },
+  {
+    "lat": 48.7967318,
+    "lng": 19.3655583
+  },
+  {
+    "lat": 48.7975896,
+    "lng": 19.3656307
+  },
+  {
+    "lat": 48.7974833,
+    "lng": 19.3679736
+  }
+]
     },
         {
-      "id": "est",
+      "id": "est-moldava",
       "name": "ESt Moldava",
-      "voltage" : "400/110 kV",
-      "lat": "",
-      "lng": "",
+      "voltage" : [400, 110],
       "operator": "SEPS",
       "type": "transmission",
-      "nodes": []
+      "nodes": [
+  {
+    "lat": 48.603239,
+    "lng": 21.0468087
+  },
+  {
+    "lat": 48.6038009,
+    "lng": 21.0468543
+  },
+  {
+    "lat": 48.6038683,
+    "lng": 21.0434478
+  },
+  {
+    "lat": 48.6031474,
+    "lng": 21.0433932
+  },
+  {
+    "lat": 48.6029671,
+    "lng": 21.0433795
+  },
+  {
+    "lat": 48.6023731,
+    "lng": 21.0433356
+  },
+  {
+    "lat": 48.600966,
+    "lng": 21.0432677
+  },
+  {
+    "lat": 48.600871,
+    "lng": 21.046665
+  },
+  {
+    "lat": 48.6027518,
+    "lng": 21.0467791
+  },
+  {
+    "lat": 48.603239,
+    "lng": 21.0468087
+  }
+]
     },
         {
-      "id": "est",
+      "id": "est-podunajskebiskupice",
       "name": "ESt Podunajské Biskupice",
-      "voltage" : "400/110 kV",
-      "lat": "",
-      "lng": "",
+      "voltage" : [400, 110],
       "operator": "SEPS/ZSD",
       "type": "transmission",
-      "nodes": []
+      "nodes": [
+  {
+    "lat": 48.1152094,
+    "lng": 17.2168879
+  },
+  {
+    "lat": 48.1147667,
+    "lng": 17.2159973
+  },
+  {
+    "lat": 48.1146962,
+    "lng": 17.2159168
+  },
+  {
+    "lat": 48.1146717,
+    "lng": 17.2158888
+  },
+  {
+    "lat": 48.114751,
+    "lng": 17.21555
+  },
+  {
+    "lat": 48.1143281,
+    "lng": 17.2146686
+  },
+  {
+    "lat": 48.1123704,
+    "lng": 17.2168533
+  },
+  {
+    "lat": 48.1120181,
+    "lng": 17.2161354
+  },
+  {
+    "lat": 48.1115104,
+    "lng": 17.2166918
+  },
+  {
+    "lat": 48.1114267,
+    "lng": 17.2165318
+  },
+  {
+    "lat": 48.1101425,
+    "lng": 17.2179297
+  },
+  {
+    "lat": 48.1115786,
+    "lng": 17.2208601
+  },
+  {
+    "lat": 48.1128384,
+    "lng": 17.2194771
+  },
+  {
+    "lat": 48.1144704,
+    "lng": 17.2176949
+  },
+  {
+    "lat": 48.1152094,
+    "lng": 17.2168879
+  }
+]
     },
         {
-      "id": "est",
+      "id": "est-rimavskasobota",
       "name": "ESt Rimavská Sobota",
-      "voltage" : "400/110 kV",
-      "lat": "",
-      "lng": "",
+      "voltage" : [400, 110],
       "operator": "SEPS",
       "type": "transmission",
-      "nodes": []
+      "nodes": [
+  {
+    "lat": 48.3815614,
+    "lng": 20.0464129
+  },
+  {
+    "lat": 48.3814393,
+    "lng": 20.0465654
+  },
+  {
+    "lat": 48.3811071,
+    "lng": 20.0465137
+  },
+  {
+    "lat": 48.3802466,
+    "lng": 20.0475707
+  },
+  {
+    "lat": 48.3788256,
+    "lng": 20.0449358
+  },
+  {
+    "lat": 48.3785058,
+    "lng": 20.044344
+  },
+  {
+    "lat": 48.3801843,
+    "lng": 20.042321
+  },
+  {
+    "lat": 48.3810492,
+    "lng": 20.0430714
+  },
+  {
+    "lat": 48.3827813,
+    "lng": 20.0419469
+  },
+  {
+    "lat": 48.3828749,
+    "lng": 20.0422572
+  },
+  {
+    "lat": 48.3834533,
+    "lng": 20.0418727
+  },
+  {
+    "lat": 48.3834924,
+    "lng": 20.0419965
+  },
+  {
+    "lat": 48.3834853,
+    "lng": 20.0420012
+  },
+  {
+    "lat": 48.3835309,
+    "lng": 20.0421732
+  },
+  {
+    "lat": 48.3836093,
+    "lng": 20.0424431
+  },
+  {
+    "lat": 48.3836013,
+    "lng": 20.0424481
+  },
+  {
+    "lat": 48.3836099,
+    "lng": 20.0424747
+  },
+  {
+    "lat": 48.3836173,
+    "lng": 20.042471
+  },
+  {
+    "lat": 48.3837382,
+    "lng": 20.0429111
+  },
+  {
+    "lat": 48.3837304,
+    "lng": 20.0429166
+  },
+  {
+    "lat": 48.3837436,
+    "lng": 20.0429634
+  },
+  {
+    "lat": 48.3837523,
+    "lng": 20.0429572
+  },
+  {
+    "lat": 48.3839091,
+    "lng": 20.0435011
+  },
+  {
+    "lat": 48.3822689,
+    "lng": 20.0446052
+  },
+  {
+    "lat": 48.3823894,
+    "lng": 20.0452635
+  },
+  {
+    "lat": 48.3824067,
+    "lng": 20.0453711
+  },
+  {
+    "lat": 48.3815614,
+    "lng": 20.0464129
+  }
+]
     },
         {
-      "id": "est",
+      "id": "est-spisskanovaves",
       "name": "ESt Spišská Nová Ves",
-      "voltage" : "400/110 kV",
-      "lat": "",
-      "lng": "",
+      "voltage" : [400, 110],
       "operator": "SEPS",
       "type": "transmission",
-      "nodes": []
+      "nodes": [
+  {
+    "lat": 48.9658017,
+    "lng": 20.5319586
+  },
+  {
+    "lat": 48.9632642,
+    "lng": 20.5320592
+  },
+  {
+    "lat": 48.9632898,
+    "lng": 20.5326976
+  },
+  {
+    "lat": 48.963855,
+    "lng": 20.5329269
+  },
+  {
+    "lat": 48.9638407,
+    "lng": 20.5330133
+  },
+  {
+    "lat": 48.9638207,
+    "lng": 20.5331334
+  },
+  {
+    "lat": 48.9632924,
+    "lng": 20.5329792
+  },
+  {
+    "lat": 48.9633778,
+    "lng": 20.5362475
+  },
+  {
+    "lat": 48.9657216,
+    "lng": 20.5361737
+  },
+  {
+    "lat": 48.9657085,
+    "lng": 20.5332783
+  },
+  {
+    "lat": 48.9658035,
+    "lng": 20.5332353
+  },
+  {
+    "lat": 48.965803,
+    "lng": 20.5328632
+  },
+  {
+    "lat": 48.965802,
+    "lng": 20.5321702
+  },
+  {
+    "lat": 48.9658017,
+    "lng": 20.5319586
+  }
+]
     },
         {
-      "id": "est",
+      "id": "est-stupava",
       "name": "ESt Stupava",
-      "voltage" : "400/110 kV",
-      "lat": "",
-      "lng": "",
+      "voltage" : [400, 110],
       "operator": "SEPS",
       "type": "transmission",
-      "nodes": []
+      "nodes": [
+  {
+    "lat": 48.3049276,
+    "lng": 17.0341858
+  },
+  {
+    "lat": 48.304552,
+    "lng": 17.033653
+  },
+  {
+    "lat": 48.3036129,
+    "lng": 17.0321043
+  },
+  {
+    "lat": 48.303472,
+    "lng": 17.0318719
+  },
+  {
+    "lat": 48.3039535,
+    "lng": 17.0311877
+  },
+  {
+    "lat": 48.3039933,
+    "lng": 17.0311311
+  },
+  {
+    "lat": 48.3052977,
+    "lng": 17.0292675
+  },
+  {
+    "lat": 48.3057893,
+    "lng": 17.0285651
+  },
+  {
+    "lat": 48.3060179,
+    "lng": 17.0289243
+  },
+  {
+    "lat": 48.3064402,
+    "lng": 17.029588
+  },
+  {
+    "lat": 48.3065957,
+    "lng": 17.0298316
+  },
+  {
+    "lat": 48.3072787,
+    "lng": 17.0309013
+  },
+  {
+    "lat": 48.3072911,
+    "lng": 17.0309548
+  },
+  {
+    "lat": 48.3072939,
+    "lng": 17.0310151
+  },
+  {
+    "lat": 48.3072893,
+    "lng": 17.0310725
+  },
+  {
+    "lat": 48.3051143,
+    "lng": 17.0342292
+  },
+  {
+    "lat": 48.3050283,
+    "lng": 17.0342576
+  },
+  {
+    "lat": 48.3049276,
+    "lng": 17.0341858
+  }
+]
     },
         {
-      "id": "est",
+      "id": "est-varin",
       "name": "ESt Varín",
-      "voltage" : "400/110 kV",
-      "lat": "",
-      "lng": "",
+      "voltage" : [400, 110],
       "operator": "SEPS",
       "type": "transmission",
-      "nodes": []
+      "nodes": [
+  {
+    "lat": 49.2147316,
+    "lng": 18.8607392
+  },
+  {
+    "lat": 49.2145663,
+    "lng": 18.8611071
+  },
+  {
+    "lat": 49.2136725,
+    "lng": 18.859887
+  },
+  {
+    "lat": 49.2134959,
+    "lng": 18.8602046
+  },
+  {
+    "lat": 49.211315,
+    "lng": 18.8641282
+  },
+  {
+    "lat": 49.2118503,
+    "lng": 18.8648202
+  },
+  {
+    "lat": 49.2129992,
+    "lng": 18.8649765
+  },
+  {
+    "lat": 49.2138716,
+    "lng": 18.8661057
+  },
+  {
+    "lat": 49.2159664,
+    "lng": 18.8623378
+  },
+  {
+    "lat": 49.2147316,
+    "lng": 18.8607392
+  }
+]
     },
         {
-      "id": "est",
+      "id": "est-velkekapusany",
       "name": "ESt Veľké Kapušany",
-      "voltage" : "400 kV",
-      "lat": "",
-      "lng": "",
+      "voltage" : [400],
       "operator": "SEPS",
       "type": "transmission",
-      "nodes": []
+      "nodes": [
+  {
+    "lat": 48.5699357,
+    "lng": 22.0383814
+  },
+  {
+    "lat": 48.5679435,
+    "lng": 22.0380533
+  },
+  {
+    "lat": 48.5677355,
+    "lng": 22.0412125
+  },
+  {
+    "lat": 48.5676726,
+    "lng": 22.0422093
+  },
+  {
+    "lat": 48.5683838,
+    "lng": 22.0423322
+  },
+  {
+    "lat": 48.5687385,
+    "lng": 22.0418795
+  },
+  {
+    "lat": 48.5696844,
+    "lng": 22.0420251
+  },
+  {
+    "lat": 48.5699357,
+    "lng": 22.0383814
+  }
+]
     },
         {
-      "id": "est",
+      "id": "est-velkydur",
       "name": "ESt Veľký Ďur",
-      "voltage" : "400/110 kV",
-      "lat": "",
-      "lng": "",
+      "voltage" : [400, 110],
       "operator": "SEPS",
       "type": "transmission",
-      "nodes": []
+      "nodes": [
+  {
+    "lat": 48.2045122,
+    "lng": 18.42449
+  },
+  {
+    "lat": 48.2056313,
+    "lng": 18.4298598
+  },
+  {
+    "lat": 48.2058547,
+    "lng": 18.4309581
+  },
+  {
+    "lat": 48.2064898,
+    "lng": 18.4306574
+  },
+  {
+    "lat": 48.20581,
+    "lng": 18.4273278
+  },
+  {
+    "lat": 48.2074023,
+    "lng": 18.4265779
+  },
+  {
+    "lat": 48.2067735,
+    "lng": 18.4235227
+  },
+  {
+    "lat": 48.2066351,
+    "lng": 18.4228624
+  },
+  {
+    "lat": 48.2043843,
+    "lng": 18.423916
+  },
+  {
+    "lat": 48.2045122,
+    "lng": 18.42449
+  }
+]
     },
         {
-      "id": "est",
+      "id": "est-ciernyvah",
       "name": "ESt Vodné dielo Čierny Váh",
-      "voltage" : "400 kV",
-      "lat": "",
-      "lng": "",
+      "voltage" : [400],
       "operator": "SEPS",
       "type": "transmission",
       "nodes": []
     },
         {
-      "id": "est",
+      "id": "est-vola",
       "name": "ESt Voľa",
-      "voltage" : "400/220/110 kV",
-      "lat": "",
-      "lng": "",
+      "voltage" : [400, 220, 110],
       "operator": "SEPS",
       "type": "transmission",
       "nodes": []
@@ -39015,9 +40500,7 @@
         {
       "id": "est-krizovany",
       "name": "ESt Križovany",
-      "voltage" : "400/220/110 kV",
-      "lat": "",
-      "lng": "",
+      "voltage" : [400, 220, 110],
       "operator": "SEPS",
       "type": "transmission",
       "nodes": []
@@ -39025,9 +40508,7 @@
             {
       "id": "est-lemesany",
       "name": "ESt Lemešany",
-      "voltage" : "400/220/110 kV",
-      "lat": "",
-      "lng": "",
+      "voltage" : [400, 220, 110],
       "operator": "SEPS/VSE",
       "type": "transmission",
       "nodes": []
@@ -39035,9 +40516,7 @@
             {
       "id": "est-sucany",
       "name": "ESt Sučany",
-      "voltage" : "400/220/110 kV",
-      "lat": "",
-      "lng": "",
+      "voltage" : [400, 220, 110],
       "operator": "SEPS",
       "type": "transmission",
       "nodes": []
@@ -39045,9 +40524,7 @@
             {
       "id": "est-jaslovske-bohunice",
       "name": "ESt Jaslovské Bohunice",
-      "voltage" : "400 kV",
-      "lat": "",
-      "lng": "",
+      "voltage" : [400],
       "operator": "SEPS",
       "type": "transmission",
       "nodes": []
@@ -39055,9 +40532,7 @@
                 {
       "id": "est-mochovce",
       "name": "ESt Mochovce",
-      "voltage" : "400/110 kV",
-      "lat": "",
-      "lng": "",
+      "voltage" : [400, 110],
       "operator": "SEPS",
       "type": "transmission",
       "nodes": []
@@ -39066,8 +40541,6 @@
       "id": "est",
       "name": "ESt",
       "voltage" : "",
-      "lat": "",
-      "lng": "",
       "operator": "SEPS",
       "type": "transmission",
       "nodes": []

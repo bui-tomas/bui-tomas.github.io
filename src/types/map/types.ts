@@ -1,6 +1,7 @@
 // types/map/types.ts - Map-specific type definitions
 
 import { LayerSpecification } from 'maplibre-gl';
+import { SlovakiaGridData } from './slovakia-grid';
 
 // Extended layer specification with z-order for proper layering
 export type LayerSpecificationWithZIndex = LayerSpecification & {
@@ -14,9 +15,9 @@ export interface StyleConfig {
   layers: LayerSpecificationWithZIndex[];
 }
 
-// Map control interfaces (moved from maplibre.tsx)
+// Map control interfaces
 export interface MapLibreProps {
-  gridData: any | null; // You can import SlovakiaGridData from '../slovakia-grid'
+  gridData: SlovakiaGridData | null;
   currentTileLayer: string;
   onMapReady: () => void;
   onError: (error: string) => void;

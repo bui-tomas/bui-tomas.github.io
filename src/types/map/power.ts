@@ -9,10 +9,10 @@ const substation_label_visible: FilterSpecification = [
   "all",
   [
     "any",
-    [">", ["to-number", ["coalesce", ["get", "voltage"], 0]], 399],                    // Always show 400kV+
-    ["all", [">", ["to-number", ["coalesce", ["get", "voltage"], 0]], 200], [">", ["zoom"], 8]],  // 200kV+ at zoom 8+
-    ["all", [">", ["to-number", ["coalesce", ["get", "voltage"], 0]], 100], [">", ["zoom"], 10]], // 100kV+ at zoom 10+
-    ["all", [">", ["to-number", ["coalesce", ["get", "voltage"], 0]], 50], [">", ["zoom"], 12]],  // 50kV+ at zoom 12+
+    [">", ["at", 0, ["get", "voltage"]], 399],                    // First voltage > 399kV
+    ["all", [">", ["at", 0, ["get", "voltage"]], 200], [">", ["zoom"], 8]],  // First voltage > 200kV at zoom 8+
+    ["all", [">", ["at", 0, ["get", "voltage"]], 100], [">", ["zoom"], 10]], // First voltage > 100kV at zoom 10+
+    ["all", [">", ["at", 0, ["get", "voltage"]], 50], [">", ["zoom"], 12]],  // First voltage > 50kV at zoom 12+
     [">", ["zoom"], 13]  // Everything at zoom 13+
   ],
   ["!=", ["get", "substation"], "transition"]  // Exclude transition substations
@@ -92,6 +92,7 @@ export default function powerStyle(): LayerSpecificationWithZIndex[] {
       type: "symbol",
       source: "towers",
       minzoom: 12,
+      filter: ["!=", ["get", "type"], "connection"],
       layout: {
         "icon-image": "tower-icon",
         "icon-size": [
@@ -119,14 +120,14 @@ export default function powerStyle(): LayerSpecificationWithZIndex[] {
       id: "substation-circles",
       type: "circle",
       source: "substation-points",
-      maxzoom: 11.99,
+      maxzoom: 12,
       paint: {
         "circle-radius": [
           "interpolate", ["linear"], ["zoom"],
-          8, 6, 12, 12
+          8, 2, 12, 6
         ],
         "circle-color": power_colors.substation,
-        "circle-stroke-width": 2,
+        "circle-stroke-width": 0.5,
         "circle-stroke-color": power_colors.substation_stroke,
         "circle-opacity": 0.8
       }
@@ -156,7 +157,7 @@ export default function powerStyle(): LayerSpecificationWithZIndex[] {
         "line-color": "#1E1E1E",
         "line-width": [
           "interpolate", ["linear"], ["zoom"],
-          12, 1, 18, 3
+          4, 0, 6, 0.1, 12, 1, 18, 3
         ]
       }
     },
@@ -167,7 +168,7 @@ export default function powerStyle(): LayerSpecificationWithZIndex[] {
       id: "power_substation_label",
       type: "symbol",
       source: "substation-points",
-      filter: substation_label_visible,
+      // filter: substation_label_visible,
       minzoom: 8,
       layout: {
         "symbol-sort-key": ["-", 10000, ["to-number", ["coalesce", ["get", "voltage"], 0]]],

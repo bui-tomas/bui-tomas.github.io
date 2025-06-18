@@ -114,7 +114,7 @@ const SlovakiaMap = ({ className = "" }: SlovakiaMapProps) => {
       <MapControls onTileLayerChange={changeTileLayer} />
 
       {/* Enhanced status indicator */}
-      {mapReady && gridData && (
+      {/* {mapReady && gridData && (
         <div className="absolute bottom-4 left-4 bg-white bg-opacity-90 px-3 py-2 rounded shadow text-sm z-10">
           <div className="text-xs text-gray-600">
             MapLibre GL JS • Vector Tiles •{" "}
@@ -126,7 +126,7 @@ const SlovakiaMap = ({ className = "" }: SlovakiaMapProps) => {
             {gridData.transmission_lines?.length || 0} lines
           </div>
         </div>
-      )}
+      )} */}
     </div>
   );
 };

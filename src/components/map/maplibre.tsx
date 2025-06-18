@@ -1,5 +1,3 @@
-// Updated maplibre.tsx - using powerStyle() instead of manual layers
-
 "use client";
 
 import {
@@ -14,88 +12,12 @@ import "maplibre-gl/dist/maplibre-gl.css";
 
 // Import types and styles from the new modular structure
 import { MapLibreProps, MapLibreRef } from "@/types/map/types";
-import { baseStyle, labelStyle, powerStyle } from "@/types/map"; // ← Add powerStyle
+import { createMapStyle } from "@/types/map"; // ← Add powerStyle
 import {
   SlovakiaGridData,
   Tower,
   TransmissionLine,
 } from "@/types/map/slovakia-grid";
-
-// Create base map style INCLUDING power layers
-const createBaseMapStyle = () => ({
-  version: 8,
-  projection: {
-    type: "globe",
-  },
-  sky: {
-    "sky-color": "#87CEEB",
-    "horizon-color": "#ffffff",
-    "fog-color": "#f0f0f0",
-    "sky-horizon-blend": 0.5,
-    "horizon-fog-blend": 0.5,
-    "fog-ground-blend": 0.5,
-    "atmosphere-blend": ["interpolate", ["linear"], ["zoom"], 2, 0.4, 4, 0],
-  },
-  light: {
-    anchor: "map",
-    color: "#ffffff",
-    intensity: 0.5,
-  },
-  glyphs: "/fonts/{fontstack}/{range}.pbf",
-  sources: {
-    "openinfra-base": {
-      type: "vector",
-      tiles: ["https://openinframap.org/20250311/{z}/{x}/{y}.mvt"],
-      maxzoom: 15,
-      attribution: '© <a href="https://openstreetmap.org">OpenStreetMap</a>',
-    },
-    // Empty sources for power data - will be populated later
-    "transmission-lines": {
-      type: "geojson",
-      data: {
-        type: "FeatureCollection",
-        features: []
-      }
-    },
-    "towers": {
-      type: "geojson", 
-      data: {
-        type: "FeatureCollection",
-        features: []
-      }
-    },
-    "substation-points": {
-      type: "geojson",
-      data: {
-        type: "FeatureCollection", 
-        features: []
-      }
-    },
-    "substation-polygons": {
-      type: "geojson",
-      data: {
-        type: "FeatureCollection",
-        features: []
-      }
-    },
-    "power-plants": {
-      type: "geojson",
-      data: {
-        type: "FeatureCollection",
-        features: []
-      }
-    }
-  },
-  layers: [
-    ...baseStyle(),    // Geographic features
-    ...powerStyle(),   // Power infrastructure layers
-    ...labelStyle(),   // Text labels on top
-  ].sort((a, b) => {
-    const aZOrder = a.zorder || 0;
-    const bZOrder = b.zorder || 0;
-    return aZOrder - bZOrder;
-  }),
-});
 
 // Utility function for calculating centroids
 const calculateCentroid = (nodes: Array<{ lat: number; lng: number }>) => ({
@@ -118,7 +40,8 @@ const MapLibreComponent = forwardRef<MapLibreRef, MapLibreProps>(
         if (!map.current) return;
 
         console.log("Changing tile layer to:", layerType);
-        const newStyle = createBaseMapStyle() as unknown as maplibregl.StyleSpecification;;
+        const newStyle =
+          createMapStyle() as unknown as maplibregl.StyleSpecification;
         map.current.setStyle(newStyle);
 
         // Re-add data sources after style change
@@ -149,36 +72,40 @@ const MapLibreComponent = forwardRef<MapLibreRef, MapLibreProps>(
       }
 
       try {
-        // DON'T remove sources - just update them!
-        // The sources already exist from createBaseMapStyle()
-
         // 1. Update substation sources
         if (gridData.substations && gridData.substations.length > 0) {
           // Point source for circles
           const substationPointsGeoJSON = {
             type: "FeatureCollection" as const,
-            features: gridData.substations.map((substation, index) => {
-              const center =
-                substation.nodes && substation.nodes.length > 0
-                  ? calculateCentroid(substation.nodes)
-                  : { lat: substation.lat, lng: substation.lng };
+            features: gridData.substations
+              .map((substation, index) => {
+                // Only use nodes for positioning - no fallback to lat/lng
+                if (!substation.nodes || substation.nodes.length === 0) {
+                  console.warn(
+                    `Substation ${substation.name} has no nodes - skipping`
+                  );
+                  return null; // Skip substations without nodes
+                }
 
-              return {
-                type: "Feature" as const,
-                id: `substation-point-${index}`,
-                geometry: {
-                  type: "Point" as const,
-                  coordinates: [center.lng, center.lat],
-                },
-                properties: {
-                  name: substation.name,
-                  type: substation.type,
-                  voltage: substation.voltage,
-                  operator: substation.operator,
-                  category: "substation",
-                },
-              };
-            }),
+                const center = calculateCentroid(substation.nodes);
+
+                return {
+                  type: "Feature" as const,
+                  id: `substation-point-${index}`,
+                  geometry: {
+                    type: "Point" as const,
+                    coordinates: [center.lng, center.lat],
+                  },
+                  properties: {
+                    name: substation.name,
+                    type: substation.type,
+                    voltage: substation.voltage,
+                    operator: substation.operator,
+                    category: "substation",
+                  },
+                };
+              })
+              .filter(Boolean), // Remove null entries
           };
 
           // Polygon source for areas
@@ -336,11 +263,11 @@ const MapLibreComponent = forwardRef<MapLibreRef, MapLibreProps>(
 
       try {
         // Create the base style including power layers
-        const baseStyle = createBaseMapStyle();
+        const baseStyle = createMapStyle();
 
         map.current = new maplibregl.Map({
           container: mapContainer.current,
-          style: baseStyle as maplibregl.StyleSpecification,
+          style: baseStyle as unknown as maplibregl.StyleSpecification,
           center: [19.5, 48.7], // Slovakia center
           zoom: 7,
           pitch: 0,
@@ -363,7 +290,28 @@ const MapLibreComponent = forwardRef<MapLibreRef, MapLibreProps>(
           });
 
         // Add navigation controls
-        map.current.addControl(new maplibregl.NavigationControl(), "top-right");
+        map.current.dragRotate.disable();
+        map.current.touchZoomRotate.disableRotation();
+
+        // Add navigation control with compass disabled (since rotation is disabled)
+        map.current.addControl(
+          new maplibregl.NavigationControl({ showCompass: false }),
+          "top-right"
+        );
+
+        // Add geolocation control
+        map.current.addControl(
+          new maplibregl.GeolocateControl({
+            positionOptions: {
+              enableHighAccuracy: true,
+            },
+            trackUserLocation: true,
+          }),
+          "top-right"
+        );
+
+        // Add scale control
+        map.current.addControl(new maplibregl.ScaleControl({}), "bottom-left");
 
         // Handle map load
         map.current.on("load", () => {
