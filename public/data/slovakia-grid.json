@@ -11,137 +11,121 @@
       "towers": ""
     },
     {
-      "id": "cn-kosice-1",
+      "id": "cn-kosice",
       "name": "Power Line",
       "voltage": "400kV",
       "status": "active",
       "operator": "SEPS",
       "country_from": "SK",
       "country_to": "SK",
-      "towers": [
-  {
-    "id": "CN_kosice_1 - /node/8989735993",
-    "lat": 48.6273002,
-    "lng": 21.1899861,
-    "type": "connection"
-  },
-  {
-    "id": "CN_kosice_1 - /node/8989735994",
-    "lat": 48.6267896,
-    "lng": 21.1907113,
-    "type": "connection"
-  }
-]
+      "lines": [
+        [
+          {
+            "id": "CN_kosice_1 - /node/8989735993",
+            "lat": 48.6273002,
+            "lng": 21.1899861,
+            "type": "connection"
+          },
+          {
+            "id": "CN_kosice_1 - /node/8989735994",
+            "lat": 48.6267896,
+            "lng": 21.1907113,
+            "type": "connection"
+          }
+        ],
+        [
+          {
+            "id": "CN_kosice_2 - /node/8989735992",
+            "lat": 48.6275033,
+            "lng": 21.1903738,
+            "type": "connection"
+          },
+          {
+            "id": "CN_kosice_2 - /node/8989735995",
+            "lat": 48.6269066,
+            "lng": 21.19095,
+            "type": "connection"
+          }
+        ]
+      ]
     },
     {
-      "id": "cn-kosice-2",
-      "name": "Power Line",
-      "voltage": "400kV",
-      "status": "active",
-      "operator": "SEPS",
-      "country_from": "SK",
-      "country_to": "SK",
-      "towers": [
-  {
-    "id": "CN_kosice_2 - /node/8989735992",
-    "lat": 48.6275033,
-    "lng": 21.1903738,
-    "type": "connection"
-  },
-  {
-    "id": "CN_kosice_2 - /node/8989735995",
-    "lat": 48.6269066,
-    "lng": 21.19095,
-    "type": "connection"
-  }
-]
-    },
-    {
-      "id": "cn-gabcikovo-1",
+      "id": "cn-gabcikovo",
       "name": "Győr-Gabčikovo",
       "voltage": "400kV",
       "status": "active",
       "operator": "SEPS",
       "country_from": "SK",
       "country_to": "SK",
-      "towers": [
-  {
-    "id": "gabcikovo_1 - /node/5809544614",
-    "lat": 47.8832404,
-    "lng": 17.5418022,
-    "type": "connection"
-  },
-  {
-    "id": "gabcikovo_1 - /node/1555383619",
-    "lat": 47.8841878,
-    "lng": 17.5434862,
-    "type": "tower"
-  },
-  {
-    "id": "gabcikovo_1 - /node/5809544613",
-    "lat": 47.8846935,
-    "lng": 17.5446817,
-    "type": "tower"
-  },
-  {
-    "id": "gabcikovo_1 - /node/6084409133",
-    "lat": 47.8849879,
-    "lng": 17.5453014,
-    "type": "connection"
-  }
-]
+      "lines": [
+        [{
+          "id": "gabcikovo_1 - /node/5809544614",
+          "lat": 47.8832404,
+          "lng": 17.5418022,
+          "type": "connection"
+        },
+        {
+          "id": "gabcikovo_1 - /node/1555383619",
+          "lat": 47.8841878,
+          "lng": 17.5434862,
+          "type": "tower"
+        },
+        {
+          "id": "gabcikovo_1 - /node/5809544613",
+          "lat": 47.8846935,
+          "lng": 17.5446817,
+          "type": "tower"
+        },
+        {
+          "id": "gabcikovo_1 - /node/6084409133",
+          "lat": 47.8849879,
+          "lng": 17.5453014,
+          "type": "connection"
+        }]
+      ]
     },
     {
-      "id": "cn-bosaca-1",
+      "id": "cn-bosaca",
       "name": "Power Line",
       "voltage": "400kV",
       "status": "active",
       "operator": "SEPS",
       "country_from": "SK",
       "country_to": "SK",
-      "towers": [
-  {
-    "id": "ESt_Bosaca_1 - /node/1929630983",
-    "lat": 48.7951738,
-    "lng": 17.8364406,
-    "type": "connection"
-  },
-  {
-    "id": "ESt_Bosaca_1 - /node/11339512762",
-    "lat": 48.7947799,
-    "lng": 17.8378886,
-    "type": "connection"
-  },
-  {
-    "id": "ESt_Bosaca_1 - /node/11339512757",
-    "lat": 48.7940681,
-    "lng": 17.8392803,
-    "type": "connection"
-  }
-]
-    },
-    {
-      "id": "cn-bosaca-2",
-      "name": "Power Line",
-      "voltage": "400kV",
-      "status": "active",
-      "operator": "SEPS",
-      "country_from": "SK",
-      "country_to": "SK",
-      "towers": [
-  {
-    "id": "ESt_Bosaca_2 - /node/11339512756",
-    "lat": 48.7943401,
-    "lng": 17.8373503,
-    "type": "connection"
-  },
-  {
-    "id": "ESt_Bosaca_2 - /node/1929630983",
-    "lat": 48.7951738,
-    "lng": 17.8364406,
-    "type": "connection"
-  }
-]
+      "lines": [
+        [{
+          "id": "ESt_Bosaca_1 - /node/1929630983",
+          "lat": 48.7951738,
+          "lng": 17.8364406,
+          "type": "connection"
+        },
+        {
+          "id": "ESt_Bosaca_1 - /node/11339512762",
+          "lat": 48.7947799,
+          "lng": 17.8378886,
+          "type": "connection"
+        },
+        {
+          "id": "ESt_Bosaca_1 - /node/11339512757",
+          "lat": 48.7940681,
+          "lng": 17.8392803,
+          "type": "connection"
+        }],
+        [
+        {
+          "id": "ESt_Bosaca_2 - /node/11339512756",
+          "lat": 48.7943401,
+          "lng": 17.8373503,
+          "type": "connection"
+        },
+        {
+          "id": "ESt_Bosaca_2 - /node/1929630983",
+          "lat": 48.7951738,
+          "lng": 17.8364406,
+          "type": "connection"
+        }
+      ]
+      ]
     },
     {
       "id": "v043-ebov2-bosaca",
@@ -244,15 +228,15 @@
       "towers": ""
     },
     {
-      "id": "v404-novosice-varin",
+      "id": "v404-nosovice-varin",
       "name": "V404 Nošovice-Varín",
       "voltage": "400kV",
       "status": "active",
       "operator": "SEPS",
       "country_from": "CZ",
       "country_to": "SK",
-      "towers": [
-        {
+      "lines": [
+        [{
           "id": "V404-1 - /node/1830584695",
           "lat": 49.6691468,
           "lng": 18.4324998,
@@ -1655,19 +1639,19 @@
           "lat": 49.2147703,
           "lng": 18.8633785,
           "type": "connection"
-        }
+        }]
       ]
     },
     {
-      "id": "v405/v406-varin-liptovskamara-sucany-a",
+      "id": "v405/v406-varin-liptovskamara-sucany",
       "name": "V405/V406 Varín-Liptovská Mara/Sučany",
       "voltage": "400kV",
       "status": "active",
       "operator": "SEPS",
       "country_from": "SK",
       "country_to": "SK",
-      "towers": [
-        {
+      "lines": [
+        [{
           "id": "V405_406A - /node/4019203889",
           "lat": 49.214592,
           "lng": 18.8637017,
@@ -1690,23 +1674,13 @@
           "lat": 49.2147967,
           "lng": 18.8693976,
           "type": "Tower"
-        }
-      ]
-    },
-    {
-      "id": "v405/v406-varin-liptovskamara-sucany-b-reversed",
-      "name": "V405/V406 Varín-Liptovská Mara/Sučany",
-      "voltage": "400kV",
-      "status": "active",
-      "operator": "SEPS",
-      "country_from": "SK",
-      "country_to": "SK",
-      "towers": [
-        {
-          "id": "V405_406B - /node/2215358142",
-          "lat": 49.2147967,
-          "lng": 18.8693976,
-          "type": "tower"
+        }],
+        [
+                {
+          "id": "V405_406B - /node/4019203678",
+          "lat": 49.2141436,
+          "lng": 18.8645278,
+          "type": "connection"
         },
         {
           "id": "V405_406B - /node/2215358144",
@@ -1714,23 +1688,14 @@
           "lng": 18.8655352,
           "type": "Tower"
         },
-        {
-          "id": "V405_406B - /node/4019203678",
-          "lat": 49.2141436,
-          "lng": 18.8645278,
-          "type": "connection"
+                {
+          "id": "V405_406B - /node/2215358142",
+          "lat": 49.2147967,
+          "lng": 18.8693976,
+          "type": "tower"
         }
-      ]
-    },
-    {
-      "id": "v405/v406-varin-liptovskamara-sucany-c",
-      "name": "V405/V406 Varín-Liptovská Mara/Sučany",
-      "voltage": "400kV",
-      "status": "active",
-      "operator": "SEPS",
-      "country_from": "SK",
-      "country_to": "SK",
-      "towers": [
+
+      ], [
         {
           "id": "V405_406C - /node/2215095121",
           "lat": 49.0944651,
@@ -2062,6 +2027,7 @@
           "type": "Tower"
         }
       ]
+      ]
     },
     {
       "id": "v405-varin-sucany",
@@ -2071,8 +2037,8 @@
       "operator": "SEPS",
       "country_from": "SK",
       "country_to": "SK",
-      "towers": [
-        {
+      "lines": [
+[        {
           "id": "V405 - /node/2473382722",
           "lat": 49.0921094,
           "lng": 18.9751531,
@@ -2089,19 +2055,19 @@
           "lat": 49.0944651,
           "lng": 18.9752609,
           "type": "Tower"
-        }
+        }]
       ]
     },
     {
-      "id": "v406-varin-liptovskamara-a",
+      "id": "v406-varin-liptovskamara",
       "name": "V406 Varín-Liptovská Mara",
       "voltage": "400kV",
       "status": "active",
       "operator": "SEPS",
       "country_from": "SK",
       "country_to": "SK",
-      "towers": [
-        {
+      "lines": [
+        [{
           "id": "V406A - /node/2215095121",
           "lat": 49.0944651,
           "lng": 18.9752609,
@@ -2418,18 +2384,8 @@
           "lat": 49.1110721,
           "lng": 19.2116225,
           "type": "Tower"
-        }
-      ]
-    },
-    {
-      "id": "v406-varin-liptovskamara-b",
-      "name": "V406 Varín-Liptovská Mara",
-      "voltage": "400kV",
-      "status": "active",
-      "operator": "SEPS",
-      "country_from": "SK",
-      "country_to": "SK",
-      "towers": [
+        }],
+        [
         {
           "id": "V406B - /node/2215095043",
           "lat": 49.0610907,
@@ -2442,17 +2398,8 @@
           "lng": 19.3001489,
           "type": "Tower"
         }
-      ]
-    },
-    {
-      "id": "v406-varin-liptovskamara-c",
-      "name": "V406 Varín-Liptovská Mara",
-      "voltage": "400kV",
-      "status": "active",
-      "operator": "SEPS",
-      "country_from": "SK",
-      "country_to": "SK",
-      "towers": [
+      ],
+      [
         {
           "id": "V406C - /node/2215095015",
           "lat": 49.0545171,
@@ -2766,8 +2713,9 @@
           "type": "connection"
         }
       ]
-    },
 
+      ]
+    },
     {
       "id": "v407-liptovskamara-spiskanovaves",
       "name": "V407 Liptovská Mara-Spišská Nová Ves",
@@ -2776,8 +2724,8 @@
       "operator": "SEPS",
       "country_from": "SK",
       "country_to": "SK",
-      "towers": [
-        {
+      "lines": [
+        [{
           "id": "V407 - /node/4014132500",
           "lat": 49.0859308,
           "lng": 19.4911491,
@@ -4408,7 +4356,7 @@
           "lat": 48.9650846,
           "lng": 20.5354003,
           "type": "connection"
-        }
+        }]
       ]
     },
     {
@@ -4419,8 +4367,8 @@
       "operator": "SEPS",
       "country_from": "SK",
       "country_to": "SK",
-      "towers": [
-        {
+      "lines": [
+        [{
           "id": "V408-1 - /node/5552929182",
           "lat": 48.9643081,
           "lng": 20.5354513,
@@ -5463,7 +5411,7 @@
           "lat": 48.8586799,
           "lng": 21.2530866,
           "type": "Tower"
-        }
+        }]
       ]
     },
     {
@@ -7509,2419 +7457,2421 @@
       "operator": "SEPS",
       "country_from": "CZ",
       "country_to": "SK",
-      "towers": [
-        {
-          "id": "V424 - /node/5809557803",
-          "lat": 48.337823,
-          "lng": 17.6621291,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/5809557802",
-          "lat": 48.3378545,
-          "lng": 17.6619957,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/5809557801",
-          "lat": 48.3378982,
-          "lng": 17.6618076,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/2209172629",
-          "lat": 48.3380108,
-          "lng": 17.6613182,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/5809557804",
-          "lat": 48.3380419,
-          "lng": 17.6611988,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1083597008",
-          "lat": 48.338477,
-          "lng": 17.659862,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1083671287",
-          "lat": 48.3406033,
-          "lng": 17.6590256,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1083671336",
-          "lat": 48.3437321,
-          "lng": 17.6578348,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1083671331",
-          "lat": 48.3468376,
-          "lng": 17.656676,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1083671382",
-          "lat": 48.34854,
-          "lng": 17.6559787,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1083671307",
-          "lat": 48.3509268,
-          "lng": 17.6561771,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1083671337",
-          "lat": 48.3541531,
-          "lng": 17.65644,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1083671357",
-          "lat": 48.3570654,
-          "lng": 17.6566063,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1083671367",
-          "lat": 48.3604391,
-          "lng": 17.6568477,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1083671313",
-          "lat": 48.3638073,
-          "lng": 17.6570998,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1097226468",
-          "lat": 48.3671394,
-          "lng": 17.6573714,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1083647800",
-          "lat": 48.370299,
-          "lng": 17.6575611,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1083647708",
-          "lat": 48.373189,
-          "lng": 17.6577972,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1083647678",
-          "lat": 48.3762785,
-          "lng": 17.6579876,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1083647795",
-          "lat": 48.3792786,
-          "lng": 17.6582693,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1083655936",
-          "lat": 48.3825645,
-          "lng": 17.6584522,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1083647713",
-          "lat": 48.3854726,
-          "lng": 17.6586689,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1083647674",
-          "lat": 48.3887518,
-          "lng": 17.6589505,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1083647743",
-          "lat": 48.3920932,
-          "lng": 17.6591973,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1083647717",
-          "lat": 48.395324,
-          "lng": 17.6594065,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1083647675",
-          "lat": 48.398323,
-          "lng": 17.6596157,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1083647749",
-          "lat": 48.4019665,
-          "lng": 17.6599161,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1083647763",
-          "lat": 48.4046945,
-          "lng": 17.6601253,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1083647772",
-          "lat": 48.4075434,
-          "lng": 17.6603185,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1083647761",
-          "lat": 48.4099969,
-          "lng": 17.6604794,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1083647741",
-          "lat": 48.4126853,
-          "lng": 17.6606671,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1083647730",
-          "lat": 48.4152391,
-          "lng": 17.6608093,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1083647692",
-          "lat": 48.4182468,
-          "lng": 17.6610963,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1083647670",
-          "lat": 48.4197661,
-          "lng": 17.6592617,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1083656016",
-          "lat": 48.4222448,
-          "lng": 17.6564239,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1083655970",
-          "lat": 48.4248471,
-          "lng": 17.6533715,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1083655972",
-          "lat": 48.4273247,
-          "lng": 17.6504318,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1083656012",
-          "lat": 48.4299161,
-          "lng": 17.6474224,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1083655992",
-          "lat": 48.4325358,
-          "lng": 17.6443489,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1083655991",
-          "lat": 48.4351447,
-          "lng": 17.6412804,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1083655939",
-          "lat": 48.4376859,
-          "lng": 17.6382978,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1083656024",
-          "lat": 48.4403621,
-          "lng": 17.635165,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1083655954",
-          "lat": 48.4429315,
-          "lng": 17.6321502,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1083655940",
-          "lat": 48.4455612,
-          "lng": 17.629071,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1083655950",
-          "lat": 48.4478919,
-          "lng": 17.6263298,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1083655973",
-          "lat": 48.4506921,
-          "lng": 17.6230414,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1083655968",
-          "lat": 48.4529977,
-          "lng": 17.6203538,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1083655976",
-          "lat": 48.4545809,
-          "lng": 17.6184709,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1083655995",
-          "lat": 48.4568293,
-          "lng": 17.615837,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1083656031",
-          "lat": 48.4593623,
-          "lng": 17.6128704,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1083655931",
-          "lat": 48.4615963,
-          "lng": 17.6102419,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1083655953",
-          "lat": 48.4642428,
-          "lng": 17.6070983,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1083655990",
-          "lat": 48.4668501,
-          "lng": 17.6040567,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1083655947",
-          "lat": 48.4694748,
-          "lng": 17.6009775,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1083655998",
-          "lat": 48.4717438,
-          "lng": 17.5983439,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1083655938",
-          "lat": 48.473764,
-          "lng": 17.5959189,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1083656044",
-          "lat": 48.4762677,
-          "lng": 17.5929792,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1083656002",
-          "lat": 48.4786183,
-          "lng": 17.5902272,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1083655934",
-          "lat": 48.4800229,
-          "lng": 17.5867457,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1083655971",
-          "lat": 48.4814844,
-          "lng": 17.5831033,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1083656035",
-          "lat": 48.4832268,
-          "lng": 17.5786079,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1083655951",
-          "lat": 48.4847699,
-          "lng": 17.5748045,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1083655952",
-          "lat": 48.4862313,
-          "lng": 17.5712318,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/2209123639",
-          "lat": 48.4876186,
-          "lng": 17.5674886,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/2209123641",
-          "lat": 48.4893198,
-          "lng": 17.5632668,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/2209123643",
-          "lat": 48.491069,
-          "lng": 17.558927,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/2209123645",
-          "lat": 48.4927061,
-          "lng": 17.5552094,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/2209123647",
-          "lat": 48.4941886,
-          "lng": 17.5515375,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/2209123649",
-          "lat": 48.4958683,
-          "lng": 17.5474176,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/2209123652",
-          "lat": 48.4975959,
-          "lng": 17.5430885,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/2209123654",
-          "lat": 48.4992204,
-          "lng": 17.5392369,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/2209123655",
-          "lat": 48.5005782,
-          "lng": 17.5355462,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/2209123657",
-          "lat": 48.5023981,
-          "lng": 17.5311151,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/2209123659",
-          "lat": 48.5036848,
-          "lng": 17.5278911,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/2209123661",
-          "lat": 48.5054868,
-          "lng": 17.5251177,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/2209123663",
-          "lat": 48.5079143,
-          "lng": 17.5214485,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/2209123665",
-          "lat": 48.5099471,
-          "lng": 17.5183049,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/2209123667",
-          "lat": 48.5120297,
-          "lng": 17.5151614,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/2209123670",
-          "lat": 48.5140024,
-          "lng": 17.5121411,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/2209123672",
-          "lat": 48.515999,
-          "lng": 17.5090996,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/2209123674",
-          "lat": 48.5179818,
-          "lng": 17.5060311,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/2209123676",
-          "lat": 48.5197975,
-          "lng": 17.5033006,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/2209123677",
-          "lat": 48.5213605,
-          "lng": 17.5010941,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/2209123679",
-          "lat": 48.5236526,
-          "lng": 17.4979362,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/2209123681",
-          "lat": 48.525429,
-          "lng": 17.4954686,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/2209123683",
-          "lat": 48.5277205,
-          "lng": 17.4922768,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/2209123687",
-          "lat": 48.5302179,
-          "lng": 17.4888167,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/2209172632",
-          "lat": 48.5326796,
-          "lng": 17.4853823,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/2209123690",
-          "lat": 48.5351449,
-          "lng": 17.4820093,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/2209123692",
-          "lat": 48.5372158,
-          "lng": 17.4790803,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/2209123694",
-          "lat": 48.5399772,
-          "lng": 17.4752224,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/2209123697",
-          "lat": 48.542326,
-          "lng": 17.4736766,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/2209123700",
-          "lat": 48.5442106,
-          "lng": 17.4724534,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/2209123701",
-          "lat": 48.5459904,
-          "lng": 17.4712855,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/2209123703",
-          "lat": 48.5484178,
-          "lng": 17.4697037,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/2209123705",
-          "lat": 48.550682,
-          "lng": 17.4682221,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/2209123707",
-          "lat": 48.5533983,
-          "lng": 17.4664502,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/2209123710",
-          "lat": 48.5558001,
-          "lng": 17.464894,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/2209123712",
-          "lat": 48.557536,
-          "lng": 17.4637649,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/2209123715",
-          "lat": 48.561706,
-          "lng": 17.4610267,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/2209123716",
-          "lat": 48.5654176,
-          "lng": 17.4585989,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/2209123719",
-          "lat": 48.5668127,
-          "lng": 17.4577138,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/2209123721",
-          "lat": 48.5695796,
-          "lng": 17.4558718,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/2209123723",
-          "lat": 48.5710529,
-          "lng": 17.4548982,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/2209123724",
-          "lat": 48.5735057,
-          "lng": 17.4532925,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/2209123726",
-          "lat": 48.5756248,
-          "lng": 17.4518998,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/2209123729",
-          "lat": 48.5784774,
-          "lng": 17.4499242,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/2209123731",
-          "lat": 48.5812516,
-          "lng": 17.4482027,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/2209123733",
-          "lat": 48.5833879,
-          "lng": 17.4467919,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/2209123735",
-          "lat": 48.5855526,
-          "lng": 17.445381,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/2209123736",
-          "lat": 48.5877101,
-          "lng": 17.4439594,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/2209123738",
-          "lat": 48.5898178,
-          "lng": 17.4425486,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/2209123740",
-          "lat": 48.5918083,
-          "lng": 17.4412504,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/2209123743",
-          "lat": 48.5947,
-          "lng": 17.4419531,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/2209123744",
-          "lat": 48.5960588,
-          "lng": 17.442275,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/2209123746",
-          "lat": 48.5988332,
-          "lng": 17.4429456,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/2209123748",
-          "lat": 48.6010646,
-          "lng": 17.4434659,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/2209123749",
-          "lat": 48.6032391,
-          "lng": 17.4439916,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/2209123751",
-          "lat": 48.6053001,
-          "lng": 17.4444852,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/2209123753",
-          "lat": 48.6075135,
-          "lng": 17.4450162,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/2209123755",
-          "lat": 48.6098899,
-          "lng": 17.4455902,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/2209123757",
-          "lat": 48.6125181,
-          "lng": 17.4461267,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/2209123759",
-          "lat": 48.6151674,
-          "lng": 17.4467811,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/2209123761",
-          "lat": 48.6182087,
-          "lng": 17.4475125,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/2209123763",
-          "lat": 48.6214255,
-          "lng": 17.4486061,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/2209123765",
-          "lat": 48.6241108,
-          "lng": 17.4494526,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/2209123767",
-          "lat": 48.6266106,
-          "lng": 17.4502787,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/2209123769",
-          "lat": 48.6289826,
-          "lng": 17.4510834,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/2209123771",
-          "lat": 48.6313509,
-          "lng": 17.4519041,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/2209123773",
-          "lat": 48.6339532,
-          "lng": 17.4527732,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/2209123775",
-          "lat": 48.6371083,
-          "lng": 17.4538031,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/2209123777",
-          "lat": 48.6410714,
-          "lng": 17.4551603,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/2209123779",
-          "lat": 48.6452681,
-          "lng": 17.4565658,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/2209123781",
-          "lat": 48.6475612,
-          "lng": 17.4573437,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/2209123783",
-          "lat": 48.6495566,
-          "lng": 17.4580089,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/2209123785",
-          "lat": 48.6518744,
-          "lng": 17.458776,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/2209123786",
-          "lat": 48.6547448,
-          "lng": 17.4577192,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/2209123788",
-          "lat": 48.6581502,
-          "lng": 17.4564693,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/2209123790",
-          "lat": 48.6602763,
-          "lng": 17.4556807,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/2209123792",
-          "lat": 48.6622144,
-          "lng": 17.4549726,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/2209123794",
-          "lat": 48.6648193,
-          "lng": 17.4540541,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/2209123797",
-          "lat": 48.6688645,
-          "lng": 17.4524781,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/2209123799",
-          "lat": 48.6713479,
-          "lng": 17.4515769,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/2209123800",
-          "lat": 48.6740685,
-          "lng": 17.4505845,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/2209123803",
-          "lat": 48.6763001,
-          "lng": 17.4497316,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/2209123805",
-          "lat": 48.6796651,
-          "lng": 17.4484924,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/2209123807",
-          "lat": 48.6818434,
-          "lng": 17.4476984,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/2209123809",
-          "lat": 48.6862244,
-          "lng": 17.4460784,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/2209123813",
-          "lat": 48.6879809,
-          "lng": 17.4453917,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/2209123815",
-          "lat": 48.6903536,
-          "lng": 17.4445442,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/2209123817",
-          "lat": 48.6929351,
-          "lng": 17.4435839,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/2209123819",
-          "lat": 48.6956191,
-          "lng": 17.4425915,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/2209123821",
-          "lat": 48.6981295,
-          "lng": 17.4416474,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1996609683",
-          "lat": 48.7002609,
-          "lng": 17.4409339,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1996609686",
-          "lat": 48.702907,
-          "lng": 17.4400981,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1996609692",
-          "lat": 48.7060175,
-          "lng": 17.4388525,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1996609682",
-          "lat": 48.7069853,
-          "lng": 17.4370297,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1996609718",
-          "lat": 48.7088261,
-          "lng": 17.4334463,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1996609693",
-          "lat": 48.7116792,
-          "lng": 17.4280067,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1996609679",
-          "lat": 48.7127907,
-          "lng": 17.4258502,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1996609690",
-          "lat": 48.7140458,
-          "lng": 17.4233708,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1996609670",
-          "lat": 48.7152754,
-          "lng": 17.421011,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1996609705",
-          "lat": 48.7164542,
-          "lng": 17.4187582,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1996609672",
-          "lat": 48.7177976,
-          "lng": 17.416161,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1996609668",
-          "lat": 48.7193456,
-          "lng": 17.4131258,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1996609681",
-          "lat": 48.7209333,
-          "lng": 17.4100027,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1996609685",
-          "lat": 48.7226953,
-          "lng": 17.4064767,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1996609671",
-          "lat": 48.7237795,
-          "lng": 17.4043687,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1996609675",
-          "lat": 48.7250596,
-          "lng": 17.4019882,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1996609708",
-          "lat": 48.7261637,
-          "lng": 17.3999605,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1996609678",
-          "lat": 48.7271262,
-          "lng": 17.39804,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1996609677",
-          "lat": 48.7284687,
-          "lng": 17.3954233,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1996609689",
-          "lat": 48.7299712,
-          "lng": 17.3924181,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1996609674",
-          "lat": 48.731349,
-          "lng": 17.3897906,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1996609687",
-          "lat": 48.7338774,
-          "lng": 17.3865602,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1996609676",
-          "lat": 48.7357788,
-          "lng": 17.3841687,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1841097245",
-          "lat": 48.7380452,
-          "lng": 17.3813245,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1841097246",
-          "lat": 48.7395422,
-          "lng": 17.3793778,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1841097247",
-          "lat": 48.7430797,
-          "lng": 17.3748477,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1841097248",
-          "lat": 48.7450856,
-          "lng": 17.3723445,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1841097249",
-          "lat": 48.7469485,
-          "lng": 17.3699924,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1841097250",
-          "lat": 48.7498813,
-          "lng": 17.3662588,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1841097251",
-          "lat": 48.7516334,
-          "lng": 17.3639777,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1841097252",
-          "lat": 48.7543288,
-          "lng": 17.360605,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1841097253",
-          "lat": 48.7569015,
-          "lng": 17.3573204,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1841097254",
-          "lat": 48.758684,
-          "lng": 17.3550347,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1841097255",
-          "lat": 48.7607635,
-          "lng": 17.3524099,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1841097256",
-          "lat": 48.7628551,
-          "lng": 17.3496968,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1841097257",
-          "lat": 48.7642117,
-          "lng": 17.3480429,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1841097259",
-          "lat": 48.7665635,
-          "lng": 17.3453391,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1841097260",
-          "lat": 48.7691103,
-          "lng": 17.3417614,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1841097261",
-          "lat": 48.7705647,
-          "lng": 17.339917,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1841097262",
-          "lat": 48.77261,
-          "lng": 17.3373201,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1841097263",
-          "lat": 48.7745603,
-          "lng": 17.33483,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1841097264",
-          "lat": 48.7766759,
-          "lng": 17.3321401,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1841097265",
-          "lat": 48.7788678,
-          "lng": 17.3294131,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1841097266",
-          "lat": 48.7816904,
-          "lng": 17.3257662,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1841097267",
-          "lat": 48.7844423,
-          "lng": 17.3222633,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1841097268",
-          "lat": 48.7865115,
-          "lng": 17.3196245,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1841097269",
-          "lat": 48.7894254,
-          "lng": 17.315908,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1841097270",
-          "lat": 48.7919199,
-          "lng": 17.3127628,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1841097271",
-          "lat": 48.7942091,
-          "lng": 17.309901,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1841097272",
-          "lat": 48.7966018,
-          "lng": 17.3068231,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1841097273",
-          "lat": 48.7982637,
-          "lng": 17.3047141,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1841097274",
-          "lat": 48.7999688,
-          "lng": 17.3025131,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1841097275",
-          "lat": 48.8026676,
-          "lng": 17.2991372,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1841097276",
-          "lat": 48.8041923,
-          "lng": 17.2971041,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1841097277",
-          "lat": 48.8062568,
-          "lng": 17.2945176,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1841097278",
-          "lat": 48.8097068,
-          "lng": 17.2900794,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1841097279",
-          "lat": 48.8115791,
-          "lng": 17.2877249,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1841097280",
-          "lat": 48.813635,
-          "lng": 17.2850358,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1841097281",
-          "lat": 48.8145329,
-          "lng": 17.2838869,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1841097282",
-          "lat": 48.81681,
-          "lng": 17.2810183,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1841097283",
-          "lat": 48.8189917,
-          "lng": 17.2782505,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1841097284",
-          "lat": 48.8217977,
-          "lng": 17.2766469,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1841097285",
-          "lat": 48.8237715,
-          "lng": 17.2756367,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1841097286",
-          "lat": 48.826823,
-          "lng": 17.2739249,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1841097287",
-          "lat": 48.8291062,
-          "lng": 17.2727021,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1841097288",
-          "lat": 48.8319266,
-          "lng": 17.2711113,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1841097289",
-          "lat": 48.8348524,
-          "lng": 17.2695305,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1841097290",
-          "lat": 48.8373097,
-          "lng": 17.2681415,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1841097291",
-          "lat": 48.8405921,
-          "lng": 17.2663557,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1841097292",
-          "lat": 48.8432998,
-          "lng": 17.2648277,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1841097293",
-          "lat": 48.8466079,
-          "lng": 17.262989,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1841097294",
-          "lat": 48.8486754,
-          "lng": 17.2618778,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1841097295",
-          "lat": 48.8507777,
-          "lng": 17.2598736,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1841097296",
-          "lat": 48.8532933,
-          "lng": 17.2573403,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1841097297",
-          "lat": 48.8553997,
-          "lng": 17.2553428,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1841097298",
-          "lat": 48.8573667,
-          "lng": 17.2534379,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1841097299",
-          "lat": 48.8602171,
-          "lng": 17.2506599,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1841097300",
-          "lat": 48.8624711,
-          "lng": 17.2484375,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1841097301",
-          "lat": 48.8652994,
-          "lng": 17.2457058,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1841097302",
-          "lat": 48.8681493,
-          "lng": 17.2429476,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1841097303",
-          "lat": 48.8697504,
-          "lng": 17.2413337,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1841097304",
-          "lat": 48.8708946,
-          "lng": 17.2401894,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1841097305",
-          "lat": 48.8728567,
-          "lng": 17.238053,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1841097306",
-          "lat": 48.8750667,
-          "lng": 17.2356652,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1841097307",
-          "lat": 48.8772686,
-          "lng": 17.2332586,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1841097308",
-          "lat": 48.8794468,
-          "lng": 17.230957,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1841097309",
-          "lat": 48.8821564,
-          "lng": 17.2280946,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1841097310",
-          "lat": 48.8845455,
-          "lng": 17.2255096,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1841097311",
-          "lat": 48.8872166,
-          "lng": 17.2226311,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1841097312",
-          "lat": 48.8901282,
-          "lng": 17.2194897,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1841097313",
-          "lat": 48.8912845,
-          "lng": 17.2182503,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1841097314",
-          "lat": 48.8930003,
-          "lng": 17.2163841,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1841097315",
-          "lat": 48.8956847,
-          "lng": 17.2150512,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1841097316",
-          "lat": 48.8991346,
-          "lng": 17.2133815,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1841097317",
-          "lat": 48.9014435,
-          "lng": 17.2122496,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1841097318",
-          "lat": 48.904377,
-          "lng": 17.2095931,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1841097319",
-          "lat": 48.9078595,
-          "lng": 17.2064761,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1841097320",
-          "lat": 48.9108866,
-          "lng": 17.203777,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1841097321",
-          "lat": 48.9136748,
-          "lng": 17.2012217,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1841097322",
-          "lat": 48.915887,
-          "lng": 17.1992695,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1841097323",
-          "lat": 48.9182013,
-          "lng": 17.1972116,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1841097324",
-          "lat": 48.9207614,
-          "lng": 17.1949386,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1841097325",
-          "lat": 48.9229926,
-          "lng": 17.1928854,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1841097326",
-          "lat": 48.925325,
-          "lng": 17.1907714,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1841097333",
-          "lat": 48.9280323,
-          "lng": 17.1883908,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1841097340",
-          "lat": 48.9304997,
-          "lng": 17.1861037,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1841097356",
-          "lat": 48.932881,
-          "lng": 17.1839756,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1841097373",
-          "lat": 48.9355726,
-          "lng": 17.1815908,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1841097381",
-          "lat": 48.936058,
-          "lng": 17.1778258,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1841097401",
-          "lat": 48.9367431,
-          "lng": 17.1729056,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1841097415",
-          "lat": 48.9375543,
-          "lng": 17.1663295,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1841097427",
-          "lat": 48.9386173,
-          "lng": 17.1626908,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1841097439",
-          "lat": 48.9396741,
-          "lng": 17.1588743,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1841097444",
-          "lat": 48.9408528,
-          "lng": 17.1547255,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1841097460",
-          "lat": 48.9420056,
-          "lng": 17.150793,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1841097472",
-          "lat": 48.9431095,
-          "lng": 17.1472625,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1841097484",
-          "lat": 48.944347,
-          "lng": 17.1426191,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1841097504",
-          "lat": 48.9456151,
-          "lng": 17.1380046,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1841097518",
-          "lat": 48.9469601,
-          "lng": 17.1333719,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1841097525",
-          "lat": 48.9482072,
-          "lng": 17.1289397,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1841097534",
-          "lat": 48.9493545,
-          "lng": 17.1250106,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1841097542",
-          "lat": 48.9505675,
-          "lng": 17.1206598,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1841097537",
-          "lat": 48.9499459,
-          "lng": 17.1167288,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1841097531",
-          "lat": 48.9492135,
-          "lng": 17.1125337,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1841097529",
-          "lat": 48.9483205,
-          "lng": 17.1074961,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1841097522",
-          "lat": 48.9475395,
-          "lng": 17.1030901,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1841097513",
-          "lat": 48.9466518,
-          "lng": 17.0982307,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1841097510",
-          "lat": 48.9459422,
-          "lng": 17.094012,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1841097494",
-          "lat": 48.9450668,
-          "lng": 17.0891432,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1841097489",
-          "lat": 48.9445599,
-          "lng": 17.0861078,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1841097465",
-          "lat": 48.9426185,
-          "lng": 17.0821557,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1841097449",
-          "lat": 48.9410303,
-          "lng": 17.0788631,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1841097438",
-          "lat": 48.9391643,
-          "lng": 17.0751052,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1841097418",
-          "lat": 48.9376423,
-          "lng": 17.0720135,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1841097412",
-          "lat": 48.9371219,
-          "lng": 17.0680183,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1841097399",
-          "lat": 48.9365418,
-          "lng": 17.0633541,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1841097398",
-          "lat": 48.9361977,
-          "lng": 17.0605806,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1841097376",
-          "lat": 48.9356724,
-          "lng": 17.0565303,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1841097365",
-          "lat": 48.9350425,
-          "lng": 17.0517738,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1841097360",
-          "lat": 48.9344096,
-          "lng": 17.0469377,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1841097359",
-          "lat": 48.933789,
-          "lng": 17.0422888,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1841097357",
-          "lat": 48.9334205,
-          "lng": 17.0389353,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1841097348",
-          "lat": 48.9324841,
-          "lng": 17.0326352,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1841097345",
-          "lat": 48.9319235,
-          "lng": 17.0279324,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1841097343",
-          "lat": 48.9313987,
-          "lng": 17.0240165,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1841097341",
-          "lat": 48.930791,
-          "lng": 17.0191991,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1841097339",
-          "lat": 48.9301159,
-          "lng": 17.0140953,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1841097337",
-          "lat": 48.9296027,
-          "lng": 17.0101993,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1841097336",
-          "lat": 48.9291879,
-          "lng": 17.0068646,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1841097334",
-          "lat": 48.9284351,
-          "lng": 17.0012942,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1841097332",
-          "lat": 48.9279557,
-          "lng": 16.9973562,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1841097331",
-          "lat": 48.9274702,
-          "lng": 16.9937034,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1841097330",
-          "lat": 48.9270246,
-          "lng": 16.990336,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1841097328",
-          "lat": 48.9262564,
-          "lng": 16.98463,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1841097327",
-          "lat": 48.9257371,
-          "lng": 16.9805984,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1841097329",
-          "lat": 48.9269355,
-          "lng": 16.9777407,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1841097335",
-          "lat": 48.9288683,
-          "lng": 16.9733397,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1841097338",
-          "lat": 48.9299807,
-          "lng": 16.9706251,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1841097346",
-          "lat": 48.9320274,
-          "lng": 16.965671,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1841097358",
-          "lat": 48.9336786,
-          "lng": 16.9617156,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1841097370",
-          "lat": 48.9352167,
-          "lng": 16.9581902,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1841097406",
-          "lat": 48.9370329,
-          "lng": 16.9538247,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1841097422",
-          "lat": 48.9382408,
-          "lng": 16.950921,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1841097440",
-          "lat": 48.9399091,
-          "lng": 16.9469789,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1841097454",
-          "lat": 48.9412864,
-          "lng": 16.9436718,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1841097469",
-          "lat": 48.9428634,
-          "lng": 16.9399479,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1841097479",
-          "lat": 48.9439712,
-          "lng": 16.9373088,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1841097499",
-          "lat": 48.9453483,
-          "lng": 16.9340281,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1841097516",
-          "lat": 48.9467818,
-          "lng": 16.9306085,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1841097528",
-          "lat": 48.9482675,
-          "lng": 16.9271161,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1841097540",
-          "lat": 48.950283,
-          "lng": 16.9257734,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1841097543",
-          "lat": 48.953128,
-          "lng": 16.9238883,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1841097544",
-          "lat": 48.9559078,
-          "lng": 16.922077,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1841097547",
-          "lat": 48.9584849,
-          "lng": 16.9203173,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1841097551",
-          "lat": 48.9616136,
-          "lng": 16.9182985,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1841097554",
-          "lat": 48.9650875,
-          "lng": 16.9159984,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1841097557",
-          "lat": 48.9681727,
-          "lng": 16.9140154,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1841097558",
-          "lat": 48.9714641,
-          "lng": 16.9118266,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1841097559",
-          "lat": 48.973785,
-          "lng": 16.9103112,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1841097562",
-          "lat": 48.9773576,
-          "lng": 16.9079431,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1841097563",
-          "lat": 48.9795065,
-          "lng": 16.9065012,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1841097564",
-          "lat": 48.9829446,
-          "lng": 16.9042391,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1841097568",
-          "lat": 48.9843553,
-          "lng": 16.9033461,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1841097571",
-          "lat": 48.9867687,
-          "lng": 16.9017719,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1841097573",
-          "lat": 48.9891386,
-          "lng": 16.900158,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1841097576",
-          "lat": 48.9915788,
-          "lng": 16.8985566,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1841097578",
-          "lat": 48.9960224,
-          "lng": 16.8956552,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1841097579",
-          "lat": 48.9970253,
-          "lng": 16.8937299,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1841097580",
-          "lat": 48.9995935,
-          "lng": 16.889106,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1841097581",
-          "lat": 49.0016504,
-          "lng": 16.8854152,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1841097582",
-          "lat": 49.0036941,
-          "lng": 16.8815392,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1841097583",
-          "lat": 49.0054991,
-          "lng": 16.878285,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1841097584",
-          "lat": 49.007239,
-          "lng": 16.8750307,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1841097586",
-          "lat": 49.0086621,
-          "lng": 16.8724511,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1841097589",
-          "lat": 49.0109138,
-          "lng": 16.8682907,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1841097591",
-          "lat": 49.0124322,
-          "lng": 16.8654929,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1841097594",
-          "lat": 49.0141848,
-          "lng": 16.8622651,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1841097597",
-          "lat": 49.016124,
-          "lng": 16.8587198,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1841097600",
-          "lat": 49.0174991,
-          "lng": 16.8561799,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1841097602",
-          "lat": 49.0192645,
-          "lng": 16.8529455,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1841097605",
-          "lat": 49.0205094,
-          "lng": 16.85069,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1841097606",
-          "lat": 49.0216762,
-          "lng": 16.8484676,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1841097607",
-          "lat": 49.0231163,
-          "lng": 16.8457955,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1841097608",
-          "lat": 49.0245476,
-          "lng": 16.8432093,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1841097609",
-          "lat": 49.0266121,
-          "lng": 16.8393796,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1841097610",
-          "lat": 49.0300773,
-          "lng": 16.8381096,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1841097611",
-          "lat": 49.0323757,
-          "lng": 16.8372894,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1841097612",
-          "lat": 49.0346697,
-          "lng": 16.8364825,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1841097613",
-          "lat": 49.0367424,
-          "lng": 16.8357086,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1841097614",
-          "lat": 49.0400335,
-          "lng": 16.834485,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1841097615",
-          "lat": 49.0425005,
-          "lng": 16.8336119,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1841097616",
-          "lat": 49.0457348,
-          "lng": 16.8323684,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1841097617",
-          "lat": 49.047534,
-          "lng": 16.83174,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1841097618",
-          "lat": 49.0495498,
-          "lng": 16.8310588,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1841097619",
-          "lat": 49.0510411,
-          "lng": 16.8287107,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1841097620",
-          "lat": 49.0538023,
-          "lng": 16.8246495,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1841097621",
-          "lat": 49.055003,
-          "lng": 16.8228372,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1841097622",
-          "lat": 49.0574433,
-          "lng": 16.8192059,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1841097623",
-          "lat": 49.0589907,
-          "lng": 16.816838,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1841097624",
-          "lat": 49.0604903,
-          "lng": 16.8146619,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1841097626",
-          "lat": 49.0630214,
-          "lng": 16.810905,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1841097627",
-          "lat": 49.065496,
-          "lng": 16.8072671,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1841097628",
-          "lat": 49.0675501,
-          "lng": 16.8040856,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1841097629",
-          "lat": 49.0699681,
-          "lng": 16.8001567,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1841097630",
-          "lat": 49.0728237,
-          "lng": 16.7953679,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1841097636",
-          "lat": 49.0740586,
-          "lng": 16.7934035,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1841097657",
-          "lat": 49.0764806,
-          "lng": 16.7894018,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1841097660",
-          "lat": 49.0783826,
-          "lng": 16.786227,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1841097666",
-          "lat": 49.0806008,
-          "lng": 16.7825825,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1841097675",
-          "lat": 49.0821648,
-          "lng": 16.7800889,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1841097686",
-          "lat": 49.0833258,
-          "lng": 16.7781509,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1841097690",
-          "lat": 49.0856823,
-          "lng": 16.7740449,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1841097696",
-          "lat": 49.0879045,
-          "lng": 16.7705592,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1841097703",
-          "lat": 49.0894119,
-          "lng": 16.7680788,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1841097710",
-          "lat": 49.0903865,
-          "lng": 16.7649767,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1841097714",
-          "lat": 49.09166,
-          "lng": 16.7611536,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1841097719",
-          "lat": 49.093059,
-          "lng": 16.7569734,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1841097725",
-          "lat": 49.094393,
-          "lng": 16.7531238,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1841097731",
-          "lat": 49.0959002,
-          "lng": 16.7486261,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1841097739",
-          "lat": 49.0974355,
-          "lng": 16.744141,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/1841097742",
-          "lat": 49.0986171,
-          "lng": 16.7405692,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/311862402",
-          "lat": 49.1000154,
-          "lng": 16.7363414,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/311862401",
-          "lat": 49.1015509,
-          "lng": 16.7317523,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/311862400",
-          "lat": 49.1030698,
-          "lng": 16.7271505,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/311862399",
-          "lat": 49.1042278,
-          "lng": 16.7236867,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/311862398",
-          "lat": 49.105697,
-          "lng": 16.7192787,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/311862397",
-          "lat": 49.1072308,
-          "lng": 16.7146773,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/311862356",
-          "lat": 49.1084059,
-          "lng": 16.7105766,
-          "type": "Tower"
-        },
-        {
-          "id": "V424 - /node/311862359",
-          "lat": 49.1097909,
-          "lng": 16.7061317,
-          "type": "Tower"
-        }
+      "lines": [
+        [
+          {
+            "id": "V424 - /node/5809557803",
+            "lat": 48.337823,
+            "lng": 17.6621291,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/5809557802",
+            "lat": 48.3378545,
+            "lng": 17.6619957,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/5809557801",
+            "lat": 48.3378982,
+            "lng": 17.6618076,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/2209172629",
+            "lat": 48.3380108,
+            "lng": 17.6613182,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/5809557804",
+            "lat": 48.3380419,
+            "lng": 17.6611988,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1083597008",
+            "lat": 48.338477,
+            "lng": 17.659862,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1083671287",
+            "lat": 48.3406033,
+            "lng": 17.6590256,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1083671336",
+            "lat": 48.3437321,
+            "lng": 17.6578348,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1083671331",
+            "lat": 48.3468376,
+            "lng": 17.656676,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1083671382",
+            "lat": 48.34854,
+            "lng": 17.6559787,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1083671307",
+            "lat": 48.3509268,
+            "lng": 17.6561771,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1083671337",
+            "lat": 48.3541531,
+            "lng": 17.65644,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1083671357",
+            "lat": 48.3570654,
+            "lng": 17.6566063,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1083671367",
+            "lat": 48.3604391,
+            "lng": 17.6568477,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1083671313",
+            "lat": 48.3638073,
+            "lng": 17.6570998,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1097226468",
+            "lat": 48.3671394,
+            "lng": 17.6573714,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1083647800",
+            "lat": 48.370299,
+            "lng": 17.6575611,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1083647708",
+            "lat": 48.373189,
+            "lng": 17.6577972,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1083647678",
+            "lat": 48.3762785,
+            "lng": 17.6579876,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1083647795",
+            "lat": 48.3792786,
+            "lng": 17.6582693,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1083655936",
+            "lat": 48.3825645,
+            "lng": 17.6584522,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1083647713",
+            "lat": 48.3854726,
+            "lng": 17.6586689,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1083647674",
+            "lat": 48.3887518,
+            "lng": 17.6589505,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1083647743",
+            "lat": 48.3920932,
+            "lng": 17.6591973,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1083647717",
+            "lat": 48.395324,
+            "lng": 17.6594065,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1083647675",
+            "lat": 48.398323,
+            "lng": 17.6596157,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1083647749",
+            "lat": 48.4019665,
+            "lng": 17.6599161,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1083647763",
+            "lat": 48.4046945,
+            "lng": 17.6601253,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1083647772",
+            "lat": 48.4075434,
+            "lng": 17.6603185,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1083647761",
+            "lat": 48.4099969,
+            "lng": 17.6604794,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1083647741",
+            "lat": 48.4126853,
+            "lng": 17.6606671,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1083647730",
+            "lat": 48.4152391,
+            "lng": 17.6608093,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1083647692",
+            "lat": 48.4182468,
+            "lng": 17.6610963,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1083647670",
+            "lat": 48.4197661,
+            "lng": 17.6592617,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1083656016",
+            "lat": 48.4222448,
+            "lng": 17.6564239,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1083655970",
+            "lat": 48.4248471,
+            "lng": 17.6533715,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1083655972",
+            "lat": 48.4273247,
+            "lng": 17.6504318,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1083656012",
+            "lat": 48.4299161,
+            "lng": 17.6474224,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1083655992",
+            "lat": 48.4325358,
+            "lng": 17.6443489,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1083655991",
+            "lat": 48.4351447,
+            "lng": 17.6412804,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1083655939",
+            "lat": 48.4376859,
+            "lng": 17.6382978,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1083656024",
+            "lat": 48.4403621,
+            "lng": 17.635165,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1083655954",
+            "lat": 48.4429315,
+            "lng": 17.6321502,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1083655940",
+            "lat": 48.4455612,
+            "lng": 17.629071,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1083655950",
+            "lat": 48.4478919,
+            "lng": 17.6263298,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1083655973",
+            "lat": 48.4506921,
+            "lng": 17.6230414,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1083655968",
+            "lat": 48.4529977,
+            "lng": 17.6203538,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1083655976",
+            "lat": 48.4545809,
+            "lng": 17.6184709,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1083655995",
+            "lat": 48.4568293,
+            "lng": 17.615837,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1083656031",
+            "lat": 48.4593623,
+            "lng": 17.6128704,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1083655931",
+            "lat": 48.4615963,
+            "lng": 17.6102419,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1083655953",
+            "lat": 48.4642428,
+            "lng": 17.6070983,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1083655990",
+            "lat": 48.4668501,
+            "lng": 17.6040567,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1083655947",
+            "lat": 48.4694748,
+            "lng": 17.6009775,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1083655998",
+            "lat": 48.4717438,
+            "lng": 17.5983439,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1083655938",
+            "lat": 48.473764,
+            "lng": 17.5959189,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1083656044",
+            "lat": 48.4762677,
+            "lng": 17.5929792,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1083656002",
+            "lat": 48.4786183,
+            "lng": 17.5902272,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1083655934",
+            "lat": 48.4800229,
+            "lng": 17.5867457,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1083655971",
+            "lat": 48.4814844,
+            "lng": 17.5831033,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1083656035",
+            "lat": 48.4832268,
+            "lng": 17.5786079,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1083655951",
+            "lat": 48.4847699,
+            "lng": 17.5748045,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1083655952",
+            "lat": 48.4862313,
+            "lng": 17.5712318,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/2209123639",
+            "lat": 48.4876186,
+            "lng": 17.5674886,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/2209123641",
+            "lat": 48.4893198,
+            "lng": 17.5632668,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/2209123643",
+            "lat": 48.491069,
+            "lng": 17.558927,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/2209123645",
+            "lat": 48.4927061,
+            "lng": 17.5552094,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/2209123647",
+            "lat": 48.4941886,
+            "lng": 17.5515375,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/2209123649",
+            "lat": 48.4958683,
+            "lng": 17.5474176,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/2209123652",
+            "lat": 48.4975959,
+            "lng": 17.5430885,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/2209123654",
+            "lat": 48.4992204,
+            "lng": 17.5392369,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/2209123655",
+            "lat": 48.5005782,
+            "lng": 17.5355462,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/2209123657",
+            "lat": 48.5023981,
+            "lng": 17.5311151,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/2209123659",
+            "lat": 48.5036848,
+            "lng": 17.5278911,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/2209123661",
+            "lat": 48.5054868,
+            "lng": 17.5251177,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/2209123663",
+            "lat": 48.5079143,
+            "lng": 17.5214485,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/2209123665",
+            "lat": 48.5099471,
+            "lng": 17.5183049,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/2209123667",
+            "lat": 48.5120297,
+            "lng": 17.5151614,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/2209123670",
+            "lat": 48.5140024,
+            "lng": 17.5121411,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/2209123672",
+            "lat": 48.515999,
+            "lng": 17.5090996,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/2209123674",
+            "lat": 48.5179818,
+            "lng": 17.5060311,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/2209123676",
+            "lat": 48.5197975,
+            "lng": 17.5033006,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/2209123677",
+            "lat": 48.5213605,
+            "lng": 17.5010941,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/2209123679",
+            "lat": 48.5236526,
+            "lng": 17.4979362,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/2209123681",
+            "lat": 48.525429,
+            "lng": 17.4954686,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/2209123683",
+            "lat": 48.5277205,
+            "lng": 17.4922768,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/2209123687",
+            "lat": 48.5302179,
+            "lng": 17.4888167,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/2209172632",
+            "lat": 48.5326796,
+            "lng": 17.4853823,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/2209123690",
+            "lat": 48.5351449,
+            "lng": 17.4820093,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/2209123692",
+            "lat": 48.5372158,
+            "lng": 17.4790803,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/2209123694",
+            "lat": 48.5399772,
+            "lng": 17.4752224,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/2209123697",
+            "lat": 48.542326,
+            "lng": 17.4736766,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/2209123700",
+            "lat": 48.5442106,
+            "lng": 17.4724534,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/2209123701",
+            "lat": 48.5459904,
+            "lng": 17.4712855,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/2209123703",
+            "lat": 48.5484178,
+            "lng": 17.4697037,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/2209123705",
+            "lat": 48.550682,
+            "lng": 17.4682221,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/2209123707",
+            "lat": 48.5533983,
+            "lng": 17.4664502,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/2209123710",
+            "lat": 48.5558001,
+            "lng": 17.464894,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/2209123712",
+            "lat": 48.557536,
+            "lng": 17.4637649,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/2209123715",
+            "lat": 48.561706,
+            "lng": 17.4610267,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/2209123716",
+            "lat": 48.5654176,
+            "lng": 17.4585989,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/2209123719",
+            "lat": 48.5668127,
+            "lng": 17.4577138,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/2209123721",
+            "lat": 48.5695796,
+            "lng": 17.4558718,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/2209123723",
+            "lat": 48.5710529,
+            "lng": 17.4548982,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/2209123724",
+            "lat": 48.5735057,
+            "lng": 17.4532925,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/2209123726",
+            "lat": 48.5756248,
+            "lng": 17.4518998,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/2209123729",
+            "lat": 48.5784774,
+            "lng": 17.4499242,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/2209123731",
+            "lat": 48.5812516,
+            "lng": 17.4482027,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/2209123733",
+            "lat": 48.5833879,
+            "lng": 17.4467919,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/2209123735",
+            "lat": 48.5855526,
+            "lng": 17.445381,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/2209123736",
+            "lat": 48.5877101,
+            "lng": 17.4439594,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/2209123738",
+            "lat": 48.5898178,
+            "lng": 17.4425486,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/2209123740",
+            "lat": 48.5918083,
+            "lng": 17.4412504,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/2209123743",
+            "lat": 48.5947,
+            "lng": 17.4419531,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/2209123744",
+            "lat": 48.5960588,
+            "lng": 17.442275,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/2209123746",
+            "lat": 48.5988332,
+            "lng": 17.4429456,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/2209123748",
+            "lat": 48.6010646,
+            "lng": 17.4434659,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/2209123749",
+            "lat": 48.6032391,
+            "lng": 17.4439916,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/2209123751",
+            "lat": 48.6053001,
+            "lng": 17.4444852,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/2209123753",
+            "lat": 48.6075135,
+            "lng": 17.4450162,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/2209123755",
+            "lat": 48.6098899,
+            "lng": 17.4455902,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/2209123757",
+            "lat": 48.6125181,
+            "lng": 17.4461267,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/2209123759",
+            "lat": 48.6151674,
+            "lng": 17.4467811,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/2209123761",
+            "lat": 48.6182087,
+            "lng": 17.4475125,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/2209123763",
+            "lat": 48.6214255,
+            "lng": 17.4486061,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/2209123765",
+            "lat": 48.6241108,
+            "lng": 17.4494526,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/2209123767",
+            "lat": 48.6266106,
+            "lng": 17.4502787,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/2209123769",
+            "lat": 48.6289826,
+            "lng": 17.4510834,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/2209123771",
+            "lat": 48.6313509,
+            "lng": 17.4519041,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/2209123773",
+            "lat": 48.6339532,
+            "lng": 17.4527732,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/2209123775",
+            "lat": 48.6371083,
+            "lng": 17.4538031,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/2209123777",
+            "lat": 48.6410714,
+            "lng": 17.4551603,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/2209123779",
+            "lat": 48.6452681,
+            "lng": 17.4565658,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/2209123781",
+            "lat": 48.6475612,
+            "lng": 17.4573437,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/2209123783",
+            "lat": 48.6495566,
+            "lng": 17.4580089,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/2209123785",
+            "lat": 48.6518744,
+            "lng": 17.458776,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/2209123786",
+            "lat": 48.6547448,
+            "lng": 17.4577192,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/2209123788",
+            "lat": 48.6581502,
+            "lng": 17.4564693,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/2209123790",
+            "lat": 48.6602763,
+            "lng": 17.4556807,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/2209123792",
+            "lat": 48.6622144,
+            "lng": 17.4549726,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/2209123794",
+            "lat": 48.6648193,
+            "lng": 17.4540541,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/2209123797",
+            "lat": 48.6688645,
+            "lng": 17.4524781,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/2209123799",
+            "lat": 48.6713479,
+            "lng": 17.4515769,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/2209123800",
+            "lat": 48.6740685,
+            "lng": 17.4505845,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/2209123803",
+            "lat": 48.6763001,
+            "lng": 17.4497316,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/2209123805",
+            "lat": 48.6796651,
+            "lng": 17.4484924,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/2209123807",
+            "lat": 48.6818434,
+            "lng": 17.4476984,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/2209123809",
+            "lat": 48.6862244,
+            "lng": 17.4460784,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/2209123813",
+            "lat": 48.6879809,
+            "lng": 17.4453917,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/2209123815",
+            "lat": 48.6903536,
+            "lng": 17.4445442,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/2209123817",
+            "lat": 48.6929351,
+            "lng": 17.4435839,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/2209123819",
+            "lat": 48.6956191,
+            "lng": 17.4425915,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/2209123821",
+            "lat": 48.6981295,
+            "lng": 17.4416474,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1996609683",
+            "lat": 48.7002609,
+            "lng": 17.4409339,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1996609686",
+            "lat": 48.702907,
+            "lng": 17.4400981,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1996609692",
+            "lat": 48.7060175,
+            "lng": 17.4388525,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1996609682",
+            "lat": 48.7069853,
+            "lng": 17.4370297,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1996609718",
+            "lat": 48.7088261,
+            "lng": 17.4334463,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1996609693",
+            "lat": 48.7116792,
+            "lng": 17.4280067,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1996609679",
+            "lat": 48.7127907,
+            "lng": 17.4258502,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1996609690",
+            "lat": 48.7140458,
+            "lng": 17.4233708,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1996609670",
+            "lat": 48.7152754,
+            "lng": 17.421011,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1996609705",
+            "lat": 48.7164542,
+            "lng": 17.4187582,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1996609672",
+            "lat": 48.7177976,
+            "lng": 17.416161,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1996609668",
+            "lat": 48.7193456,
+            "lng": 17.4131258,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1996609681",
+            "lat": 48.7209333,
+            "lng": 17.4100027,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1996609685",
+            "lat": 48.7226953,
+            "lng": 17.4064767,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1996609671",
+            "lat": 48.7237795,
+            "lng": 17.4043687,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1996609675",
+            "lat": 48.7250596,
+            "lng": 17.4019882,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1996609708",
+            "lat": 48.7261637,
+            "lng": 17.3999605,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1996609678",
+            "lat": 48.7271262,
+            "lng": 17.39804,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1996609677",
+            "lat": 48.7284687,
+            "lng": 17.3954233,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1996609689",
+            "lat": 48.7299712,
+            "lng": 17.3924181,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1996609674",
+            "lat": 48.731349,
+            "lng": 17.3897906,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1996609687",
+            "lat": 48.7338774,
+            "lng": 17.3865602,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1996609676",
+            "lat": 48.7357788,
+            "lng": 17.3841687,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1841097245",
+            "lat": 48.7380452,
+            "lng": 17.3813245,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1841097246",
+            "lat": 48.7395422,
+            "lng": 17.3793778,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1841097247",
+            "lat": 48.7430797,
+            "lng": 17.3748477,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1841097248",
+            "lat": 48.7450856,
+            "lng": 17.3723445,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1841097249",
+            "lat": 48.7469485,
+            "lng": 17.3699924,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1841097250",
+            "lat": 48.7498813,
+            "lng": 17.3662588,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1841097251",
+            "lat": 48.7516334,
+            "lng": 17.3639777,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1841097252",
+            "lat": 48.7543288,
+            "lng": 17.360605,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1841097253",
+            "lat": 48.7569015,
+            "lng": 17.3573204,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1841097254",
+            "lat": 48.758684,
+            "lng": 17.3550347,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1841097255",
+            "lat": 48.7607635,
+            "lng": 17.3524099,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1841097256",
+            "lat": 48.7628551,
+            "lng": 17.3496968,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1841097257",
+            "lat": 48.7642117,
+            "lng": 17.3480429,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1841097259",
+            "lat": 48.7665635,
+            "lng": 17.3453391,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1841097260",
+            "lat": 48.7691103,
+            "lng": 17.3417614,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1841097261",
+            "lat": 48.7705647,
+            "lng": 17.339917,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1841097262",
+            "lat": 48.77261,
+            "lng": 17.3373201,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1841097263",
+            "lat": 48.7745603,
+            "lng": 17.33483,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1841097264",
+            "lat": 48.7766759,
+            "lng": 17.3321401,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1841097265",
+            "lat": 48.7788678,
+            "lng": 17.3294131,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1841097266",
+            "lat": 48.7816904,
+            "lng": 17.3257662,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1841097267",
+            "lat": 48.7844423,
+            "lng": 17.3222633,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1841097268",
+            "lat": 48.7865115,
+            "lng": 17.3196245,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1841097269",
+            "lat": 48.7894254,
+            "lng": 17.315908,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1841097270",
+            "lat": 48.7919199,
+            "lng": 17.3127628,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1841097271",
+            "lat": 48.7942091,
+            "lng": 17.309901,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1841097272",
+            "lat": 48.7966018,
+            "lng": 17.3068231,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1841097273",
+            "lat": 48.7982637,
+            "lng": 17.3047141,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1841097274",
+            "lat": 48.7999688,
+            "lng": 17.3025131,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1841097275",
+            "lat": 48.8026676,
+            "lng": 17.2991372,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1841097276",
+            "lat": 48.8041923,
+            "lng": 17.2971041,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1841097277",
+            "lat": 48.8062568,
+            "lng": 17.2945176,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1841097278",
+            "lat": 48.8097068,
+            "lng": 17.2900794,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1841097279",
+            "lat": 48.8115791,
+            "lng": 17.2877249,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1841097280",
+            "lat": 48.813635,
+            "lng": 17.2850358,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1841097281",
+            "lat": 48.8145329,
+            "lng": 17.2838869,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1841097282",
+            "lat": 48.81681,
+            "lng": 17.2810183,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1841097283",
+            "lat": 48.8189917,
+            "lng": 17.2782505,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1841097284",
+            "lat": 48.8217977,
+            "lng": 17.2766469,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1841097285",
+            "lat": 48.8237715,
+            "lng": 17.2756367,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1841097286",
+            "lat": 48.826823,
+            "lng": 17.2739249,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1841097287",
+            "lat": 48.8291062,
+            "lng": 17.2727021,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1841097288",
+            "lat": 48.8319266,
+            "lng": 17.2711113,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1841097289",
+            "lat": 48.8348524,
+            "lng": 17.2695305,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1841097290",
+            "lat": 48.8373097,
+            "lng": 17.2681415,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1841097291",
+            "lat": 48.8405921,
+            "lng": 17.2663557,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1841097292",
+            "lat": 48.8432998,
+            "lng": 17.2648277,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1841097293",
+            "lat": 48.8466079,
+            "lng": 17.262989,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1841097294",
+            "lat": 48.8486754,
+            "lng": 17.2618778,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1841097295",
+            "lat": 48.8507777,
+            "lng": 17.2598736,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1841097296",
+            "lat": 48.8532933,
+            "lng": 17.2573403,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1841097297",
+            "lat": 48.8553997,
+            "lng": 17.2553428,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1841097298",
+            "lat": 48.8573667,
+            "lng": 17.2534379,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1841097299",
+            "lat": 48.8602171,
+            "lng": 17.2506599,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1841097300",
+            "lat": 48.8624711,
+            "lng": 17.2484375,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1841097301",
+            "lat": 48.8652994,
+            "lng": 17.2457058,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1841097302",
+            "lat": 48.8681493,
+            "lng": 17.2429476,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1841097303",
+            "lat": 48.8697504,
+            "lng": 17.2413337,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1841097304",
+            "lat": 48.8708946,
+            "lng": 17.2401894,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1841097305",
+            "lat": 48.8728567,
+            "lng": 17.238053,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1841097306",
+            "lat": 48.8750667,
+            "lng": 17.2356652,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1841097307",
+            "lat": 48.8772686,
+            "lng": 17.2332586,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1841097308",
+            "lat": 48.8794468,
+            "lng": 17.230957,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1841097309",
+            "lat": 48.8821564,
+            "lng": 17.2280946,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1841097310",
+            "lat": 48.8845455,
+            "lng": 17.2255096,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1841097311",
+            "lat": 48.8872166,
+            "lng": 17.2226311,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1841097312",
+            "lat": 48.8901282,
+            "lng": 17.2194897,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1841097313",
+            "lat": 48.8912845,
+            "lng": 17.2182503,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1841097314",
+            "lat": 48.8930003,
+            "lng": 17.2163841,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1841097315",
+            "lat": 48.8956847,
+            "lng": 17.2150512,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1841097316",
+            "lat": 48.8991346,
+            "lng": 17.2133815,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1841097317",
+            "lat": 48.9014435,
+            "lng": 17.2122496,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1841097318",
+            "lat": 48.904377,
+            "lng": 17.2095931,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1841097319",
+            "lat": 48.9078595,
+            "lng": 17.2064761,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1841097320",
+            "lat": 48.9108866,
+            "lng": 17.203777,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1841097321",
+            "lat": 48.9136748,
+            "lng": 17.2012217,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1841097322",
+            "lat": 48.915887,
+            "lng": 17.1992695,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1841097323",
+            "lat": 48.9182013,
+            "lng": 17.1972116,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1841097324",
+            "lat": 48.9207614,
+            "lng": 17.1949386,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1841097325",
+            "lat": 48.9229926,
+            "lng": 17.1928854,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1841097326",
+            "lat": 48.925325,
+            "lng": 17.1907714,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1841097333",
+            "lat": 48.9280323,
+            "lng": 17.1883908,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1841097340",
+            "lat": 48.9304997,
+            "lng": 17.1861037,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1841097356",
+            "lat": 48.932881,
+            "lng": 17.1839756,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1841097373",
+            "lat": 48.9355726,
+            "lng": 17.1815908,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1841097381",
+            "lat": 48.936058,
+            "lng": 17.1778258,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1841097401",
+            "lat": 48.9367431,
+            "lng": 17.1729056,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1841097415",
+            "lat": 48.9375543,
+            "lng": 17.1663295,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1841097427",
+            "lat": 48.9386173,
+            "lng": 17.1626908,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1841097439",
+            "lat": 48.9396741,
+            "lng": 17.1588743,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1841097444",
+            "lat": 48.9408528,
+            "lng": 17.1547255,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1841097460",
+            "lat": 48.9420056,
+            "lng": 17.150793,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1841097472",
+            "lat": 48.9431095,
+            "lng": 17.1472625,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1841097484",
+            "lat": 48.944347,
+            "lng": 17.1426191,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1841097504",
+            "lat": 48.9456151,
+            "lng": 17.1380046,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1841097518",
+            "lat": 48.9469601,
+            "lng": 17.1333719,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1841097525",
+            "lat": 48.9482072,
+            "lng": 17.1289397,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1841097534",
+            "lat": 48.9493545,
+            "lng": 17.1250106,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1841097542",
+            "lat": 48.9505675,
+            "lng": 17.1206598,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1841097537",
+            "lat": 48.9499459,
+            "lng": 17.1167288,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1841097531",
+            "lat": 48.9492135,
+            "lng": 17.1125337,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1841097529",
+            "lat": 48.9483205,
+            "lng": 17.1074961,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1841097522",
+            "lat": 48.9475395,
+            "lng": 17.1030901,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1841097513",
+            "lat": 48.9466518,
+            "lng": 17.0982307,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1841097510",
+            "lat": 48.9459422,
+            "lng": 17.094012,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1841097494",
+            "lat": 48.9450668,
+            "lng": 17.0891432,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1841097489",
+            "lat": 48.9445599,
+            "lng": 17.0861078,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1841097465",
+            "lat": 48.9426185,
+            "lng": 17.0821557,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1841097449",
+            "lat": 48.9410303,
+            "lng": 17.0788631,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1841097438",
+            "lat": 48.9391643,
+            "lng": 17.0751052,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1841097418",
+            "lat": 48.9376423,
+            "lng": 17.0720135,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1841097412",
+            "lat": 48.9371219,
+            "lng": 17.0680183,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1841097399",
+            "lat": 48.9365418,
+            "lng": 17.0633541,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1841097398",
+            "lat": 48.9361977,
+            "lng": 17.0605806,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1841097376",
+            "lat": 48.9356724,
+            "lng": 17.0565303,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1841097365",
+            "lat": 48.9350425,
+            "lng": 17.0517738,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1841097360",
+            "lat": 48.9344096,
+            "lng": 17.0469377,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1841097359",
+            "lat": 48.933789,
+            "lng": 17.0422888,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1841097357",
+            "lat": 48.9334205,
+            "lng": 17.0389353,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1841097348",
+            "lat": 48.9324841,
+            "lng": 17.0326352,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1841097345",
+            "lat": 48.9319235,
+            "lng": 17.0279324,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1841097343",
+            "lat": 48.9313987,
+            "lng": 17.0240165,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1841097341",
+            "lat": 48.930791,
+            "lng": 17.0191991,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1841097339",
+            "lat": 48.9301159,
+            "lng": 17.0140953,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1841097337",
+            "lat": 48.9296027,
+            "lng": 17.0101993,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1841097336",
+            "lat": 48.9291879,
+            "lng": 17.0068646,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1841097334",
+            "lat": 48.9284351,
+            "lng": 17.0012942,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1841097332",
+            "lat": 48.9279557,
+            "lng": 16.9973562,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1841097331",
+            "lat": 48.9274702,
+            "lng": 16.9937034,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1841097330",
+            "lat": 48.9270246,
+            "lng": 16.990336,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1841097328",
+            "lat": 48.9262564,
+            "lng": 16.98463,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1841097327",
+            "lat": 48.9257371,
+            "lng": 16.9805984,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1841097329",
+            "lat": 48.9269355,
+            "lng": 16.9777407,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1841097335",
+            "lat": 48.9288683,
+            "lng": 16.9733397,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1841097338",
+            "lat": 48.9299807,
+            "lng": 16.9706251,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1841097346",
+            "lat": 48.9320274,
+            "lng": 16.965671,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1841097358",
+            "lat": 48.9336786,
+            "lng": 16.9617156,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1841097370",
+            "lat": 48.9352167,
+            "lng": 16.9581902,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1841097406",
+            "lat": 48.9370329,
+            "lng": 16.9538247,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1841097422",
+            "lat": 48.9382408,
+            "lng": 16.950921,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1841097440",
+            "lat": 48.9399091,
+            "lng": 16.9469789,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1841097454",
+            "lat": 48.9412864,
+            "lng": 16.9436718,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1841097469",
+            "lat": 48.9428634,
+            "lng": 16.9399479,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1841097479",
+            "lat": 48.9439712,
+            "lng": 16.9373088,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1841097499",
+            "lat": 48.9453483,
+            "lng": 16.9340281,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1841097516",
+            "lat": 48.9467818,
+            "lng": 16.9306085,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1841097528",
+            "lat": 48.9482675,
+            "lng": 16.9271161,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1841097540",
+            "lat": 48.950283,
+            "lng": 16.9257734,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1841097543",
+            "lat": 48.953128,
+            "lng": 16.9238883,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1841097544",
+            "lat": 48.9559078,
+            "lng": 16.922077,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1841097547",
+            "lat": 48.9584849,
+            "lng": 16.9203173,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1841097551",
+            "lat": 48.9616136,
+            "lng": 16.9182985,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1841097554",
+            "lat": 48.9650875,
+            "lng": 16.9159984,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1841097557",
+            "lat": 48.9681727,
+            "lng": 16.9140154,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1841097558",
+            "lat": 48.9714641,
+            "lng": 16.9118266,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1841097559",
+            "lat": 48.973785,
+            "lng": 16.9103112,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1841097562",
+            "lat": 48.9773576,
+            "lng": 16.9079431,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1841097563",
+            "lat": 48.9795065,
+            "lng": 16.9065012,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1841097564",
+            "lat": 48.9829446,
+            "lng": 16.9042391,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1841097568",
+            "lat": 48.9843553,
+            "lng": 16.9033461,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1841097571",
+            "lat": 48.9867687,
+            "lng": 16.9017719,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1841097573",
+            "lat": 48.9891386,
+            "lng": 16.900158,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1841097576",
+            "lat": 48.9915788,
+            "lng": 16.8985566,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1841097578",
+            "lat": 48.9960224,
+            "lng": 16.8956552,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1841097579",
+            "lat": 48.9970253,
+            "lng": 16.8937299,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1841097580",
+            "lat": 48.9995935,
+            "lng": 16.889106,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1841097581",
+            "lat": 49.0016504,
+            "lng": 16.8854152,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1841097582",
+            "lat": 49.0036941,
+            "lng": 16.8815392,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1841097583",
+            "lat": 49.0054991,
+            "lng": 16.878285,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1841097584",
+            "lat": 49.007239,
+            "lng": 16.8750307,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1841097586",
+            "lat": 49.0086621,
+            "lng": 16.8724511,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1841097589",
+            "lat": 49.0109138,
+            "lng": 16.8682907,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1841097591",
+            "lat": 49.0124322,
+            "lng": 16.8654929,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1841097594",
+            "lat": 49.0141848,
+            "lng": 16.8622651,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1841097597",
+            "lat": 49.016124,
+            "lng": 16.8587198,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1841097600",
+            "lat": 49.0174991,
+            "lng": 16.8561799,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1841097602",
+            "lat": 49.0192645,
+            "lng": 16.8529455,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1841097605",
+            "lat": 49.0205094,
+            "lng": 16.85069,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1841097606",
+            "lat": 49.0216762,
+            "lng": 16.8484676,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1841097607",
+            "lat": 49.0231163,
+            "lng": 16.8457955,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1841097608",
+            "lat": 49.0245476,
+            "lng": 16.8432093,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1841097609",
+            "lat": 49.0266121,
+            "lng": 16.8393796,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1841097610",
+            "lat": 49.0300773,
+            "lng": 16.8381096,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1841097611",
+            "lat": 49.0323757,
+            "lng": 16.8372894,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1841097612",
+            "lat": 49.0346697,
+            "lng": 16.8364825,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1841097613",
+            "lat": 49.0367424,
+            "lng": 16.8357086,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1841097614",
+            "lat": 49.0400335,
+            "lng": 16.834485,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1841097615",
+            "lat": 49.0425005,
+            "lng": 16.8336119,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1841097616",
+            "lat": 49.0457348,
+            "lng": 16.8323684,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1841097617",
+            "lat": 49.047534,
+            "lng": 16.83174,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1841097618",
+            "lat": 49.0495498,
+            "lng": 16.8310588,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1841097619",
+            "lat": 49.0510411,
+            "lng": 16.8287107,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1841097620",
+            "lat": 49.0538023,
+            "lng": 16.8246495,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1841097621",
+            "lat": 49.055003,
+            "lng": 16.8228372,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1841097622",
+            "lat": 49.0574433,
+            "lng": 16.8192059,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1841097623",
+            "lat": 49.0589907,
+            "lng": 16.816838,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1841097624",
+            "lat": 49.0604903,
+            "lng": 16.8146619,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1841097626",
+            "lat": 49.0630214,
+            "lng": 16.810905,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1841097627",
+            "lat": 49.065496,
+            "lng": 16.8072671,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1841097628",
+            "lat": 49.0675501,
+            "lng": 16.8040856,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1841097629",
+            "lat": 49.0699681,
+            "lng": 16.8001567,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1841097630",
+            "lat": 49.0728237,
+            "lng": 16.7953679,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1841097636",
+            "lat": 49.0740586,
+            "lng": 16.7934035,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1841097657",
+            "lat": 49.0764806,
+            "lng": 16.7894018,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1841097660",
+            "lat": 49.0783826,
+            "lng": 16.786227,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1841097666",
+            "lat": 49.0806008,
+            "lng": 16.7825825,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1841097675",
+            "lat": 49.0821648,
+            "lng": 16.7800889,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1841097686",
+            "lat": 49.0833258,
+            "lng": 16.7781509,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1841097690",
+            "lat": 49.0856823,
+            "lng": 16.7740449,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1841097696",
+            "lat": 49.0879045,
+            "lng": 16.7705592,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1841097703",
+            "lat": 49.0894119,
+            "lng": 16.7680788,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1841097710",
+            "lat": 49.0903865,
+            "lng": 16.7649767,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1841097714",
+            "lat": 49.09166,
+            "lng": 16.7611536,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1841097719",
+            "lat": 49.093059,
+            "lng": 16.7569734,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1841097725",
+            "lat": 49.094393,
+            "lng": 16.7531238,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1841097731",
+            "lat": 49.0959002,
+            "lng": 16.7486261,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1841097739",
+            "lat": 49.0974355,
+            "lng": 16.744141,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/1841097742",
+            "lat": 49.0986171,
+            "lng": 16.7405692,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/311862402",
+            "lat": 49.1000154,
+            "lng": 16.7363414,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/311862401",
+            "lat": 49.1015509,
+            "lng": 16.7317523,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/311862400",
+            "lat": 49.1030698,
+            "lng": 16.7271505,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/311862399",
+            "lat": 49.1042278,
+            "lng": 16.7236867,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/311862398",
+            "lat": 49.105697,
+            "lng": 16.7192787,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/311862397",
+            "lat": 49.1072308,
+            "lng": 16.7146773,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/311862356",
+            "lat": 49.1084059,
+            "lng": 16.7105766,
+            "type": "Tower"
+          },
+          {
+            "id": "V424 - /node/311862359",
+            "lat": 49.1097909,
+            "lng": 16.7061317,
+            "type": "Tower"
+          }
+        ]
       ]
     },
     {
@@ -26668,25 +26618,25 @@
       "country_from": "SK",
       "country_to": "HU",
       "towers": [
-  {
-    "id": "V480_ad - /node/9580489622",
-    "lat": 47.8858129,
-    "lng": 17.5460663,
-    "type": "connection"
-  },
-  {
-    "id": "V480_ad - /node/6084409126",
-    "lat": 47.8866416,
-    "lng": 17.5472555,
-    "type": "tower"
-  },
-  {
-    "id": "V480_ad - /node/6084409125",
-    "lat": 47.8862693,
-    "lng": 17.549353,
-    "type": "connection"
-  }
-]
+        {
+          "id": "V480_ad - /node/9580489622",
+          "lat": 47.8858129,
+          "lng": 17.5460663,
+          "type": "connection"
+        },
+        {
+          "id": "V480_ad - /node/6084409126",
+          "lat": 47.8866416,
+          "lng": 17.5472555,
+          "type": "tower"
+        },
+        {
+          "id": "V480_ad - /node/6084409125",
+          "lat": 47.8862693,
+          "lng": 17.549353,
+          "type": "connection"
+        }
+      ]
     },
     {
       "id": "v479-gabcikovo-velkydur",
@@ -26697,25 +26647,25 @@
       "country_from": "SK",
       "country_to": "SK",
       "towers": [
-  {
-    "id": "V479_ad - /node/6084409125",
-    "lat": 47.8862693,
-    "lng": 17.549353,
-    "type": "connection"
-  },
-  {
-    "id": "V479_ad - /node/6084409128",
-    "lat": 47.8870931,
-    "lng": 17.5468907,
-    "type": "tower"
-  },
-  {
-    "id": "V479_ad - /node/9580204296",
-    "lat": 47.886388,
-    "lng": 17.5455024,
-    "type": "connection"
-  }
-]
+        {
+          "id": "V479_ad - /node/6084409125",
+          "lat": 47.8862693,
+          "lng": 17.549353,
+          "type": "connection"
+        },
+        {
+          "id": "V479_ad - /node/6084409128",
+          "lat": 47.8870931,
+          "lng": 17.5468907,
+          "type": "tower"
+        },
+        {
+          "id": "V479_ad - /node/9580204296",
+          "lat": 47.886388,
+          "lng": 17.5455024,
+          "type": "connection"
+        }
+      ]
     },
 
     {
@@ -27008,51 +26958,51 @@
       "country_from": "SK",
       "country_to": "SK",
       "towers": [
-  {
-    "id": "V483 - /node/1165736672",
-    "lat": 48.6665133,
-    "lng": 18.5071614,
-    "type": "tower"
-  },
-  {
-    "id": "V483 - /node/9083758017",
-    "lat": 48.6665026,
-    "lng": 18.5084846,
-    "type": "connection"
-  },
-  {
-    "id": "V483 - /node/9083758018",
-    "lat": 48.665931,
-    "lng": 18.5101426,
-    "type": "connection"
-  },
-  {
-    "id": "V483 - /node/9083758026",
-    "lat": 48.665892,
-    "lng": 18.5102763,
-    "type": "connection"
-  },
-  {
-    "id": "V483 - /node/9083758030",
-    "lat": 48.6657548,
-    "lng": 18.5107532,
-    "type": "connection"
-  },
-  {
-    "id": "V483 - /node/9083758034",
-    "lat": 48.6656926,
-    "lng": 18.5109597,
-    "type": "connection"
-  },
-  {
-    "id": "V483 - /node/9083758022",
-    "lat": 48.6656736,
-    "lng": 18.5110237,
-    "type": "connection"
-  }
-]
+        {
+          "id": "V483 - /node/1165736672",
+          "lat": 48.6665133,
+          "lng": 18.5071614,
+          "type": "tower"
+        },
+        {
+          "id": "V483 - /node/9083758017",
+          "lat": 48.6665026,
+          "lng": 18.5084846,
+          "type": "connection"
+        },
+        {
+          "id": "V483 - /node/9083758018",
+          "lat": 48.665931,
+          "lng": 18.5101426,
+          "type": "connection"
+        },
+        {
+          "id": "V483 - /node/9083758026",
+          "lat": 48.665892,
+          "lng": 18.5102763,
+          "type": "connection"
+        },
+        {
+          "id": "V483 - /node/9083758030",
+          "lat": 48.6657548,
+          "lng": 18.5107532,
+          "type": "connection"
+        },
+        {
+          "id": "V483 - /node/9083758034",
+          "lat": 48.6656926,
+          "lng": 18.5109597,
+          "type": "connection"
+        },
+        {
+          "id": "V483 - /node/9083758022",
+          "lat": 48.6656736,
+          "lng": 18.5110237,
+          "type": "connection"
+        }
+      ]
     },
-      {
+    {
       "id": "v484-krizovany-bystricany",
       "name": "V484 Križovany-Bystričany",
       "voltage": "400kV",
@@ -27061,49 +27011,49 @@
       "country_from": "SK",
       "country_to": "SK",
       "towers": [
-  {
-    "id": "V484 - /node/1165736672",
-    "lat": 48.6665133,
-    "lng": 18.5071614,
-    "type": "tower"
-  },
-  {
-    "id": "V484 - /node/1691633009",
-    "lat": 48.6667905,
-    "lng": 18.5087429,
-    "type": "connection"
-  },
-  {
-    "id": "V484 - /node/8727720337",
-    "lat": 48.6662657,
-    "lng": 18.5104009,
-    "type": "connection"
-  },
-  {
-    "id": "V484 - /node/9083758025",
-    "lat": 48.6662321,
-    "lng": 18.5105131,
-    "type": "connection"
-  },
-  {
-    "id": "V484 - /node/9083758029",
-    "lat": 48.6660883,
-    "lng": 18.5109936,
-    "type": "connection"
-  },
-  {
-    "id": "V484 - /node/9083758033",
-    "lat": 48.6660282,
-    "lng": 18.5111942,
-    "type": "connection"
-  },
-  {
-    "id": "V484 - /node/9083758023",
-    "lat": 48.6660023,
-    "lng": 18.5112809,
-    "type": "connection"
-  }
-]
+        {
+          "id": "V484 - /node/1165736672",
+          "lat": 48.6665133,
+          "lng": 18.5071614,
+          "type": "tower"
+        },
+        {
+          "id": "V484 - /node/1691633009",
+          "lat": 48.6667905,
+          "lng": 18.5087429,
+          "type": "connection"
+        },
+        {
+          "id": "V484 - /node/8727720337",
+          "lat": 48.6662657,
+          "lng": 18.5104009,
+          "type": "connection"
+        },
+        {
+          "id": "V484 - /node/9083758025",
+          "lat": 48.6662321,
+          "lng": 18.5105131,
+          "type": "connection"
+        },
+        {
+          "id": "V484 - /node/9083758029",
+          "lat": 48.6660883,
+          "lng": 18.5109936,
+          "type": "connection"
+        },
+        {
+          "id": "V484 - /node/9083758033",
+          "lat": 48.6660282,
+          "lng": 18.5111942,
+          "type": "connection"
+        },
+        {
+          "id": "V484 - /node/9083758023",
+          "lat": 48.6660023,
+          "lng": 18.5112809,
+          "type": "connection"
+        }
+      ]
     },
     {
       "id": "v483/v484-krizovany-bystricany",
@@ -28541,19 +28491,19 @@
       "country_from": "SK",
       "country_to": "SK",
       "towers": [
-  {
-    "id": "V487 - /node/1814408641",
-    "lat": 48.6282543,
-    "lng": 21.1882367,
-    "type": "connection"
-  },
-  {
-    "id": "V487 - /node/1814408642",
-    "lat": 48.6286521,
-    "lng": 21.1884387,
-    "type": "connection"
-  }
-]
+        {
+          "id": "V487 - /node/1814408641",
+          "lat": 48.6282543,
+          "lng": 21.1882367,
+          "type": "connection"
+        },
+        {
+          "id": "V487 - /node/1814408642",
+          "lat": 48.6286521,
+          "lng": 21.1884387,
+          "type": "connection"
+        }
+      ]
     },
     {
       "id": "v487-moldava-lemesany",
@@ -28564,19 +28514,19 @@
       "country_from": "SK",
       "country_to": "SK",
       "towers": [
-  {
-    "id": "V487_ad - /node/8616067207",
-    "lat": 48.6012501,
-    "lng": 21.0463425,
-    "type": "connection"
-  },
-  {
-    "id": "V487_ad - /node/1814408603",
-    "lat": 48.6002045,
-    "lng": 21.045816,
-    "type": "connection"
-  }
-]
+        {
+          "id": "V487_ad - /node/8616067207",
+          "lat": 48.6012501,
+          "lng": 21.0463425,
+          "type": "connection"
+        },
+        {
+          "id": "V487_ad - /node/1814408603",
+          "lat": 48.6002045,
+          "lng": 21.045816,
+          "type": "connection"
+        }
+      ]
     },
     {
       "id": "v489-moldava-kosice",
@@ -28587,19 +28537,19 @@
       "country_from": "SK",
       "country_to": "SK",
       "towers": [
-  {
-    "id": "V489_ad_2 - /node/8616067208",
-    "lat": 48.6012602,
-    "lng": 21.046022,
-    "type": "connection"
-  },
-  {
-    "id": "V489_ad_2 - /node/1814408603",
-    "lat": 48.6002045,
-    "lng": 21.045816,
-    "type": "connection"
-  }
-]
+        {
+          "id": "V489_ad_2 - /node/8616067208",
+          "lat": 48.6012602,
+          "lng": 21.046022,
+          "type": "connection"
+        },
+        {
+          "id": "V489_ad_2 - /node/1814408603",
+          "lat": 48.6002045,
+          "lng": 21.045816,
+          "type": "connection"
+        }
+      ]
     },
     {
       "id": "v487/v488-moldava-kosice-lemesany",
@@ -28610,24 +28560,24 @@
       "country_from": "SK",
       "country_to": "SK",
       "towers": [
-          {
-    "id": "V488_ad - /node/8989735977",
-    "lat": 48.6278346,
-    "lng": 21.1896488,
-    "type": "connection"
-  },
-  {
-    "id": "V488_ad - /node/1984222433",
-    "lat": 48.6284324,
-    "lng": 21.189092,
-    "type": "tower"
-  },
-  {
-    "id": "V488_ad - /node/1814408642",
-    "lat": 48.6286521,
-    "lng": 21.1884387,
-    "type": "connection"
-  },
+        {
+          "id": "V488_ad - /node/8989735977",
+          "lat": 48.6278346,
+          "lng": 21.1896488,
+          "type": "connection"
+        },
+        {
+          "id": "V488_ad - /node/1984222433",
+          "lat": 48.6284324,
+          "lng": 21.189092,
+          "type": "tower"
+        },
+        {
+          "id": "V488_ad - /node/1814408642",
+          "lat": 48.6286521,
+          "lng": 21.1884387,
+          "type": "connection"
+        },
         {
           "id": "V488 - /node/1814408642",
           "lat": 48.6286521,
@@ -29521,24 +29471,24 @@
           "lng": 21.1882367,
           "type": "Tower"
         },
-          {
-    "id": "V489_ad - /node/1814408641",
-    "lat": 48.6282543,
-    "lng": 21.1882367,
-    "type": "connection"
-  },
-  {
-    "id": "V489_ad - /node/1984222365",
-    "lat": 48.628248,
-    "lng": 21.1886843,
-    "type": "tower"
-  },
-  {
-    "id": "V489_ad - /node/8989735990",
-    "lat": 48.6276345,
-    "lng": 21.1892638,
-    "type": "connection"
-  }
+        {
+          "id": "V489_ad - /node/1814408641",
+          "lat": 48.6282543,
+          "lng": 21.1882367,
+          "type": "connection"
+        },
+        {
+          "id": "V489_ad - /node/1984222365",
+          "lat": 48.628248,
+          "lng": 21.1886843,
+          "type": "tower"
+        },
+        {
+          "id": "V489_ad - /node/8989735990",
+          "lat": 48.6276345,
+          "lng": 21.1892638,
+          "type": "connection"
+        }
       ]
     },
     {
@@ -35204,25 +35154,25 @@
       "towers": [
         {
           "id": "V495 - /node/11339512758",
-          "lat": 48.5052570,
+          "lat": 48.505257,
           "lng": 17.6935563,
           "type": "Tower"
         },
         {
           "id": "V495 - /node/11339512758",
-          "lat": 48.5034407, 
+          "lat": 48.5034407,
           "lng": 17.6963029,
           "type": "Tower"
         },
         {
           "id": "V495 - /node/11339512758",
-          "lat": 48.5017208, 
+          "lat": 48.5017208,
           "lng": 17.6988778,
           "type": "Tower"
         }
       ]
     },
-    {       
+    {
       "id": "v043/v496-bosaca-ebov2-krizovany",
       "name": "V043/V496 Bošáca-EBOV2-Križovany",
       "voltage": "400kV",
@@ -35230,7 +35180,8 @@
       "operator": "SEPS",
       "country_from": "SK",
       "country_to": "SK",
-      "towers":         [{
+      "towers": [
+        {
           "id": "V093-V496 - /node/1929630983",
           "lat": 48.7951738,
           "lng": 17.8364406,
@@ -35925,7 +35876,8 @@
           "lat": 48.505257,
           "lng": 17.6935563,
           "type": "Tower"
-        }]
+        }
+      ]
     },
     {
       "id": "v044/v496-bosaca-ebov2-krizovany",
@@ -35936,7 +35888,6 @@
       "country_from": "SK",
       "country_to": "SK",
       "towers": [
-
         {
           "id": "V496-2 - /node/1083535929",
           "lat": 48.5017208,
@@ -39223,1324 +39174,1323 @@
           "lng": 17.2236112,
           "type": "Tower"
         },
-          {
-    "id": "V498_ad - /node/35463960",
-    "lat": 48.1121219,
-    "lng": 17.2236112,
-    "type": "tower"
-  },
-  {
-    "id": "V498_ad - /node/35463961",
-    "lat": 48.1111966,
-    "lng": 17.2203809,
-    "type": "connection"
-  },
-  {
-    "id": "V498_ad - /node/388190990",
-    "lat": 48.1119644,
-    "lng": 17.2197967,
-    "type": "connection"
-  }
-
+        {
+          "id": "V498_ad - /node/35463960",
+          "lat": 48.1121219,
+          "lng": 17.2236112,
+          "type": "tower"
+        },
+        {
+          "id": "V498_ad - /node/35463961",
+          "lat": 48.1111966,
+          "lng": 17.2203809,
+          "type": "connection"
+        },
+        {
+          "id": "V498_ad - /node/388190990",
+          "lat": 48.1119644,
+          "lng": 17.2197967,
+          "type": "connection"
+        }
       ]
     }
   ],
-  "substations" : [
+  "substations": [
     {
       "id": "est_bosaca",
       "name": "ESt Bošáca",
-      "voltage" : [400, 110],
+      "voltage": [400, 110],
       "operator": "SEPS",
       "type": "distribution",
       "nodes": [
-  {
-    "lat": 48.7924935,
-    "lng": 17.8398009
-  },
-  {
-    "lat": 48.7942788,
-    "lng": 17.8363904
-  },
-  {
-    "lat": 48.7959204,
-    "lng": 17.838258
-  },
-  {
-    "lat": 48.7949508,
-    "lng": 17.8402119
-  },
-  {
-    "lat": 48.7954389,
-    "lng": 17.8408463
-  },
-  {
-    "lat": 48.7946888,
-    "lng": 17.8423367
-  },
-  {
-    "lat": 48.7926482,
-    "lng": 17.8399796
-  },
-  {
-    "lat": 48.7924935,
-    "lng": 17.8398009
-  }
-]
-    },
         {
+          "lat": 48.7924935,
+          "lng": 17.8398009
+        },
+        {
+          "lat": 48.7942788,
+          "lng": 17.8363904
+        },
+        {
+          "lat": 48.7959204,
+          "lng": 17.838258
+        },
+        {
+          "lat": 48.7949508,
+          "lng": 17.8402119
+        },
+        {
+          "lat": 48.7954389,
+          "lng": 17.8408463
+        },
+        {
+          "lat": 48.7946888,
+          "lng": 17.8423367
+        },
+        {
+          "lat": 48.7926482,
+          "lng": 17.8399796
+        },
+        {
+          "lat": 48.7924935,
+          "lng": 17.8398009
+        }
+      ]
+    },
+    {
       "id": "est-bystricany",
       "name": "ESt Bystričany",
-      "voltage" : [400, 220, 110],
+      "voltage": [400, 220, 110],
       "operator": "SEPS/SSD",
       "type": "transmission",
       "nodes": [
-  {
-    "lat": 48.6671746,
-    "lng": 18.5142116
-  },
-  {
-    "lat": 48.6666656,
-    "lng": 18.5138497
-  },
-  {
-    "lat": 48.6663406,
-    "lng": 18.5148976
-  },
-  {
-    "lat": 48.6662119,
-    "lng": 18.5148061
-  },
-  {
-    "lat": 48.6661241,
-    "lng": 18.5147437
-  },
-  {
-    "lat": 48.6663227,
-    "lng": 18.5141035
-  },
-  {
-    "lat": 48.6642663,
-    "lng": 18.5126702
-  },
-  {
-    "lat": 48.6643686,
-    "lng": 18.511864
-  },
-  {
-    "lat": 48.6652644,
-    "lng": 18.5089635
-  },
-  {
-    "lat": 48.6670898,
-    "lng": 18.510329
-  },
-  {
-    "lat": 48.668143,
-    "lng": 18.511062
-  },
-  {
-    "lat": 48.6671746,
-    "lng": 18.5142116
-  }
-]
-    },
         {
+          "lat": 48.6671746,
+          "lng": 18.5142116
+        },
+        {
+          "lat": 48.6666656,
+          "lng": 18.5138497
+        },
+        {
+          "lat": 48.6663406,
+          "lng": 18.5148976
+        },
+        {
+          "lat": 48.6662119,
+          "lng": 18.5148061
+        },
+        {
+          "lat": 48.6661241,
+          "lng": 18.5147437
+        },
+        {
+          "lat": 48.6663227,
+          "lng": 18.5141035
+        },
+        {
+          "lat": 48.6642663,
+          "lng": 18.5126702
+        },
+        {
+          "lat": 48.6643686,
+          "lng": 18.511864
+        },
+        {
+          "lat": 48.6652644,
+          "lng": 18.5089635
+        },
+        {
+          "lat": 48.6670898,
+          "lng": 18.510329
+        },
+        {
+          "lat": 48.668143,
+          "lng": 18.511062
+        },
+        {
+          "lat": 48.6671746,
+          "lng": 18.5142116
+        }
+      ]
+    },
+    {
       "id": "est-gabcikovo-1",
       "name": "ESt Gabčíkovo",
-      "voltage" : [400],
+      "voltage": [400],
       "operator": "SEPS",
       "type": "transmission",
       "nodes": [
-  {
-    "lat": 47.887793,
-    "lng": 17.5451267
-  },
-  {
-    "lat": 47.8856073,
-    "lng": 17.5476821
-  },
-  {
-    "lat": 47.8855592,
-    "lng": 17.547741
-  },
-  {
-    "lat": 47.8844133,
-    "lng": 17.545619
-  },
-  {
-    "lat": 47.8860685,
-    "lng": 17.5437052
-  },
-  {
-    "lat": 47.8865997,
-    "lng": 17.5430776
-  },
-  {
-    "lat": 47.8867273,
-    "lng": 17.5430891
-  },
-  {
-    "lat": 47.8869725,
-    "lng": 17.5435536
-  },
-  {
-    "lat": 47.887793,
-    "lng": 17.5451267
-  }
-]
-    },
         {
+          "lat": 47.887793,
+          "lng": 17.5451267
+        },
+        {
+          "lat": 47.8856073,
+          "lng": 17.5476821
+        },
+        {
+          "lat": 47.8855592,
+          "lng": 17.547741
+        },
+        {
+          "lat": 47.8844133,
+          "lng": 17.545619
+        },
+        {
+          "lat": 47.8860685,
+          "lng": 17.5437052
+        },
+        {
+          "lat": 47.8865997,
+          "lng": 17.5430776
+        },
+        {
+          "lat": 47.8867273,
+          "lng": 17.5430891
+        },
+        {
+          "lat": 47.8869725,
+          "lng": 17.5435536
+        },
+        {
+          "lat": 47.887793,
+          "lng": 17.5451267
+        }
+      ]
+    },
+    {
       "id": "est-gabcikovo-2",
       "name": "ESt Vodné dielo Gabčíkovo",
-      "voltage" : [400, 110],
+      "voltage": [400, 110],
       "operator": "SEPS",
       "type": "transmission",
       "nodes": [
-  {
-    "lat": 47.8835939,
-    "lng": 17.5433933
-  },
-  {
-    "lat": 47.8827958,
-    "lng": 17.5419236
-  },
-  {
-    "lat": 47.8843702,
-    "lng": 17.5399773
-  },
-  {
-    "lat": 47.8845999,
-    "lng": 17.5397045
-  },
-  {
-    "lat": 47.8854035,
-    "lng": 17.5411541
-  },
-  {
-    "lat": 47.8836474,
-    "lng": 17.5433227
-  },
-  {
-    "lat": 47.8835939,
-    "lng": 17.5433933
-  }
-]
-    },
         {
+          "lat": 47.8835939,
+          "lng": 17.5433933
+        },
+        {
+          "lat": 47.8827958,
+          "lng": 17.5419236
+        },
+        {
+          "lat": 47.8843702,
+          "lng": 17.5399773
+        },
+        {
+          "lat": 47.8845999,
+          "lng": 17.5397045
+        },
+        {
+          "lat": 47.8854035,
+          "lng": 17.5411541
+        },
+        {
+          "lat": 47.8836474,
+          "lng": 17.5433227
+        },
+        {
+          "lat": 47.8835939,
+          "lng": 17.5433933
+        }
+      ]
+    },
+    {
       "id": "est-hornazdana",
       "name": "ESt Horná Ždaňa",
-      "voltage" : [400, 110],
+      "voltage": [400, 110],
       "operator": "SEPS",
       "type": "transmission",
       "nodes": [
-  {
-    "lat": 48.5575667,
-    "lng": 18.742042
-  },
-  {
-    "lat": 48.5575286,
-    "lng": 18.7406344
-  },
-  {
-    "lat": 48.5582651,
-    "lng": 18.7400445
-  },
-  {
-    "lat": 48.5598204,
-    "lng": 18.7392859
-  },
-  {
-    "lat": 48.5598699,
-    "lng": 18.7395403
-  },
-  {
-    "lat": 48.5601007,
-    "lng": 18.7399131
-  },
-  {
-    "lat": 48.5602019,
-    "lng": 18.7402886
-  },
-  {
-    "lat": 48.5604374,
-    "lng": 18.7404803
-  },
-  {
-    "lat": 48.5606237,
-    "lng": 18.7408469
-  },
-  {
-    "lat": 48.5610612,
-    "lng": 18.7425537
-  },
-  {
-    "lat": 48.5583689,
-    "lng": 18.7442168
-  },
-  {
-    "lat": 48.5581579,
-    "lng": 18.7433878
-  },
-  {
-    "lat": 48.5580723,
-    "lng": 18.7433848
-  },
-  {
-    "lat": 48.5580458,
-    "lng": 18.7433039
-  },
-  {
-    "lat": 48.5578488,
-    "lng": 18.7427035
-  },
-  {
-    "lat": 48.5576428,
-    "lng": 18.7423011
-  },
-  {
-    "lat": 48.5575667,
-    "lng": 18.742042
-  }
-]
-    },
         {
+          "lat": 48.5575667,
+          "lng": 18.742042
+        },
+        {
+          "lat": 48.5575286,
+          "lng": 18.7406344
+        },
+        {
+          "lat": 48.5582651,
+          "lng": 18.7400445
+        },
+        {
+          "lat": 48.5598204,
+          "lng": 18.7392859
+        },
+        {
+          "lat": 48.5598699,
+          "lng": 18.7395403
+        },
+        {
+          "lat": 48.5601007,
+          "lng": 18.7399131
+        },
+        {
+          "lat": 48.5602019,
+          "lng": 18.7402886
+        },
+        {
+          "lat": 48.5604374,
+          "lng": 18.7404803
+        },
+        {
+          "lat": 48.5606237,
+          "lng": 18.7408469
+        },
+        {
+          "lat": 48.5610612,
+          "lng": 18.7425537
+        },
+        {
+          "lat": 48.5583689,
+          "lng": 18.7442168
+        },
+        {
+          "lat": 48.5581579,
+          "lng": 18.7433878
+        },
+        {
+          "lat": 48.5580723,
+          "lng": 18.7433848
+        },
+        {
+          "lat": 48.5580458,
+          "lng": 18.7433039
+        },
+        {
+          "lat": 48.5578488,
+          "lng": 18.7427035
+        },
+        {
+          "lat": 48.5576428,
+          "lng": 18.7423011
+        },
+        {
+          "lat": 48.5575667,
+          "lng": 18.742042
+        }
+      ]
+    },
+    {
       "id": "est-kosice-1",
       "name": "ESt Košice",
-      "voltage" : [400, 110],
+      "voltage": [400, 110],
       "operator": "SEPS",
       "type": "transmission",
       "nodes": [
-  {
-    "lat": 48.6283073,
-    "lng": 21.1898604
-  },
-  {
-    "lat": 48.6274191,
-    "lng": 21.1909058
-  },
-  {
-    "lat": 48.6267778,
-    "lng": 21.1896788
-  },
-  {
-    "lat": 48.6267142,
-    "lng": 21.189557
-  },
-  {
-    "lat": 48.6266959,
-    "lng": 21.189522
-  },
-  {
-    "lat": 48.6266709,
-    "lng": 21.1894741
-  },
-  {
-    "lat": 48.6275511,
-    "lng": 21.1884245
-  },
-  {
-    "lat": 48.6283073,
-    "lng": 21.1898604
-  }
-]
+        {
+          "lat": 48.6283073,
+          "lng": 21.1898604
+        },
+        {
+          "lat": 48.6274191,
+          "lng": 21.1909058
+        },
+        {
+          "lat": 48.6267778,
+          "lng": 21.1896788
+        },
+        {
+          "lat": 48.6267142,
+          "lng": 21.189557
+        },
+        {
+          "lat": 48.6266959,
+          "lng": 21.189522
+        },
+        {
+          "lat": 48.6266709,
+          "lng": 21.1894741
+        },
+        {
+          "lat": 48.6275511,
+          "lng": 21.1884245
+        },
+        {
+          "lat": 48.6283073,
+          "lng": 21.1898604
+        }
+      ]
     },
-            {
+    {
       "id": "est-kosice-2",
       "name": "ESt Košice",
-      "voltage" : [400, 110],
+      "voltage": [400, 110],
       "operator": "SEPS",
       "type": "transmission",
       "nodes": [
-  {
-    "lat": 48.6270972,
-    "lng": 21.1906103
-  },
-  {
-    "lat": 48.6272864,
-    "lng": 21.1909571
-  },
-  {
-    "lat": 48.6280804,
-    "lng": 21.1924128
-  },
-  {
-    "lat": 48.6278267,
-    "lng": 21.1924386
-  },
-  {
-    "lat": 48.6271976,
-    "lng": 21.1931697
-  },
-  {
-    "lat": 48.6271618,
-    "lng": 21.1932124
-  },
-  {
-    "lat": 48.6271183,
-    "lng": 21.1932629
-  },
-  {
-    "lat": 48.6270619,
-    "lng": 21.1933281
-  },
-  {
-    "lat": 48.6267549,
-    "lng": 21.1936909
-  },
-  {
-    "lat": 48.6266648,
-    "lng": 21.1937984
-  },
-  {
-    "lat": 48.626624,
-    "lng": 21.1937137
-  },
-  {
-    "lat": 48.6265026,
-    "lng": 21.1938607
-  },
-  {
-    "lat": 48.6260565,
-    "lng": 21.1930172
-  },
-  {
-    "lat": 48.6259142,
-    "lng": 21.1927326
-  },
-  {
-    "lat": 48.6258191,
-    "lng": 21.1925426
-  },
-  {
-    "lat": 48.625784,
-    "lng": 21.192476
-  },
-  {
-    "lat": 48.6254847,
-    "lng": 21.1919227
-  },
-  {
-    "lat": 48.6254514,
-    "lng": 21.1918612
-  },
-  {
-    "lat": 48.6253697,
-    "lng": 21.1917046
-  },
-  {
-    "lat": 48.6253663,
-    "lng": 21.1916962
-  },
-  {
-    "lat": 48.6262865,
-    "lng": 21.1906212
-  },
-  {
-    "lat": 48.6261786,
-    "lng": 21.190409
-  },
-  {
-    "lat": 48.6266709,
-    "lng": 21.1898073
-  },
-  {
-    "lat": 48.6270972,
-    "lng": 21.1906103
-  }
-]
-    },
         {
+          "lat": 48.6270972,
+          "lng": 21.1906103
+        },
+        {
+          "lat": 48.6272864,
+          "lng": 21.1909571
+        },
+        {
+          "lat": 48.6280804,
+          "lng": 21.1924128
+        },
+        {
+          "lat": 48.6278267,
+          "lng": 21.1924386
+        },
+        {
+          "lat": 48.6271976,
+          "lng": 21.1931697
+        },
+        {
+          "lat": 48.6271618,
+          "lng": 21.1932124
+        },
+        {
+          "lat": 48.6271183,
+          "lng": 21.1932629
+        },
+        {
+          "lat": 48.6270619,
+          "lng": 21.1933281
+        },
+        {
+          "lat": 48.6267549,
+          "lng": 21.1936909
+        },
+        {
+          "lat": 48.6266648,
+          "lng": 21.1937984
+        },
+        {
+          "lat": 48.626624,
+          "lng": 21.1937137
+        },
+        {
+          "lat": 48.6265026,
+          "lng": 21.1938607
+        },
+        {
+          "lat": 48.6260565,
+          "lng": 21.1930172
+        },
+        {
+          "lat": 48.6259142,
+          "lng": 21.1927326
+        },
+        {
+          "lat": 48.6258191,
+          "lng": 21.1925426
+        },
+        {
+          "lat": 48.625784,
+          "lng": 21.192476
+        },
+        {
+          "lat": 48.6254847,
+          "lng": 21.1919227
+        },
+        {
+          "lat": 48.6254514,
+          "lng": 21.1918612
+        },
+        {
+          "lat": 48.6253697,
+          "lng": 21.1917046
+        },
+        {
+          "lat": 48.6253663,
+          "lng": 21.1916962
+        },
+        {
+          "lat": 48.6262865,
+          "lng": 21.1906212
+        },
+        {
+          "lat": 48.6261786,
+          "lng": 21.190409
+        },
+        {
+          "lat": 48.6266709,
+          "lng": 21.1898073
+        },
+        {
+          "lat": 48.6270972,
+          "lng": 21.1906103
+        }
+      ]
+    },
+    {
       "id": "est-levice-1",
       "name": "ESt Levice",
-      "voltage" : [400],
+      "voltage": [400],
       "operator": "SEPS",
       "type": "transmission",
       "nodes": [
-  {
-    "lat": 48.2348264,
-    "lng": 18.602664
-  },
-  {
-    "lat": 48.2346869,
-    "lng": 18.6036835
-  },
-  {
-    "lat": 48.2345466,
-    "lng": 18.6047217
-  },
-  {
-    "lat": 48.234521,
-    "lng": 18.6047518
-  },
-  {
-    "lat": 48.2335331,
-    "lng": 18.6054571
-  },
-  {
-    "lat": 48.2324369,
-    "lng": 18.6062365
-  },
-  {
-    "lat": 48.2317175,
-    "lng": 18.6039613
-  },
-  {
-    "lat": 48.2325817,
-    "lng": 18.6033453
-  },
-  {
-    "lat": 48.2326348,
-    "lng": 18.6035128
-  },
-  {
-    "lat": 48.2327597,
-    "lng": 18.6034251
-  },
-  {
-    "lat": 48.2327971,
-    "lng": 18.6033844
-  },
-  {
-    "lat": 48.2328205,
-    "lng": 18.6033402
-  },
-  {
-    "lat": 48.2328303,
-    "lng": 18.6032898
-  },
-  {
-    "lat": 48.2328207,
-    "lng": 18.6032398
-  },
-  {
-    "lat": 48.2326113,
-    "lng": 18.6025703
-  },
-  {
-    "lat": 48.2325444,
-    "lng": 18.602347
-  },
-  {
-    "lat": 48.2327038,
-    "lng": 18.6022337
-  },
-  {
-    "lat": 48.2330025,
-    "lng": 18.602021
-  },
-  {
-    "lat": 48.2329643,
-    "lng": 18.6019008
-  },
-  {
-    "lat": 48.2342839,
-    "lng": 18.6009676
-  },
-  {
-    "lat": 48.2343301,
-    "lng": 18.6011184
-  },
-  {
-    "lat": 48.2348264,
-    "lng": 18.602664
-  }
-]
+        {
+          "lat": 48.2348264,
+          "lng": 18.602664
+        },
+        {
+          "lat": 48.2346869,
+          "lng": 18.6036835
+        },
+        {
+          "lat": 48.2345466,
+          "lng": 18.6047217
+        },
+        {
+          "lat": 48.234521,
+          "lng": 18.6047518
+        },
+        {
+          "lat": 48.2335331,
+          "lng": 18.6054571
+        },
+        {
+          "lat": 48.2324369,
+          "lng": 18.6062365
+        },
+        {
+          "lat": 48.2317175,
+          "lng": 18.6039613
+        },
+        {
+          "lat": 48.2325817,
+          "lng": 18.6033453
+        },
+        {
+          "lat": 48.2326348,
+          "lng": 18.6035128
+        },
+        {
+          "lat": 48.2327597,
+          "lng": 18.6034251
+        },
+        {
+          "lat": 48.2327971,
+          "lng": 18.6033844
+        },
+        {
+          "lat": 48.2328205,
+          "lng": 18.6033402
+        },
+        {
+          "lat": 48.2328303,
+          "lng": 18.6032898
+        },
+        {
+          "lat": 48.2328207,
+          "lng": 18.6032398
+        },
+        {
+          "lat": 48.2326113,
+          "lng": 18.6025703
+        },
+        {
+          "lat": 48.2325444,
+          "lng": 18.602347
+        },
+        {
+          "lat": 48.2327038,
+          "lng": 18.6022337
+        },
+        {
+          "lat": 48.2330025,
+          "lng": 18.602021
+        },
+        {
+          "lat": 48.2329643,
+          "lng": 18.6019008
+        },
+        {
+          "lat": 48.2342839,
+          "lng": 18.6009676
+        },
+        {
+          "lat": 48.2343301,
+          "lng": 18.6011184
+        },
+        {
+          "lat": 48.2348264,
+          "lng": 18.602664
+        }
+      ]
     },
-            {
+    {
       "id": "est-levice-2",
       "name": "ESt Levice",
-      "voltage" : [110],
+      "voltage": [110],
       "operator": "SEPS",
       "type": "transmission",
       "nodes": [
-  {
-    "lat": 48.2346991,
-    "lng": 18.6005965
-  },
-  {
-    "lat": 48.2346411,
-    "lng": 18.6008495
-  },
-  {
-    "lat": 48.2346265,
-    "lng": 18.6009005
-  },
-  {
-    "lat": 48.2345987,
-    "lng": 18.600918
-  },
-  {
-    "lat": 48.2343301,
-    "lng": 18.6011184
-  },
-  {
-    "lat": 48.2342839,
-    "lng": 18.6009676
-  },
-  {
-    "lat": 48.2329643,
-    "lng": 18.6019008
-  },
-  {
-    "lat": 48.2329532,
-    "lng": 18.6018643
-  },
-  {
-    "lat": 48.2328317,
-    "lng": 18.6019507
-  },
-  {
-    "lat": 48.2327612,
-    "lng": 18.6017343
-  },
-  {
-    "lat": 48.23272,
-    "lng": 18.601764
-  },
-  {
-    "lat": 48.2326382,
-    "lng": 18.6015047
-  },
-  {
-    "lat": 48.2326304,
-    "lng": 18.6015103
-  },
-  {
-    "lat": 48.2325748,
-    "lng": 18.6013351
-  },
-  {
-    "lat": 48.2325742,
-    "lng": 18.6013043
-  },
-  {
-    "lat": 48.2325492,
-    "lng": 18.6012179
-  },
-  {
-    "lat": 48.2328506,
-    "lng": 18.6010153
-  },
-  {
-    "lat": 48.2332347,
-    "lng": 18.6007572
-  },
-  {
-    "lat": 48.2344578,
-    "lng": 18.5998958
-  },
-  {
-    "lat": 48.2346991,
-    "lng": 18.6005965
-  }
-]
-    },
         {
+          "lat": 48.2346991,
+          "lng": 18.6005965
+        },
+        {
+          "lat": 48.2346411,
+          "lng": 18.6008495
+        },
+        {
+          "lat": 48.2346265,
+          "lng": 18.6009005
+        },
+        {
+          "lat": 48.2345987,
+          "lng": 18.600918
+        },
+        {
+          "lat": 48.2343301,
+          "lng": 18.6011184
+        },
+        {
+          "lat": 48.2342839,
+          "lng": 18.6009676
+        },
+        {
+          "lat": 48.2329643,
+          "lng": 18.6019008
+        },
+        {
+          "lat": 48.2329532,
+          "lng": 18.6018643
+        },
+        {
+          "lat": 48.2328317,
+          "lng": 18.6019507
+        },
+        {
+          "lat": 48.2327612,
+          "lng": 18.6017343
+        },
+        {
+          "lat": 48.23272,
+          "lng": 18.601764
+        },
+        {
+          "lat": 48.2326382,
+          "lng": 18.6015047
+        },
+        {
+          "lat": 48.2326304,
+          "lng": 18.6015103
+        },
+        {
+          "lat": 48.2325748,
+          "lng": 18.6013351
+        },
+        {
+          "lat": 48.2325742,
+          "lng": 18.6013043
+        },
+        {
+          "lat": 48.2325492,
+          "lng": 18.6012179
+        },
+        {
+          "lat": 48.2328506,
+          "lng": 18.6010153
+        },
+        {
+          "lat": 48.2332347,
+          "lng": 18.6007572
+        },
+        {
+          "lat": 48.2344578,
+          "lng": 18.5998958
+        },
+        {
+          "lat": 48.2346991,
+          "lng": 18.6005965
+        }
+      ]
+    },
+    {
       "id": "est-liptovskamara",
       "name": "ESt Liptovská Mara",
-      "voltage" : [400, 110],
+      "voltage": [400, 110],
       "operator": "SEPS",
       "type": "transmission",
       "nodes": [
-  {
-    "lat": 49.0842332,
-    "lng": 19.4893926
-  },
-  {
-    "lat": 49.0855339,
-    "lng": 19.4873573
-  },
-  {
-    "lat": 49.0861148,
-    "lng": 19.4864484
-  },
-  {
-    "lat": 49.0880908,
-    "lng": 19.4893716
-  },
-  {
-    "lat": 49.0876254,
-    "lng": 19.4901095
-  },
-  {
-    "lat": 49.0862093,
-    "lng": 19.4923245
-  },
-  {
-    "lat": 49.0842332,
-    "lng": 19.4893926
-  }
-]
-    },
         {
+          "lat": 49.0842332,
+          "lng": 19.4893926
+        },
+        {
+          "lat": 49.0855339,
+          "lng": 19.4873573
+        },
+        {
+          "lat": 49.0861148,
+          "lng": 19.4864484
+        },
+        {
+          "lat": 49.0880908,
+          "lng": 19.4893716
+        },
+        {
+          "lat": 49.0876254,
+          "lng": 19.4901095
+        },
+        {
+          "lat": 49.0862093,
+          "lng": 19.4923245
+        },
+        {
+          "lat": 49.0842332,
+          "lng": 19.4893926
+        }
+      ]
+    },
+    {
       "id": "est-medzibrod",
       "name": "ESt Medzibrod",
-      "voltage" : [400, 110],
+      "voltage": [400, 110],
       "operator": "SEPS",
       "type": "transmission",
       "nodes": [
-  {
-    "lat": 48.7974833,
-    "lng": 19.3679736
-  },
-  {
-    "lat": 48.796683,
-    "lng": 19.3679058
-  },
-  {
-    "lat": 48.7962834,
-    "lng": 19.3680861
-  },
-  {
-    "lat": 48.7962172,
-    "lng": 19.3680779
-  },
-  {
-    "lat": 48.7961751,
-    "lng": 19.3680636
-  },
-  {
-    "lat": 48.7961681,
-    "lng": 19.3681472
-  },
-  {
-    "lat": 48.7959417,
-    "lng": 19.3682719
-  },
-  {
-    "lat": 48.795926,
-    "lng": 19.3682965
-  },
-  {
-    "lat": 48.7958967,
-    "lng": 19.3682948
-  },
-  {
-    "lat": 48.7958715,
-    "lng": 19.3682883
-  },
-  {
-    "lat": 48.7958073,
-    "lng": 19.3683048
-  },
-  {
-    "lat": 48.7953727,
-    "lng": 19.368155
-  },
-  {
-    "lat": 48.7954195,
-    "lng": 19.3670261
-  },
-  {
-    "lat": 48.795475,
-    "lng": 19.3658309
-  },
-  {
-    "lat": 48.7954786,
-    "lng": 19.3655305
-  },
-  {
-    "lat": 48.795503,
-    "lng": 19.3649931
-  },
-  {
-    "lat": 48.7967391,
-    "lng": 19.3650631
-  },
-  {
-    "lat": 48.7967318,
-    "lng": 19.3655583
-  },
-  {
-    "lat": 48.7975896,
-    "lng": 19.3656307
-  },
-  {
-    "lat": 48.7974833,
-    "lng": 19.3679736
-  }
-]
-    },
         {
+          "lat": 48.7974833,
+          "lng": 19.3679736
+        },
+        {
+          "lat": 48.796683,
+          "lng": 19.3679058
+        },
+        {
+          "lat": 48.7962834,
+          "lng": 19.3680861
+        },
+        {
+          "lat": 48.7962172,
+          "lng": 19.3680779
+        },
+        {
+          "lat": 48.7961751,
+          "lng": 19.3680636
+        },
+        {
+          "lat": 48.7961681,
+          "lng": 19.3681472
+        },
+        {
+          "lat": 48.7959417,
+          "lng": 19.3682719
+        },
+        {
+          "lat": 48.795926,
+          "lng": 19.3682965
+        },
+        {
+          "lat": 48.7958967,
+          "lng": 19.3682948
+        },
+        {
+          "lat": 48.7958715,
+          "lng": 19.3682883
+        },
+        {
+          "lat": 48.7958073,
+          "lng": 19.3683048
+        },
+        {
+          "lat": 48.7953727,
+          "lng": 19.368155
+        },
+        {
+          "lat": 48.7954195,
+          "lng": 19.3670261
+        },
+        {
+          "lat": 48.795475,
+          "lng": 19.3658309
+        },
+        {
+          "lat": 48.7954786,
+          "lng": 19.3655305
+        },
+        {
+          "lat": 48.795503,
+          "lng": 19.3649931
+        },
+        {
+          "lat": 48.7967391,
+          "lng": 19.3650631
+        },
+        {
+          "lat": 48.7967318,
+          "lng": 19.3655583
+        },
+        {
+          "lat": 48.7975896,
+          "lng": 19.3656307
+        },
+        {
+          "lat": 48.7974833,
+          "lng": 19.3679736
+        }
+      ]
+    },
+    {
       "id": "est-moldava",
       "name": "ESt Moldava",
-      "voltage" : [400, 110],
+      "voltage": [400, 110],
       "operator": "SEPS",
       "type": "transmission",
       "nodes": [
-  {
-    "lat": 48.603239,
-    "lng": 21.0468087
-  },
-  {
-    "lat": 48.6038009,
-    "lng": 21.0468543
-  },
-  {
-    "lat": 48.6038683,
-    "lng": 21.0434478
-  },
-  {
-    "lat": 48.6031474,
-    "lng": 21.0433932
-  },
-  {
-    "lat": 48.6029671,
-    "lng": 21.0433795
-  },
-  {
-    "lat": 48.6023731,
-    "lng": 21.0433356
-  },
-  {
-    "lat": 48.600966,
-    "lng": 21.0432677
-  },
-  {
-    "lat": 48.600871,
-    "lng": 21.046665
-  },
-  {
-    "lat": 48.6027518,
-    "lng": 21.0467791
-  },
-  {
-    "lat": 48.603239,
-    "lng": 21.0468087
-  }
-]
-    },
         {
+          "lat": 48.603239,
+          "lng": 21.0468087
+        },
+        {
+          "lat": 48.6038009,
+          "lng": 21.0468543
+        },
+        {
+          "lat": 48.6038683,
+          "lng": 21.0434478
+        },
+        {
+          "lat": 48.6031474,
+          "lng": 21.0433932
+        },
+        {
+          "lat": 48.6029671,
+          "lng": 21.0433795
+        },
+        {
+          "lat": 48.6023731,
+          "lng": 21.0433356
+        },
+        {
+          "lat": 48.600966,
+          "lng": 21.0432677
+        },
+        {
+          "lat": 48.600871,
+          "lng": 21.046665
+        },
+        {
+          "lat": 48.6027518,
+          "lng": 21.0467791
+        },
+        {
+          "lat": 48.603239,
+          "lng": 21.0468087
+        }
+      ]
+    },
+    {
       "id": "est-podunajskebiskupice",
       "name": "ESt Podunajské Biskupice",
-      "voltage" : [400, 110],
+      "voltage": [400, 110],
       "operator": "SEPS/ZSD",
       "type": "transmission",
       "nodes": [
-  {
-    "lat": 48.1152094,
-    "lng": 17.2168879
-  },
-  {
-    "lat": 48.1147667,
-    "lng": 17.2159973
-  },
-  {
-    "lat": 48.1146962,
-    "lng": 17.2159168
-  },
-  {
-    "lat": 48.1146717,
-    "lng": 17.2158888
-  },
-  {
-    "lat": 48.114751,
-    "lng": 17.21555
-  },
-  {
-    "lat": 48.1143281,
-    "lng": 17.2146686
-  },
-  {
-    "lat": 48.1123704,
-    "lng": 17.2168533
-  },
-  {
-    "lat": 48.1120181,
-    "lng": 17.2161354
-  },
-  {
-    "lat": 48.1115104,
-    "lng": 17.2166918
-  },
-  {
-    "lat": 48.1114267,
-    "lng": 17.2165318
-  },
-  {
-    "lat": 48.1101425,
-    "lng": 17.2179297
-  },
-  {
-    "lat": 48.1115786,
-    "lng": 17.2208601
-  },
-  {
-    "lat": 48.1128384,
-    "lng": 17.2194771
-  },
-  {
-    "lat": 48.1144704,
-    "lng": 17.2176949
-  },
-  {
-    "lat": 48.1152094,
-    "lng": 17.2168879
-  }
-]
-    },
         {
+          "lat": 48.1152094,
+          "lng": 17.2168879
+        },
+        {
+          "lat": 48.1147667,
+          "lng": 17.2159973
+        },
+        {
+          "lat": 48.1146962,
+          "lng": 17.2159168
+        },
+        {
+          "lat": 48.1146717,
+          "lng": 17.2158888
+        },
+        {
+          "lat": 48.114751,
+          "lng": 17.21555
+        },
+        {
+          "lat": 48.1143281,
+          "lng": 17.2146686
+        },
+        {
+          "lat": 48.1123704,
+          "lng": 17.2168533
+        },
+        {
+          "lat": 48.1120181,
+          "lng": 17.2161354
+        },
+        {
+          "lat": 48.1115104,
+          "lng": 17.2166918
+        },
+        {
+          "lat": 48.1114267,
+          "lng": 17.2165318
+        },
+        {
+          "lat": 48.1101425,
+          "lng": 17.2179297
+        },
+        {
+          "lat": 48.1115786,
+          "lng": 17.2208601
+        },
+        {
+          "lat": 48.1128384,
+          "lng": 17.2194771
+        },
+        {
+          "lat": 48.1144704,
+          "lng": 17.2176949
+        },
+        {
+          "lat": 48.1152094,
+          "lng": 17.2168879
+        }
+      ]
+    },
+    {
       "id": "est-rimavskasobota",
       "name": "ESt Rimavská Sobota",
-      "voltage" : [400, 110],
+      "voltage": [400, 110],
       "operator": "SEPS",
       "type": "transmission",
       "nodes": [
-  {
-    "lat": 48.3815614,
-    "lng": 20.0464129
-  },
-  {
-    "lat": 48.3814393,
-    "lng": 20.0465654
-  },
-  {
-    "lat": 48.3811071,
-    "lng": 20.0465137
-  },
-  {
-    "lat": 48.3802466,
-    "lng": 20.0475707
-  },
-  {
-    "lat": 48.3788256,
-    "lng": 20.0449358
-  },
-  {
-    "lat": 48.3785058,
-    "lng": 20.044344
-  },
-  {
-    "lat": 48.3801843,
-    "lng": 20.042321
-  },
-  {
-    "lat": 48.3810492,
-    "lng": 20.0430714
-  },
-  {
-    "lat": 48.3827813,
-    "lng": 20.0419469
-  },
-  {
-    "lat": 48.3828749,
-    "lng": 20.0422572
-  },
-  {
-    "lat": 48.3834533,
-    "lng": 20.0418727
-  },
-  {
-    "lat": 48.3834924,
-    "lng": 20.0419965
-  },
-  {
-    "lat": 48.3834853,
-    "lng": 20.0420012
-  },
-  {
-    "lat": 48.3835309,
-    "lng": 20.0421732
-  },
-  {
-    "lat": 48.3836093,
-    "lng": 20.0424431
-  },
-  {
-    "lat": 48.3836013,
-    "lng": 20.0424481
-  },
-  {
-    "lat": 48.3836099,
-    "lng": 20.0424747
-  },
-  {
-    "lat": 48.3836173,
-    "lng": 20.042471
-  },
-  {
-    "lat": 48.3837382,
-    "lng": 20.0429111
-  },
-  {
-    "lat": 48.3837304,
-    "lng": 20.0429166
-  },
-  {
-    "lat": 48.3837436,
-    "lng": 20.0429634
-  },
-  {
-    "lat": 48.3837523,
-    "lng": 20.0429572
-  },
-  {
-    "lat": 48.3839091,
-    "lng": 20.0435011
-  },
-  {
-    "lat": 48.3822689,
-    "lng": 20.0446052
-  },
-  {
-    "lat": 48.3823894,
-    "lng": 20.0452635
-  },
-  {
-    "lat": 48.3824067,
-    "lng": 20.0453711
-  },
-  {
-    "lat": 48.3815614,
-    "lng": 20.0464129
-  }
-]
-    },
         {
+          "lat": 48.3815614,
+          "lng": 20.0464129
+        },
+        {
+          "lat": 48.3814393,
+          "lng": 20.0465654
+        },
+        {
+          "lat": 48.3811071,
+          "lng": 20.0465137
+        },
+        {
+          "lat": 48.3802466,
+          "lng": 20.0475707
+        },
+        {
+          "lat": 48.3788256,
+          "lng": 20.0449358
+        },
+        {
+          "lat": 48.3785058,
+          "lng": 20.044344
+        },
+        {
+          "lat": 48.3801843,
+          "lng": 20.042321
+        },
+        {
+          "lat": 48.3810492,
+          "lng": 20.0430714
+        },
+        {
+          "lat": 48.3827813,
+          "lng": 20.0419469
+        },
+        {
+          "lat": 48.3828749,
+          "lng": 20.0422572
+        },
+        {
+          "lat": 48.3834533,
+          "lng": 20.0418727
+        },
+        {
+          "lat": 48.3834924,
+          "lng": 20.0419965
+        },
+        {
+          "lat": 48.3834853,
+          "lng": 20.0420012
+        },
+        {
+          "lat": 48.3835309,
+          "lng": 20.0421732
+        },
+        {
+          "lat": 48.3836093,
+          "lng": 20.0424431
+        },
+        {
+          "lat": 48.3836013,
+          "lng": 20.0424481
+        },
+        {
+          "lat": 48.3836099,
+          "lng": 20.0424747
+        },
+        {
+          "lat": 48.3836173,
+          "lng": 20.042471
+        },
+        {
+          "lat": 48.3837382,
+          "lng": 20.0429111
+        },
+        {
+          "lat": 48.3837304,
+          "lng": 20.0429166
+        },
+        {
+          "lat": 48.3837436,
+          "lng": 20.0429634
+        },
+        {
+          "lat": 48.3837523,
+          "lng": 20.0429572
+        },
+        {
+          "lat": 48.3839091,
+          "lng": 20.0435011
+        },
+        {
+          "lat": 48.3822689,
+          "lng": 20.0446052
+        },
+        {
+          "lat": 48.3823894,
+          "lng": 20.0452635
+        },
+        {
+          "lat": 48.3824067,
+          "lng": 20.0453711
+        },
+        {
+          "lat": 48.3815614,
+          "lng": 20.0464129
+        }
+      ]
+    },
+    {
       "id": "est-spisskanovaves",
       "name": "ESt Spišská Nová Ves",
-      "voltage" : [400, 110],
+      "voltage": [400, 110],
       "operator": "SEPS",
       "type": "transmission",
       "nodes": [
-  {
-    "lat": 48.9658017,
-    "lng": 20.5319586
-  },
-  {
-    "lat": 48.9632642,
-    "lng": 20.5320592
-  },
-  {
-    "lat": 48.9632898,
-    "lng": 20.5326976
-  },
-  {
-    "lat": 48.963855,
-    "lng": 20.5329269
-  },
-  {
-    "lat": 48.9638407,
-    "lng": 20.5330133
-  },
-  {
-    "lat": 48.9638207,
-    "lng": 20.5331334
-  },
-  {
-    "lat": 48.9632924,
-    "lng": 20.5329792
-  },
-  {
-    "lat": 48.9633778,
-    "lng": 20.5362475
-  },
-  {
-    "lat": 48.9657216,
-    "lng": 20.5361737
-  },
-  {
-    "lat": 48.9657085,
-    "lng": 20.5332783
-  },
-  {
-    "lat": 48.9658035,
-    "lng": 20.5332353
-  },
-  {
-    "lat": 48.965803,
-    "lng": 20.5328632
-  },
-  {
-    "lat": 48.965802,
-    "lng": 20.5321702
-  },
-  {
-    "lat": 48.9658017,
-    "lng": 20.5319586
-  }
-]
-    },
         {
+          "lat": 48.9658017,
+          "lng": 20.5319586
+        },
+        {
+          "lat": 48.9632642,
+          "lng": 20.5320592
+        },
+        {
+          "lat": 48.9632898,
+          "lng": 20.5326976
+        },
+        {
+          "lat": 48.963855,
+          "lng": 20.5329269
+        },
+        {
+          "lat": 48.9638407,
+          "lng": 20.5330133
+        },
+        {
+          "lat": 48.9638207,
+          "lng": 20.5331334
+        },
+        {
+          "lat": 48.9632924,
+          "lng": 20.5329792
+        },
+        {
+          "lat": 48.9633778,
+          "lng": 20.5362475
+        },
+        {
+          "lat": 48.9657216,
+          "lng": 20.5361737
+        },
+        {
+          "lat": 48.9657085,
+          "lng": 20.5332783
+        },
+        {
+          "lat": 48.9658035,
+          "lng": 20.5332353
+        },
+        {
+          "lat": 48.965803,
+          "lng": 20.5328632
+        },
+        {
+          "lat": 48.965802,
+          "lng": 20.5321702
+        },
+        {
+          "lat": 48.9658017,
+          "lng": 20.5319586
+        }
+      ]
+    },
+    {
       "id": "est-stupava",
       "name": "ESt Stupava",
-      "voltage" : [400, 110],
+      "voltage": [400, 110],
       "operator": "SEPS",
       "type": "transmission",
       "nodes": [
-  {
-    "lat": 48.3049276,
-    "lng": 17.0341858
-  },
-  {
-    "lat": 48.304552,
-    "lng": 17.033653
-  },
-  {
-    "lat": 48.3036129,
-    "lng": 17.0321043
-  },
-  {
-    "lat": 48.303472,
-    "lng": 17.0318719
-  },
-  {
-    "lat": 48.3039535,
-    "lng": 17.0311877
-  },
-  {
-    "lat": 48.3039933,
-    "lng": 17.0311311
-  },
-  {
-    "lat": 48.3052977,
-    "lng": 17.0292675
-  },
-  {
-    "lat": 48.3057893,
-    "lng": 17.0285651
-  },
-  {
-    "lat": 48.3060179,
-    "lng": 17.0289243
-  },
-  {
-    "lat": 48.3064402,
-    "lng": 17.029588
-  },
-  {
-    "lat": 48.3065957,
-    "lng": 17.0298316
-  },
-  {
-    "lat": 48.3072787,
-    "lng": 17.0309013
-  },
-  {
-    "lat": 48.3072911,
-    "lng": 17.0309548
-  },
-  {
-    "lat": 48.3072939,
-    "lng": 17.0310151
-  },
-  {
-    "lat": 48.3072893,
-    "lng": 17.0310725
-  },
-  {
-    "lat": 48.3051143,
-    "lng": 17.0342292
-  },
-  {
-    "lat": 48.3050283,
-    "lng": 17.0342576
-  },
-  {
-    "lat": 48.3049276,
-    "lng": 17.0341858
-  }
-]
-    },
         {
+          "lat": 48.3049276,
+          "lng": 17.0341858
+        },
+        {
+          "lat": 48.304552,
+          "lng": 17.033653
+        },
+        {
+          "lat": 48.3036129,
+          "lng": 17.0321043
+        },
+        {
+          "lat": 48.303472,
+          "lng": 17.0318719
+        },
+        {
+          "lat": 48.3039535,
+          "lng": 17.0311877
+        },
+        {
+          "lat": 48.3039933,
+          "lng": 17.0311311
+        },
+        {
+          "lat": 48.3052977,
+          "lng": 17.0292675
+        },
+        {
+          "lat": 48.3057893,
+          "lng": 17.0285651
+        },
+        {
+          "lat": 48.3060179,
+          "lng": 17.0289243
+        },
+        {
+          "lat": 48.3064402,
+          "lng": 17.029588
+        },
+        {
+          "lat": 48.3065957,
+          "lng": 17.0298316
+        },
+        {
+          "lat": 48.3072787,
+          "lng": 17.0309013
+        },
+        {
+          "lat": 48.3072911,
+          "lng": 17.0309548
+        },
+        {
+          "lat": 48.3072939,
+          "lng": 17.0310151
+        },
+        {
+          "lat": 48.3072893,
+          "lng": 17.0310725
+        },
+        {
+          "lat": 48.3051143,
+          "lng": 17.0342292
+        },
+        {
+          "lat": 48.3050283,
+          "lng": 17.0342576
+        },
+        {
+          "lat": 48.3049276,
+          "lng": 17.0341858
+        }
+      ]
+    },
+    {
       "id": "est-varin",
       "name": "ESt Varín",
-      "voltage" : [400, 110],
+      "voltage": [400, 110],
       "operator": "SEPS",
       "type": "transmission",
       "nodes": [
-  {
-    "lat": 49.2147316,
-    "lng": 18.8607392
-  },
-  {
-    "lat": 49.2145663,
-    "lng": 18.8611071
-  },
-  {
-    "lat": 49.2136725,
-    "lng": 18.859887
-  },
-  {
-    "lat": 49.2134959,
-    "lng": 18.8602046
-  },
-  {
-    "lat": 49.211315,
-    "lng": 18.8641282
-  },
-  {
-    "lat": 49.2118503,
-    "lng": 18.8648202
-  },
-  {
-    "lat": 49.2129992,
-    "lng": 18.8649765
-  },
-  {
-    "lat": 49.2138716,
-    "lng": 18.8661057
-  },
-  {
-    "lat": 49.2159664,
-    "lng": 18.8623378
-  },
-  {
-    "lat": 49.2147316,
-    "lng": 18.8607392
-  }
-]
-    },
         {
+          "lat": 49.2147316,
+          "lng": 18.8607392
+        },
+        {
+          "lat": 49.2145663,
+          "lng": 18.8611071
+        },
+        {
+          "lat": 49.2136725,
+          "lng": 18.859887
+        },
+        {
+          "lat": 49.2134959,
+          "lng": 18.8602046
+        },
+        {
+          "lat": 49.211315,
+          "lng": 18.8641282
+        },
+        {
+          "lat": 49.2118503,
+          "lng": 18.8648202
+        },
+        {
+          "lat": 49.2129992,
+          "lng": 18.8649765
+        },
+        {
+          "lat": 49.2138716,
+          "lng": 18.8661057
+        },
+        {
+          "lat": 49.2159664,
+          "lng": 18.8623378
+        },
+        {
+          "lat": 49.2147316,
+          "lng": 18.8607392
+        }
+      ]
+    },
+    {
       "id": "est-velkekapusany",
       "name": "ESt Veľké Kapušany",
-      "voltage" : [400],
+      "voltage": [400],
       "operator": "SEPS",
       "type": "transmission",
       "nodes": [
-  {
-    "lat": 48.5699357,
-    "lng": 22.0383814
-  },
-  {
-    "lat": 48.5679435,
-    "lng": 22.0380533
-  },
-  {
-    "lat": 48.5677355,
-    "lng": 22.0412125
-  },
-  {
-    "lat": 48.5676726,
-    "lng": 22.0422093
-  },
-  {
-    "lat": 48.5683838,
-    "lng": 22.0423322
-  },
-  {
-    "lat": 48.5687385,
-    "lng": 22.0418795
-  },
-  {
-    "lat": 48.5696844,
-    "lng": 22.0420251
-  },
-  {
-    "lat": 48.5699357,
-    "lng": 22.0383814
-  }
-]
-    },
         {
+          "lat": 48.5699357,
+          "lng": 22.0383814
+        },
+        {
+          "lat": 48.5679435,
+          "lng": 22.0380533
+        },
+        {
+          "lat": 48.5677355,
+          "lng": 22.0412125
+        },
+        {
+          "lat": 48.5676726,
+          "lng": 22.0422093
+        },
+        {
+          "lat": 48.5683838,
+          "lng": 22.0423322
+        },
+        {
+          "lat": 48.5687385,
+          "lng": 22.0418795
+        },
+        {
+          "lat": 48.5696844,
+          "lng": 22.0420251
+        },
+        {
+          "lat": 48.5699357,
+          "lng": 22.0383814
+        }
+      ]
+    },
+    {
       "id": "est-velkydur",
       "name": "ESt Veľký Ďur",
-      "voltage" : [400, 110],
+      "voltage": [400, 110],
       "operator": "SEPS",
       "type": "transmission",
       "nodes": [
-  {
-    "lat": 48.2045122,
-    "lng": 18.42449
-  },
-  {
-    "lat": 48.2056313,
-    "lng": 18.4298598
-  },
-  {
-    "lat": 48.2058547,
-    "lng": 18.4309581
-  },
-  {
-    "lat": 48.2064898,
-    "lng": 18.4306574
-  },
-  {
-    "lat": 48.20581,
-    "lng": 18.4273278
-  },
-  {
-    "lat": 48.2074023,
-    "lng": 18.4265779
-  },
-  {
-    "lat": 48.2067735,
-    "lng": 18.4235227
-  },
-  {
-    "lat": 48.2066351,
-    "lng": 18.4228624
-  },
-  {
-    "lat": 48.2043843,
-    "lng": 18.423916
-  },
-  {
-    "lat": 48.2045122,
-    "lng": 18.42449
-  }
-]
-    },
         {
+          "lat": 48.2045122,
+          "lng": 18.42449
+        },
+        {
+          "lat": 48.2056313,
+          "lng": 18.4298598
+        },
+        {
+          "lat": 48.2058547,
+          "lng": 18.4309581
+        },
+        {
+          "lat": 48.2064898,
+          "lng": 18.4306574
+        },
+        {
+          "lat": 48.20581,
+          "lng": 18.4273278
+        },
+        {
+          "lat": 48.2074023,
+          "lng": 18.4265779
+        },
+        {
+          "lat": 48.2067735,
+          "lng": 18.4235227
+        },
+        {
+          "lat": 48.2066351,
+          "lng": 18.4228624
+        },
+        {
+          "lat": 48.2043843,
+          "lng": 18.423916
+        },
+        {
+          "lat": 48.2045122,
+          "lng": 18.42449
+        }
+      ]
+    },
+    {
       "id": "est-ciernyvah",
       "name": "ESt Vodné dielo Čierny Váh",
-      "voltage" : [400],
+      "voltage": [400],
       "operator": "SEPS",
       "type": "transmission",
       "nodes": []
     },
-        {
+    {
       "id": "est-vola",
       "name": "ESt Voľa",
-      "voltage" : [400, 220, 110],
+      "voltage": [400, 220, 110],
       "operator": "SEPS",
       "type": "transmission",
       "nodes": []
     },
-        {
+    {
       "id": "est-krizovany",
       "name": "ESt Križovany",
-      "voltage" : [400, 220, 110],
+      "voltage": [400, 220, 110],
       "operator": "SEPS",
       "type": "transmission",
       "nodes": []
     },
-            {
+    {
       "id": "est-lemesany",
       "name": "ESt Lemešany",
-      "voltage" : [400, 220, 110],
+      "voltage": [400, 220, 110],
       "operator": "SEPS/VSE",
       "type": "transmission",
       "nodes": []
     },
-            {
+    {
       "id": "est-sucany",
       "name": "ESt Sučany",
-      "voltage" : [400, 220, 110],
+      "voltage": [400, 220, 110],
       "operator": "SEPS",
       "type": "transmission",
       "nodes": []
     },
-            {
+    {
       "id": "est-jaslovske-bohunice",
       "name": "ESt Jaslovské Bohunice",
-      "voltage" : [400],
+      "voltage": [400],
       "operator": "SEPS",
       "type": "transmission",
       "nodes": []
     },
-                {
+    {
       "id": "est-mochovce",
       "name": "ESt Mochovce",
-      "voltage" : [400, 110],
+      "voltage": [400, 110],
       "operator": "SEPS",
       "type": "transmission",
       "nodes": []
     },
-                {
+    {
       "id": "est",
       "name": "ESt",
-      "voltage" : "",
+      "voltage": "",
       "operator": "SEPS",
       "type": "transmission",
       "nodes": []

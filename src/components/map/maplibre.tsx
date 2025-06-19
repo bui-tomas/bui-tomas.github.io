@@ -158,14 +158,19 @@ const MapLibreComponent = forwardRef<MapLibreRef, MapLibreProps>(
 
         // 2. Update tower source
         if (gridData.transmission_lines) {
-          const allTowers: Array<Tower & { lineId: string }> = [];
+          const allTowers: Array<
+            Tower & { lineId: string; segmentId: number }
+          > = [];
 
-          gridData.transmission_lines.forEach((line, lineIndex) => {
-            if (line.towers) {
-              line.towers.forEach((tower) => {
-                allTowers.push({
-                  ...tower,
-                  lineId: `line-${lineIndex}`,
+          gridData.transmission_lines.forEach((transmissionLine, lineIndex) => {
+            if (transmissionLine.lines) {
+              transmissionLine.lines.forEach((lineSegment, segmentIndex) => {
+                lineSegment.forEach((tower) => {
+                  allTowers.push({
+                    ...tower,
+                    lineId: `line-${lineIndex}`,
+                    segmentId: segmentIndex,
+                  });
                 });
               });
             }
@@ -185,6 +190,7 @@ const MapLibreComponent = forwardRef<MapLibreRef, MapLibreProps>(
                   type: tower.type,
                   height: tower.height,
                   lineId: tower.lineId,
+                  segmentId: tower.segmentId,
                 },
               })),
             };
@@ -204,37 +210,46 @@ const MapLibreComponent = forwardRef<MapLibreRef, MapLibreProps>(
           gridData.transmission_lines &&
           gridData.transmission_lines.length > 0
         ) {
-          const linesWithCoordinates = gridData.transmission_lines
-            .map((line) => {
-              if (!line.towers || line.towers.length < 2) return null;
+          const allLineSegments: Array<{
+            line: TransmissionLine;
+            coordinates: number[][];
+            segmentId: number;
+          }> = [];
 
-              const coordinates = line.towers.map((tower) => [
-                tower.lng,
-                tower.lat,
-              ]);
-              return { line, coordinates };
-            })
-            .filter(
-              (
-                item
-              ): item is { line: TransmissionLine; coordinates: number[][] } =>
-                item !== null
-            );
+          gridData.transmission_lines.forEach((transmissionLine) => {
+            if (transmissionLine.lines) {
+              transmissionLine.lines.forEach((lineSegment, segmentIndex) => {
+                if (lineSegment.length >= 2) {
+                  const coordinates = lineSegment.map((tower) => [
+                    tower.lng,
+                    tower.lat,
+                  ]);
+                  allLineSegments.push({
+                    line: transmissionLine,
+                    coordinates,
+                    segmentId: segmentIndex,
+                  });
+                }
+              });
+            }
+          });
 
           const linesGeoJSON = {
             type: "FeatureCollection" as const,
-            features: linesWithCoordinates.map((lineData) => ({
+            features: allLineSegments.map((segmentData) => ({
               type: "Feature" as const,
               geometry: {
                 type: "LineString" as const,
-                coordinates: lineData.coordinates,
+                coordinates: segmentData.coordinates,
               },
               properties: {
-                name: lineData.line.name,
-                voltage: lineData.line.voltage,
-                operator: lineData.line.operator,
-                status: lineData.line.status,
-                description: lineData.line.description || "",
+                name: segmentData.line.name,
+                voltage: segmentData.line.voltage,
+                operator: segmentData.line.operator,
+                status: segmentData.line.status,
+                description: segmentData.line.description || "",
+                segmentId: segmentData.segmentId,
+                lineId: segmentData.line.id,
               },
             })),
           };
@@ -245,7 +260,7 @@ const MapLibreComponent = forwardRef<MapLibreRef, MapLibreProps>(
           if (linesSource) {
             linesSource.setData(linesGeoJSON);
             console.log(
-              `Updated transmission lines: ${linesWithCoordinates.length} features`
+              `Updated transmission lines: ${allLineSegments.length} segments`
             );
           }
         }

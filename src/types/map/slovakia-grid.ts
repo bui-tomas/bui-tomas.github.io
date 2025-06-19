@@ -17,7 +17,7 @@ export interface TransmissionLine {
   country_from?: string;
   country_to?: string;
   description?: string;
-  towers: Tower[];
+  lines: Tower[][]; // Changed from towers: Tower[] to lines: Tower[][]
 }
 
 export interface Substation {
