@@ -43,8 +43,8 @@ const Navbar = () => {
 
     return (
         <nav className="shadow">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="flex h-20 items-center">
+            <div className=" mx-12 px-4 sm:px-6 lg:px-8">
+                <div className="flex h-20 items-center w-full">
                     <div className="flex items-center space-x-8">
                         <Link href="/" className="text-[#DCD7C9] text-xl font-bold">
                             <img src="/logo.png" alt="TB Logo" className="h-16" />
