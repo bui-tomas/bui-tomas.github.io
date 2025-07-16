@@ -1,37 +1,17 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🚀 Welcome to my personal website!
 
-## Getting Started
+Well hello! You have stumbled into this yet unknown little corner of the internet is where I showcase my work, share my thoughts, and connect with fellow creators. Feel free to browse around, check out my projects, and don't hesitate to reach out if you'd like to collaborate or just chat about tech.
 
-First, run the development server:
+Thanks for stopping by!
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+---
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+*Currently working on some exciting projects – stay tuned for updates.*
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🔥 NEW PROJECT - Slovakia energy sector overview
+I compiled and processed some interesting data about Slovakia's energy sector. It's all organized in neat casual friendly interactive charts. 
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+PS: There's also an interactive map built on top of [OpenIfraMap](https://openinframap.org/) ... did I mention that?
 
-## Learn More
+Link: https://bui-tomas.github.io/slovakia-grid
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
-# bui-tomas.github.io
