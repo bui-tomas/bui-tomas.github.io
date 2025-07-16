@@ -21,7 +21,12 @@ import "maplibre-gl/dist/maplibre-gl.css";
 import { MapLibreProps, MapLibreRef } from "./utils";
 import { createMapStyle } from "./utils";
 import { getOperatorLogos } from "./utils";
-import { updateGridDataSources, toggleLine, toggleAllLines } from "./utils";
+import {
+  updateGridDataSources,
+  toggleLine,
+  toggleAllLines,
+  togglePowerPlantType,
+} from "./utils";
 
 const MapLibreComponent = forwardRef<MapLibreRef, MapLibreProps>(
   (
@@ -65,6 +70,10 @@ const MapLibreComponent = forwardRef<MapLibreRef, MapLibreProps>(
           toggleAllLines(map.current, visible);
         }
       },
+      togglePowerPlantType: (plantType: string, visible: boolean) => {
+        if (!map.current) return;
+        togglePowerPlantType(map.current, plantType, visible);
+      },
     }));
 
     // Initialize map
@@ -79,7 +88,7 @@ const MapLibreComponent = forwardRef<MapLibreRef, MapLibreProps>(
           center: [20.5, 48.7], // Slovakia center
           zoom: 7,
           maxZoom: 18,
-          minZoom: 3,
+          minZoom: 6,
         });
 
         // Add tower icons
@@ -166,23 +175,26 @@ const MapLibreComponent = forwardRef<MapLibreRef, MapLibreProps>(
           // Query all clickable features at the click point
           const features = map.current!.queryRenderedFeatures(e.point, {
             layers: [
-              "substation-circles", 
+              "substation-circles",
               "substation-areas",
-              "power-plant-symbols", 
+              "power-plant-nuclear-icons",
+              "power-plant-gas-icons",
+              "power-plant-hydro-icons",
+              "power-plant-wind-icons",
               "power-plant-areas",
               "transmission-lines-400",
-              "transmission-lines-220", 
+              "transmission-lines-220",
               "transmission-lines-110",
-            ]
+            ],
           });
 
           if (features.length === 0) return;
 
           // Priority 1: Check for substations first
-          const substationFeature = features.find(f => 
+          const substationFeature = features.find((f) =>
             ["substation-circles", "substation-areas"].includes(f.layer.id)
           );
-          
+
           if (substationFeature) {
             const properties = substationFeature.properties;
             const { logo1, logo2 } = getOperatorLogos(properties?.operator);
@@ -208,10 +220,16 @@ const MapLibreComponent = forwardRef<MapLibreRef, MapLibreProps>(
           }
 
           // Priority 2: Check for power plants
-          const powerPlantFeature = features.find(f => 
-            ["power-plant-symbols", "power-plant-areas"].includes(f.layer.id)
+          const powerPlantFeature = features.find((f) =>
+            [
+              "power-plant-nuclear-icons",
+              "power-plant-gas-icons",
+              "power-plant-hydro-icons",
+              "power-plant-wind-icons",
+              "power-plant-areas",
+            ].includes(f.layer.id)
           );
-          
+
           if (powerPlantFeature) {
             const properties = powerPlantFeature.properties;
             const { logo1, logo2 } = getOperatorLogos(properties?.operator);
@@ -240,10 +258,15 @@ const MapLibreComponent = forwardRef<MapLibreRef, MapLibreProps>(
           }
 
           // Priority 3: Check for transmission lines (only if no substation or power plant)
-          const transmissionLineFeature = features.find(f => 
-            ["transmission-lines-400", "transmission-lines-220", "transmission-lines-110", "transmission-lines"].includes(f.layer.id)
+          const transmissionLineFeature = features.find((f) =>
+            [
+              "transmission-lines-400",
+              "transmission-lines-220",
+              "transmission-lines-110",
+              "transmission-lines",
+            ].includes(f.layer.id)
           );
-          
+
           if (transmissionLineFeature) {
             const properties = transmissionLineFeature.properties;
 

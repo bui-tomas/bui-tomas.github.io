@@ -34,14 +34,22 @@ const KeyPanel = ({ isVisible, onClose, mapRef }: KeyPanelProps) => {
   );
 
   // Power plant types
-    const [powerPlantTypes, setPowerPlantTypes] = useState<PowerPlantType[]>([
-        // { name: 'Coal', symbol: '/icons/power_plant_coal.png', enabled: true },
-        { name: 'Hydroelectric', symbol: '/icons/power_plant_hydro.png', enabled: true },
-        { name: 'Nuclear', symbol: '/icons/power_plant_nuclear.png', enabled: true },
-        { name: 'Oil/Gas', symbol: '/icons/power_plant_oilgas.png', enabled: true },
-        // { name: 'Solar', symbol: '/icons/power_plant_solar.png', enabled: true },
-        { name: 'Wind', symbol: '/icons/power_plant_wind.png', enabled: true },
-    ]);
+  const [powerPlantTypes, setPowerPlantTypes] = useState<PowerPlantType[]>([
+    // { name: 'Coal', symbol: '/icons/power_plant_coal.png', enabled: true },
+    {
+      name: "Hydroelectric",
+      symbol: "/icons/power_plant_hydro.png",
+      enabled: true,
+    },
+    {
+      name: "Nuclear",
+      symbol: "/icons/power_plant_nuclear.png",
+      enabled: true,
+    },
+    { name: "Oil/Gas", symbol: "/icons/power_plant_oilgas.png", enabled: true },
+    // { name: 'Solar', symbol: '/icons/power_plant_solar.png', enabled: true },
+    { name: "Wind", symbol: "/icons/power_plant_wind.png", enabled: true },
+  ]);
 
   const toggleVoltageLevel = (voltage: string) => {
     const newVisibility = !voltageVisibility[voltage];
@@ -59,9 +67,27 @@ const KeyPanel = ({ isVisible, onClose, mapRef }: KeyPanelProps) => {
 
   const togglePowerPlant = (index: number) => {
     setPowerPlantTypes((prev) =>
-      prev.map((plant, i) =>
-        i === index ? { ...plant, enabled: !plant.enabled } : plant
-      )
+      prev.map((plant, i) => {
+        if (i === index) {
+          const newEnabled = !plant.enabled;
+
+          // Map the display names to source types used in data
+          const sourceTypeMap: Record<string, string> = {
+            Hydroelectric: "hydro",
+            Nuclear: "nuclear",
+            "Oil/Gas": "gas",
+            Wind: "wind",
+          };
+
+          const sourceType = sourceTypeMap[plant.name];
+          if (sourceType && mapRef?.current) {
+            mapRef.current.togglePowerPlantType(sourceType, newEnabled);
+          }
+
+          return { ...plant, enabled: newEnabled };
+        }
+        return plant;
+      })
     );
   };
 
@@ -143,13 +169,13 @@ const KeyPanel = ({ isVisible, onClose, mapRef }: KeyPanelProps) => {
                     plant.enabled ? "opacity-100" : "opacity-30"
                   }`}
                 >
-                  <Image 
-                    src={plant.symbol} 
-                    alt={plant.name} 
-                    width={20} 
-                    height={20} 
+                  <Image
+                    src={plant.symbol}
+                    alt={plant.name}
+                    width={20}
+                    height={20}
                     className="mr-2"
-                    />
+                  />
                 </span>
                 <button
                   onClick={() => togglePowerPlant(index)}

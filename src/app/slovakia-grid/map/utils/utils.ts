@@ -1,6 +1,8 @@
 // src/components/map/utils/utils.ts
 import maplibregl from "maplibre-gl";
 import { SlovakiaGridData, Tower, TransmissionLine } from "./types"
+import type { FilterSpecification } from 'maplibre-gl';
+
 
 // Utility function for calculating centroids
 export const calculateCentroid = (nodes: Array<{ lat: number; lng: number }>) => ({
@@ -493,3 +495,20 @@ export function getOperatorLogos(operator?: string): {
     logo2: logo2 ? `${LOGO_BASE_PATH}${logo2}` : undefined
   };
 }
+
+export const togglePowerPlantType = (
+  map: maplibregl.Map,
+  plantType: string,
+  visible: boolean
+) => {
+  const iconLayerId = `power-plant-${plantType}-icons`;
+  const labelLayerId = `power-plant-${plantType}-labels`;
+  
+  [iconLayerId, labelLayerId].forEach(layerId => {
+    if (map.getLayer(layerId)) {
+      map.setLayoutProperty(layerId, 'visibility', visible ? 'visible' : 'none');
+    }
+  });
+  
+  console.log(`${plantType} power plants ${visible ? 'shown' : 'hidden'}`);
+};

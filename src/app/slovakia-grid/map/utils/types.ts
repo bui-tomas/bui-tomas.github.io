@@ -88,4 +88,5 @@ export interface MapLibreRef {
   isReady: () => boolean;
   toggleLine: (voltage: number, visible: boolean) => void;
   toggleAllLines: (visible: boolean) => void;
+  togglePowerPlantType: (plantType: string, visible: boolean) => void;
 }

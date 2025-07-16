@@ -124,6 +124,25 @@ export const TransmissionLinePopup: React.FC<{
   );
 };
 
+// Transformation dictionaries
+const GENERATION_METHOD_TRANSFORM: Record<string, string> = {
+  'fission': 'Fission',
+  'run-of-river': 'Run-of-river',
+  'pumped-storage': 'Pumped storage',
+  'water-storage': 'Water storage',
+  'combustion': 'Combustion',
+  'geothermal': 'Geothermal',
+};
+
+const SOURCE_TRANSFORM: Record<string, string> = {
+  'renewable': 'Renewable Energy',
+  'gas': 'Gas',
+  'nuclear': 'Nuclear',
+  'hydro': 'Hydroelectric',
+  'wind': 'Wind',
+  'solar': 'Solar',
+};
+
 export const PowerPlantPopup: React.FC<{
   name?: string;
   operator?: string;
@@ -145,40 +164,61 @@ export const PowerPlantPopup: React.FC<{
   operatorLogo,
   operatorLogo2,
 }) => {
+  // Transform values using dictionaries
+  const transformedSource = source ? (SOURCE_TRANSFORM[source] || source) : "Unknown";
+  const transformedGenerationMethod = generation_method 
+    ? (GENERATION_METHOD_TRANSFORM[generation_method] || generation_method) 
+    : "Unknown";
+
+  // Helper function to check if a value should be displayed
+  const shouldShowField = (value?: string) => value && value !== "unknown";
+
   return (
     <div className="p-2">
       <div className="text-center mb-4">
         <h3 className="text-md font-semibold">{name || "Power Plant"}</h3>
       </div>
       <div className="flex-1 h-px bg-[#A27B5C]/20 mb-4"></div>
-
+      
       <div className="grid grid-cols-2 gap-4">
         {/* First column - Information */}
         <div className="space-y-1">
-          <p>
-            <strong>Operator: </strong>
-            {operator || "Unknown"}
-          </p>
-          <p>
-            <strong>Source: </strong>
-            {source || "Unknown"}
-          </p>
-          <p>
-            <strong>Generation method: </strong>
-            {generation_method || "Unknown"}
-          </p>
-          <p>
-            <strong>Installed power: </strong>
-            {power || "Unknown"} MW
-          </p>
-          <p>
-            <strong>Average production: </strong>
-            {average_production || "Unknown"} GWh
-          </p>
-          <p>
-            <strong>Start year: </strong>
-            {start_year || "Unknown"}
-          </p>
+          {shouldShowField(operator) && (
+            <p>
+              <strong>Operator: </strong>
+              {operator}
+            </p>
+          )}
+          {shouldShowField(source) && (
+            <p>
+              <strong>Source: </strong>
+              {transformedSource}
+            </p>
+          )}
+          {shouldShowField(generation_method) && (
+            <p>
+              <strong>Generation method: </strong>
+              {transformedGenerationMethod}
+            </p>
+          )}
+          {shouldShowField(power) && (
+            <p>
+              <strong>Installed power: </strong>
+              {power} MW
+            </p>
+          )}
+          {shouldShowField(average_production) && (
+            <p>
+              <strong>Average production: </strong>
+              {average_production} GWh
+            </p>
+          )}
+          {shouldShowField(start_year) && (
+            <p>
+              <strong>Start year: </strong>
+              {start_year}
+            </p>
+          )}
         </div>
 
         {/* Second column - Operator Logo(s) */}
@@ -194,7 +234,7 @@ export const PowerPlantPopup: React.FC<{
                   className="w-full h-full object-contain"
                 />
               </div>
-
+              
               {/* Bottom-right logo */}
               <div className="absolute bottom-1 right-1 w-14 h-14">
                 <img
@@ -203,7 +243,7 @@ export const PowerPlantPopup: React.FC<{
                   className="w-full h-full object-contain"
                 />
               </div>
-
+              
               {/* Optional: Diagonal line separator */}
               <div
                 className="absolute inset-0"

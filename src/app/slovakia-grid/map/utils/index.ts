@@ -53,12 +53,6 @@ export function createMapStyle(): StyleSpecification {
         
         attribution: '© <a href="https://openstreetmap.org">OpenStreetMap</a> | <a href="https://openinframap.org/">Open Infrastructure Map</a>',
       },
-      "blackmarble": {
-        type: "raster",
-        tiles: ["https://openinframap.org/black-marble-2023/{z}/{x}/{y}.webp"],
-        maxzoom: 8,
-        attribution: 'NASA Black Marble 2023'
-      },
       "transmission-lines": {
         type: "geojson",
         data: { type: "FeatureCollection", features: [] }

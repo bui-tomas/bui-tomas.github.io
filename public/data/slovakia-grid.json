@@ -97186,7 +97186,7 @@
       "source": "nuclear",
       "start_year": 1998,
       "generation_method": "fission",
-      "avg_production": 2200,
+      "avg_production": 8325,
       "relations": [
         [
           {
@@ -97504,7 +97504,7 @@
       "source": "nuclear",
       "start_year": 1982,
       "generation_method": "fission",
-      "avg_production": 2200,
+      "avg_production": 7779,
       "relations": [
         [
           {
@@ -97780,9 +97780,9 @@
       "power": 215.7,
       "operator": "Veolia",
       "source": "gas",
-      "start_year": -1,
+      "start_year": "unknown",
       "generation_method": "combustion",
-      "avg_production": -1,
+      "avg_production": "unknown",
       "relations": [[
   {
     "lat": 48.1776268,
@@ -97856,9 +97856,9 @@
       "power": 174,
       "operator": "SLOVNAFT",
       "source": "gas",
-      "start_year": -1,
-      "generation_method": "-1",
-      "avg_production": -1,
+      "start_year": "unknown",
+      "generation_method": "unknown",
+      "avg_production": "unknown",
       "relations": [[
   {
     "lat": 48.1196077,
@@ -98038,7 +98038,7 @@
       "source": "gas",
       "start_year": 2009,
       "generation_method": "combustion",
-      "avg_production": -1,
+      "avg_production": "unknown",
       "relations": [[
   {
     "lat": 49.1178211,
@@ -98094,7 +98094,7 @@
       "source": "coal/gas",
       "start_year": 1967,
       "generation_method": "combustion",
-      "avg_production": -1,
+      "avg_production": "unknown",
       "relations": [[
   {
     "lat": 48.6990704,
@@ -98154,7 +98154,7 @@
       "source": "gas",
       "start_year": 1955,
       "generation_method": "combustion",
-      "avg_production": -1,
+      "avg_production": "unknown",
       "relations": [[
   {
     "lat": 49.0599777,

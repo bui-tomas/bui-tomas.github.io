@@ -35,8 +35,8 @@ const projects = [
       "Compilation of important data from various sources about Slovakia's energy sector, including interactive implementation of Slovakia's electrical grid network on top of Open Infrastructure Map",
     techStack: ["Energy Sector", "Data Analysis", "Interactive Map"],
     images: [
-      "/images/projects/portfolio1.png",
-      "/images/projects/portfolio2.png",
+      "/images/projects/slovakia-grid-2.png",
+      "/images/projects/slovakia-grid-1.png",
     ],
     codeUrl: "/slovakia-grid",
   },

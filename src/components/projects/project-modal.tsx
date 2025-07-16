@@ -29,7 +29,7 @@ const ProjectModal = ({ project, onClose }: ProjectModalProps) => {
                                     src={image}
                                     alt={`${project.title} preview ${index + 1}`}
                                     fill
-                                    className="object-cover rounded-lg"
+                                    className="object-contain rounded-lg"
                                 />
                             </div>
                         ))}

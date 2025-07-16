@@ -17,7 +17,7 @@ const ProjectCard = ({ project, onClick }: ProjectCardProps) => {
                     src={project.images[0]}
                     alt={project.title}
                     fill
-                    className="object-cover"
+                    className="object-contain"
                 />
             </div>
             <div className="p-6">

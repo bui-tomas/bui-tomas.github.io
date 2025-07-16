@@ -62,7 +62,7 @@ const MapControls = ({ onTileLayerChange, mapRef, className = '' }: MapControlsP
                     <Map className="w-5 h-5" />
                 </button>
                 
-                <button
+                {/* <button
                     onClick={() => togglePanel('layers')}
                     className={`bg-white rounded-md shadow-lg p-2 hover:bg-gray-50 transition-colors ${
                         showLayersPanel ? 'ring-2 ring-blue-500 bg-blue-50' : ''
@@ -80,7 +80,7 @@ const MapControls = ({ onTileLayerChange, mapRef, className = '' }: MapControlsP
                     title="Toggle Settings Panel"
                 >
                     <Settings className="w-5 h-5" />
-                </button>
+                </button> */}
             </div>
 
             {/* Control Panels */}
@@ -91,13 +91,12 @@ const MapControls = ({ onTileLayerChange, mapRef, className = '' }: MapControlsP
                     mapRef={mapRef}
                 />
                 
-                <LayersPanel 
+                {/* <LayersPanel 
                     isVisible={showLayersPanel}
                     onClose={() => setShowLayersPanel(false)}
                     onTileLayerChange={handleTileLayerChange}
                 />
 
-                {/* Settings Panel (placeholder for future features) */}
                 {showSettingsPanel && (
                     <div className="bg-white rounded-lg shadow-lg p-4 w-64">
                         <div className="flex justify-between items-center mb-3">
@@ -141,7 +140,7 @@ const MapControls = ({ onTileLayerChange, mapRef, className = '' }: MapControlsP
                             </div>
                         </div>
                     </div>
-                )}
+                )} */}
             </div>
         </div>
     );
