@@ -4,7 +4,7 @@ import { useState, useRef } from 'react';
 import { Map, Layers, Settings, Info } from 'lucide-react';
 import { MapLibreRef } from "./maplibre";
 import KeyPanel from './key-panel';
-import LayersPanel from './layers-panel';
+// import LayersPanel from './layers-panel';
 
 interface MapControlsProps {
     onTileLayerChange?: (layerType: string) => void;
