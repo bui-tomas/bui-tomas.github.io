@@ -475,7 +475,7 @@ export function ElectricityShareChart() {
         >
           <CartesianGrid strokeDasharray="3 3" stroke="#f0f0f0" />
 
-          <XAxis dataKey="Year" stroke="#666" fontSize={12} interval={2} />
+          <XAxis dataKey="Year" stroke="#666" fontSize={12} interval={chartHeight === 350 ? 2 : undefined} />
           <YAxis
             stroke="#666"
             fontSize={12}
