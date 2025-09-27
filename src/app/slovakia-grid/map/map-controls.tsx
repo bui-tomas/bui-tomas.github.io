@@ -13,7 +13,7 @@ interface MapControlsProps {
 }
 
 const MapControls = ({ onTileLayerChange, mapRef, className = '' }: MapControlsProps) => {
-    const [showKeyPanel, setShowKeyPanel] = useState(true);
+    const [showKeyPanel, setShowKeyPanel] = useState(true); // hide on sm
     const [showLayersPanel, setShowLayersPanel] = useState(false);
     const [showSettingsPanel, setShowSettingsPanel] = useState(false);
 

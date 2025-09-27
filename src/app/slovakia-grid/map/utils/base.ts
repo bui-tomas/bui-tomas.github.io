@@ -49,15 +49,82 @@ export default function baseStyle(): LayerSpecificationWithZIndex[] {
       },
     },
     {
-      zorder: 22,
-      id: "landuse-wood",
+      zorder: 23,
+      id: "landuse-green-expanded",
       type: "fill",
       source: "openinfra-base",
       "source-layer": "landuse",
-      filter: ["in", "kind", "forest", "wood"],
+      filter: [
+        "in",
+        "kind",
+        "scrub",
+        "grassland", 
+        "grass",
+        "park",
+        "cemetery",
+        "protected_area",
+        "nature_reserve",
+        "golf_course",
+        "allotments",
+        "village_green",
+        "playground",
+        "farmland",
+        "orchard"
+      ],
+      paint: {
+        "fill-color": colours.green
+      }
+    },
+    {
+      zorder: 24,
+      id: "landcover-green",
+      type: "fill",
+      source: "openinfra-base",
+      "source-layer": "landcover",
+      filter: ["in", "kind", "scrub", "grassland", "grass", "farmland"],
+      paint: {
+        "fill-color": colours.green,
+        "fill-opacity": [
+          "interpolate",
+          ["linear"],
+          ["zoom"],
+          6,
+          1,
+          7,
+          0
+        ]
+      }
+    },
+    {
+      zorder: 25,
+      id: "landuse-wood-expanded", 
+      type: "fill",
+      source: "openinfra-base",
+      "source-layer": "landuse",
+      filter: ["in", "kind", "wood", "forest"],
+      paint: {
+        "fill-color": colours.wood
+      }
+    },
+    {
+      zorder: 26,
+      id: "landcover-wood",
+      type: "fill",
+      source: "openinfra-base", 
+      "source-layer": "landcover",
+      filter: ["in", "kind", "forest"],
       paint: {
         "fill-color": colours.wood,
-      },
+        "fill-opacity": [
+          "interpolate",
+          ["linear"],
+          ["zoom"],
+          6,
+          1,
+          7,
+          0
+        ]
+      }
     },
     {
       zorder: 30,
@@ -164,15 +231,17 @@ export default function baseStyle(): LayerSpecificationWithZIndex[] {
     },
     {
       zorder: 102,
-      id: "boundaries",
-      type: "line",
-      source: "openinfra-base",
-      "source-layer": "boundaries",
+      id: 'boundaries',
+      type: 'line',
+      source: 'openinfra-base',
+      'source-layer': 'boundaries',
+      filter: ['<=', 'kind_detail', 2],  // This is the key filter
+      layout: { 'line-join': 'round' },
       paint: {
-        "line-color": colours.border,
-        "line-width": 1,
-        "line-dasharray": [3, 3],
-      },
+        'line-color': colours['border'],
+        'line-width': ['interpolate', ['linear'], ['zoom'], 3, 0.5, 20, 9],
+        'line-dasharray': [2, 1]
+      }
     },
     {
       zorder: 15,

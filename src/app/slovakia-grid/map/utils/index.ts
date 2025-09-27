@@ -9,6 +9,7 @@ import labelStyle from './labels';
 import powerStyle from './power';
 
 
+
 // Re-export common utilities
 export * from './common';
 export * from './types';
@@ -23,6 +24,26 @@ function sortLayers(layers: LayerSpecificationWithZIndex[]): LayerSpecificationW
   });
 }
 
+function sunDeclinationAngle(date: Date): number {
+  const dayOfYear =
+    (Date.UTC(date.getFullYear(), date.getMonth(), date.getDate()) - Date.UTC(date.getFullYear(), 0, 0)) /
+    24 /
+    60 /
+    60 /
+    1000
+
+  return 23.44 * Math.cos((360 / 365) * (dayOfYear + 10) * (Math.PI / 180))
+}
+
+function sunPolarAngle(date: Date): number {
+  const angle = ((date.getUTCHours() + date.getUTCMinutes() / 60) / 24) * 360
+  return angle
+}
+
+function sunPosition(date: Date): [number, number, number] {
+  return [1.5, 90 + sunDeclinationAngle(date), sunPolarAngle(date)]
+}
+
 // Main style composition function
 export function createMapStyle(): StyleSpecification {
   const allLayers = [
@@ -35,14 +56,19 @@ export function createMapStyle(): StyleSpecification {
     version: 8,
     projection: { type: "globe" },
     sky: {
-      "sky-color": "#87CEEB",
-      "horizon-color": "#ffffff",
-      // ... rest of sky config
+      'sky-color': '#1A6566',
+      'horizon-color': '#863BED',
+      'fog-color': '#4B575E',
+      'sky-horizon-blend': 0.5,
+      'horizon-fog-blend': 0.5,
+      'fog-ground-blend': 0.5,
+      'atmosphere-blend': ['interpolate', ['linear'], ['zoom'], 2, 0.4, 4, 0]
     },
     light: {
-      anchor: "map",
-      color: "#ffffff",
-      intensity: 0.5,
+      anchor: 'map',
+      color: '#F5F02E',
+      intensity: 0.8,
+      position: sunPosition(new Date())
     },
     glyphs: "/fonts/{fontstack}/{range}.pbf",
     sources: {

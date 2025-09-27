@@ -88,7 +88,7 @@ const MapLibreComponent = forwardRef<MapLibreRef, MapLibreProps>(
           center: [20.5, 48.7], // Slovakia center
           zoom: 7,
           maxZoom: 18,
-          minZoom: 6,
+          minZoom: 2,
         });
 
         // Add tower icons
